@@ -1,0 +1,411 @@
+{% extends 'userapp/master.html' %}
+{% load static %} 
+{% block content %}
+
+    <!-- Section 1 Hero Section Start -->
+    <div class="container-fluid position-relative p-0">
+        <div class="header-section">
+            <div class="header-content">
+                <h1>Portfolio</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, reiciendis!</p>
+            </div>
+        </div>
+    </div>
+    <!-- Section 1 Hero Section End -->
+
+    <!-- Section 2 Start -->
+    <div class="container-fluid d-flex justify-content-center flex-column py-5">
+        <h1 class="mb-3 text-blue fw-bold text-center">Our Projects</h1>
+        <div class="container">
+            <div class="row">
+                
+                <!-- Filter -->
+<div class="filter py-4">
+  <div class="filter-options d-flex flex-wrap gap-3 p-3 justify-content-center">
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="all" class="me-1" checked>
+      <label for="all" class="fw-bold category-btn">All</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="mobile" class="me-1">
+      <label for="mobile" class="fw-bold category-btn">Mobile App Development</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="website" class="me-1">
+      <label for="website" class="fw-bold category-btn">Website Development</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="software" class="me-1">
+      <label for="software" class="fw-bold category-btn">Software Development</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="digital" class="me-1">
+      <label for="digital" class="fw-bold category-btn">Digital Marketing</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="ai" class="me-1">
+      <label for="ai" class="fw-bold category-btn">AI/ML Development</label>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <input type="radio" name="category" id="data" class="me-1">
+      <label for="data" class="fw-bold category-btn">Data Mining</label>
+    </div>
+
+  </div>
+</div>
+
+                <!-- Portfolio 1 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/blog1.jpg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">Mobile App Development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 2 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/blog2.jpg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">Website Development</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio 3 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/heroimg.svg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">Software Development</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 4 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/Techverse.svg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">Digital Marketing</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 5 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/industry-AI.jpg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">AI/ML Development</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 6 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 p-2">
+                    <div class="card border-0 shadow-sm rounded-0">
+                        <div class="card-body p-0">
+                            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="Porfolio 1" class="w-100" height="300">
+                            <div class="card-content pt-2">
+                                <div class="p-3 d-flex flex-column">
+                                    <h3 class="h3 fw-bold">Project Name</h3>
+                                    <p class="text-blue mb-0" style="font-size: 14px;">Data Mining</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section 2 End -->
+     
+    <!-- Section 3 start -->
+     <!-- Section 8 Start -->
+     
+    <!-- Section 8 End -->
+    <!-- Section 3 End -->
+
+    <!-- Section 4 Start -->
+
+    <!-- Section 4 End -->
+
+    <!-- Section 4 Start -->
+    
+    <!-- Section 4 End -->
+
+
+    <!-- Section 5 Start -->
+
+    <!-- Section 5 End -->
+
+    <!-- Section 6 Start -->
+
+    <!-- Section 6 End -->
+
+    <!-- Section 7 Start -->
+    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 mt-5">
+        <div class="container">
+            <div class="newsletter-content text-center py-5 px-4">
+                <h1 class="newsletter-title text-white fw-bold">
+                    Start Your App Journey With Expert Solutions and Seamless Experiences
+                </h1>
+                <div class="mt-4 mt-md-0">
+                    <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 7 End -->
+
+    <!-- Section 8 Start -->
+
+    <!-- Section 8 End -->
+
+    <!-- Section 9 Start -->
+
+    <!-- Section 9 End -->
+
+    <!-- Section testimonial Start -->
+    <div class="container py-5">
+        <h2 class="text-start mb-3 mb-md-5 text-blue fw-bold fs-2">What Our Clients Says</h2>
+        <div class="owl-carousel owl-theme">
+            <!-- Testimonial 1 -->
+            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+                    style="top: 10px; right: 20px;"></i>
+                <div class="card-body">
+                    <h4>"The best Webflow Templates"</h4>
+                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
+                        from day one
+                        and delivered
+                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
+                        was quickly
+                        implemented. We're already planning our next project together!.</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
+                            style="width: 40px; height: 40px;">
+                        <div class="d-flex flex-column text">
+                            <span class="mb-0 fw-bold">Sophia Moore</span>
+                            <span style="font-size: 12px;">CEO at K Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+                    style="top: 10px; right: 20px;"></i>
+                <div class="card-body">
+                    <h4>"The best Webflow Templates"</h4>
+                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
+                        from day one
+                        and delivered
+                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
+                        was quickly
+                        implemented. We're already planning our next project together!.</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
+                            style="width: 40px; height: 40px;">
+                        <div class="d-flex flex-column text">
+                            <span class="mb-0 fw-bold">Sophia Moore</span>
+                            <span style="font-size: 12px;">CEO at K Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+                    style="top: 10px; right: 20px;"></i>
+                <div class="card-body">
+                    <h4>"The best Webflow Templates"</h4>
+                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
+                        from day one
+                        and delivered
+                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
+                        was quickly
+                        implemented. We're already planning our next project together!.</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
+                            style="width: 40px; height: 40px;">
+                        <div class="d-flex flex-column text">
+                            <span class="mb-0 fw-bold">Sophia Moore</span>
+                            <span style="font-size: 12px;">CEO at K Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 4 -->
+            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+                    style="top: 10px; right: 20px;"></i>
+                <div class="card-body">
+                    <h4>"The best Webflow Templates"</h4>
+                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
+                        from day one
+                        and delivered
+                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
+                        was quickly
+                        implemented. We're already planning our next project together!.</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
+                            style="width: 40px; height: 40px;">
+                        <div class="d-flex flex-column text">
+                            <span class="mb-0 fw-bold">Sophia Moore</span>
+                            <span style="font-size: 12px;">CEO at K Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 5 -->
+            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+                    style="top: 10px; right: 20px;"></i>
+                <div class="card-body">
+                    <h4>"The best Webflow Templates"</h4>
+                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
+                        from day one
+                        and delivered
+                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
+                        was quickly
+                        implemented. We're already planning our next project together!.</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
+                            style="width: 40px; height: 40px;">
+                        <div class="d-flex flex-column text">
+                            <span class="mb-0 fw-bold">Sophia Moore</span>
+                            <span style="font-size: 12px;">CEO at K Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section testimonial End -->
+    <!-- Section 10  Start Contact Us -->
+    <div
+        class="container-fluid d-flex flex-column align-items-center justify-content-center contact-us-section py-4 py-md-0">
+        <h2 class="text-center mb-3 mb-md-5 text-blue fw-bold fs-2">Get in Touch</h2>
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-6 col-sm-12 contact-left mb-0 mb-sm-5">
+                    <p class="mb-3" style="max-width: 500px;">
+                        Get in touch to discuss your development needs. At TechVerse, we provide reliable web and app
+                        development solutions, delivering creative, efficient, and tailored services to help your
+                        business
+                        grow and succeed.
+                    </p>
+                    <div
+                        class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
+                        <i class="fa fa-location-dot text-blue"></i>
+                        <div>
+                            <span class="fw-bold">Location:</span><br>
+                            <span>913, The Capital 2,<br>Ahmedabad</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
+                        <i class="fa fa-phone text-blue"></i>
+                        <div>
+                            <span class="fw-bold"> Call Us:</span>
+                            <span>+91 9081431434</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 contact-right">
+                    <form class="d-flex flex-column gap-3">
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
+                                placeholder="Enter Name" required>
+                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
+                                placeholder="Enter Email" required>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <input type="tel" class="form-control rounded-0 py-3 bg-transparent border-dark"
+                                placeholder="Enter Phone" required>
+                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
+                                placeholder="Enter City" required>
+                        </div>
+                        <textarea class="form-control rounded-0 bg-transparent border-dark" placeholder="Enter Message"
+                            style="min-height: 100px;"></textarea>
+                        <button type="button" class="btn neon-button text-white py-3">Submit Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section 10  End Contact Us -->
+
+{% endblock %}

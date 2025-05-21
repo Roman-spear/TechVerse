@@ -1,0 +1,74 @@
+{% extends 'userapp/master.html' %}
+{% load static %} 
+{% block content %}
+
+  <!-- Section 1 Hero Section Start -->
+  <div class="container-fluid position-relative p-0">
+        <div class="header-section">
+            <div class="header-content">
+                <h1>Contact Us</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, reiciendis!</p>
+            </div>
+        </div>
+     </div>
+  <!-- Section 1 Hero Section End -->
+
+  <!-- Section 2 Start -->
+  <div class="container-md py-5">
+    <div class="d-flex flex-column align-items-center">
+      <h2 class="text-blue fw-bold">Get in touch.</h2>
+      <p class="mb-0 text-center" style="max-width: 500px;">Need some help ? Let us know what you need and we'll get straight back
+        to you.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-center align-items-start">
+        <img src="{% static 'userapp/images/blog1.jpg' %}" alt="Contact Us" class="w-100">
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="contact-form">
+          <form>
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label class="form-label">Company</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="">
+              </div>
+            </div>
+            <!-- <div class="mb-4">
+              <div class="range">
+                <label class="form-label">Project Budget <span class="fw-bold">$</span><span id="budgetValue"
+                    class="fw-bold">5500</span> </label>
+                <input type="range" min="1000" max="10000" id="budgetRange" />
+              </div>
+            </div> -->
+            <div class="mb-4">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="">
+
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Start typing here..."></textarea>
+            </div>
+            <button type="submit" class="btn neon-button text-white px-4">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section 2 End -->
+  
+{% endblock %}

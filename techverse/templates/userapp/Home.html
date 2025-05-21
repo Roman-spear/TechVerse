@@ -1,0 +1,850 @@
+{% extends 'userapp/master.html' %}
+{% load static %} 
+{% block content %}
+
+  <!-- Section 1 Hero Section Start -->
+  <img src="{% static 'userapp/images/herobg.png' %}" alt="" class="herobg img-fluid">
+  <div class="container position-relative mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="h-100 d-flex flex-column justify-content-center text-blue">
+          <h1 class="fw-bold mb-3 mt-5 mt-sm-0">We Provide IT Solutions</h1>
+          <p class="mb-3 fw-semibold">We help businesses grow by providing fast and easy solutions. Our services include
+            mobile apps, website development, design, software, digital marketing, AI/ML, and full-stack development.
+          </p>
+          <div><a href="#" class="btn neon-button text-white px-3 py-2">Get in Touch</a></div>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{% static 'userapp/images/heroimg.svg' %}" alt="" class="img-fluid mt-5">
+      </div>
+    </div>
+  </div>
+  <!-- Section 1 Hero Section End -->
+
+  <!-- Section 2 About Section Start -->
+  <div class="container py-5">
+  <div class="row">
+    <!-- Image column -->
+    <div class="col-md-6 text-center order-1 order-md-0">
+      <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="" class="img-fluid mt-5">
+    </div>
+    
+    <!-- Content column -->
+    <div class="col-md-6 order-0 order-md-1">
+      <div class="h-100 d-flex flex-column justify-content-center text-blue">
+        <h1 class="fw-bold mb-3">We Help Businesses Reach Goals with Support</h1>
+        <p class="mb-3 fw-semibold">At TechVerse, we help businesses grow with smart and simple digital solutions. Our
+          services include mobile app development, web development, website design, software development, digital
+          marketing, AI/ML, and full-stack development. Whether you’re starting fresh or improving an existing system,
+          we use the right tools to fit your needs.</p>
+        <p class="mb-3 fw-semibold">We work with all types of clients—startups, small businesses, large companies, and
+          digital agencies. We listen to your goals, create a clear plan, and deliver quality results. Every project
+          is focused on your success and business growth.</p>
+        <div><a href="#" class="btn neon-button text-white px-3 py-2">About Us</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Section 2 About Section End -->
+
+  <!-- Section 3 Start -->
+  <div class="container py-5">
+    <div class="row align-items-center mb-4">
+      <!-- Left Image -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="{% static 'userapp/images/Techverse.svg' %}" alt="Woman with laptop" class="img-fluid rounded">
+      </div>
+
+      <!-- Right Stats -->
+      <div class="col-lg-6">
+        <div class="row text-center gy-4">
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">👩‍💼</div>
+            <h5 class="mb-1">12+</h5>
+            <p class="mb-0 small">Years of Experience</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">📱</div>
+            <h5 class="mb-1">4500+</h5>
+            <p class="mb-0 small">Mobile Apps Developed</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">🌐</div>
+            <h5 class="mb-1">2200+</h5>
+            <p class="mb-0 small">Websites Developed</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">⭐</div>
+            <h5 class="mb-1">4.9</h5>
+            <p class="mb-0 small">Ratings on Clutch.co</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">📥</div>
+            <h5 class="mb-1">110M</h5>
+            <p class="mb-0 small">App Downloads</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="stats-icon">👨‍💻</div>
+            <h5 class="mb-1">1200+</h5>
+            <p class="mb-0 small">Dedicated Developers</p>
+          </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="cta-box mt-4 text-center text-lg-start">
+          <h5 class="fw-bold">Who We Are?</h5>
+          <p class="mb-2">TechVerse is an ISO-certified software development company offering a variety of IT solutions
+            to clients worldwide. We specialize in web development, mobile apps, AI/ML, and software services. Our
+            skilled team is focused on meeting customer needs and solving problems efficiently.</p>
+          <!-- <p class="mb-2">At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.</p> -->
+          <a href="#">➜ Hire Developers</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- Section 3 End -->
+
+  <!-- Section 4 Start -->
+  <div class="container my-5 text-center">
+    <h1 class="fw-bold mb-3 text-blue">Our Services</h1>
+    <h6 class="text-muted mb-4">We help our partners drive fast change and growth.</h6>
+
+    <div class="row">
+      <!-- Left Tab Menu -->
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+          <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1
+            Mobile App Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service2">2 Website
+            Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service3">3 Software
+            Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service4">4 AI/ML
+            Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service5">5 Full Stack
+            Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service6">6 Digital
+            Marketing</button>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="col-md-7">
+        <div class="tab-content">
+          <div class="tab-pane fade show active text-center" id="service1">
+            <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Mobile App Development</h4>
+            <p>We create custom mobile apps for Android and iOS that offer smooth, user-friendly experiences. Our apps
+              help businesses engage with customers, increase reach, and improve accessibility, while meeting specific
+              business needs.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service2">
+            <img src="{% static 'userapp/images/herobg.png' %}" alt="Website Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Website Development</h4>
+            <p>We build responsive, high-performance websites tailored to your brand and business goals, ensuring great
+              user experience and fast load times across all devices.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service3">
+            <img src="{% static 'userapp/images/heroimg.svg' %}" alt="Software Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Software Development</h4>
+            <p>Our team develops robust custom software solutions to streamline business operations, improve
+              productivity, and support digital transformation.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service4">
+            <img src="{% static 'userapp/images/Techverse.svg' %}" alt="AI/ML" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">AI/ML Development</h4>
+            <p>We integrate artificial intelligence and machine learning to build intelligent solutions that automate
+              processes and provide deep insights from data.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service5">
+            <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Full Stack Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Full Stack Development</h4>
+            <p>Our full-stack developers deliver end-to-end solutions using the latest tech stack, from front-end design
+              to back-end infrastructure.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service6">
+            <img src="{% static 'userapp/images/Techverse.svg' %}" alt="Digital Marketing" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Digital Marketing</h4>
+            <p>We provide digital marketing strategies including SEO, social media, email marketing, and PPC to help
+              your brand grow online.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section 4 End -->
+
+  <!-- Section 5 Start -->
+  <section class="py-5">
+    <div class="container-fluid text-center">
+      <h1 class="fw-bold mb-3 text-blue">AI Use Cases</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, non?</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="circle-container">
+            <div class="center-ai">
+              <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" class="img-fluid" />
+            </div>
+            <div class="circle-item item-1">AI for Fintech</div>
+            <div class="circle-item item-2">AI for Healthcare</div>
+            <div class="circle-item item-3">AI for Media & Entertainment</div>
+            <div class="circle-item item-4">AI for Retail & e-Commerce</div>
+            <div class="circle-item item-5">AI for Education</div>
+            <div class="circle-item item-6">AI for Marketing</div>
+          </div>
+        </div>
+        <!-- Right Description Boxes -->
+        <div class="col-md-6 bg-primary1 text-white p-0">
+          <div class="row h-100 g-0">
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Fintech</h4>
+                <p class="mb-0">Automate risk, fraud detection, and customer insights.</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Healthcare</h4>
+                <p class="mb-0">Enhance diagnostics, patient monitoring, and drug research.</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Media & Entertainment</h4>
+                <p class="mb-0">Generate personalized content and optimize user engagement.</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Retail & e-Commerce</h4>
+                <p class="mb-0">Enable smart recommendations and inventory prediction.</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Education</h4>
+                <p class="mb-0">Provide adaptive learning, grading, and performance tracking.</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div>
+                <h4 class="fw-bold">AI for Marketing</h4>
+                <p class="mb-0">Create targeted campaigns and perform sentiment analysis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 End -->
+
+  <!-- core 2 start  -->
+
+  <!-- core 2 end -->
+
+  <!-- Section 6 Start -->
+  <section class="text-center position-relative py-5">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="row g-4">
+            <!-- Core Value 1 -->
+            <div class="col-md-6 col-lg-4">
+              <!-- <div class="core-value-box">
+            <i class="fas fa-user-check core-value-icon"></i>
+            <p class="core-value-title">Focus on Clients</p>
+          </div> -->
+            </div>
+            <!-- Core Value 1 -->
+            <div class="col-md-6 col-lg-4">
+              <!-- <div class="core-value-box">
+            <i class="fas fa-user-check core-value-icon"></i>
+            <p class="core-value-title">Focus on Clients</p>
+          </div> -->
+            </div>
+            <!-- Core Value 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-user-check core-value-icon"></i>
+                <p class="core-value-title">Focus on Clients</p>
+              </div>
+            </div>
+            <!-- Core Value 2 -->
+            <div class="col-md-6 col-lg-4">
+              <!-- <div class="core-value-box">
+            <i class="fas fa-lightbulb core-value-icon"></i>
+            <p class="core-value-title">Creativity and Quality</p>
+          </div> -->
+            </div>
+            <!-- Core Value 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-lightbulb core-value-icon"></i>
+                <p class="core-value-title">Creativity and Quality</p>
+              </div>
+            </div>
+            <!-- Core Value 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-handshake core-value-icon"></i>
+                <p class="core-value-title">Honesty and Openness</p>
+              </div>
+            </div>
+            <!-- Core Value 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-chart-line core-value-icon"></i>
+                <p class="core-value-title">High-Quality Results</p>
+              </div>
+            </div>
+            <!-- Core Value 5 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-people-arrows core-value-icon"></i>
+                <p class="core-value-title">Teamwork and Cooperation</p>
+              </div>
+            </div>
+            <!-- Core Value 6 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="core-value-box">
+                <i class="fas fa-seedling core-value-icon"></i>
+                <p class="core-value-title">Dedication to Growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column justify-content-center ">
+          <h1 class="fw-bold mb-3 text-blue">Our Core Values</h1>
+          <p class="text-muted mb-5 ">
+            At TechVerse, our core values guide every project we take on. <br>
+            They guide how we work, solve problems, and deliver results. These values help us stay focused, do our best,
+            and build strong trust with our clients.
+          </p>
+        </div>
+      </div>
+
+
+
+      <!-- Optional: AI robot illustration -->
+      <div>
+        <img src="{% static 'userapp/images/hand-ai.svg' %}" alt="AI Robot" class="robot-img d-none d-sm-block" />
+      </div>
+    </div>
+  </section>
+  <!-- Section 6 End -->
+
+  <!-- ====================== -->
+   
+  <!-- ====================== -->
+
+<h1 class="fw-bold mb-3 text-blue text-center">Industries We Serve</h1>
+<div class="container-fluid bg-primary1 text-center">
+
+  <!-- <div class=""> -->
+    <div class="row">
+      <div class="col-md-4 p-3  d-flex align-items-center">
+        <div class="row">
+        <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-graduation-cap"></i>
+        <p class="industry-title">Education</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-heartbeat"></i>
+        <p class="industry-title">Healthcare</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-university"></i>
+        <p class="industry-title">Fintech</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-plane-departure"></i>
+        <p class="industry-title">Travel & Hospitality</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-store-alt"></i>
+        <p class="industry-title">Retail & E-commerce</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-truck"></i>
+        <p class="industry-title">Logistics & Supply Chain</p>
+      </div>
+    </div>
+    </div>
+
+      </div>
+      <div class="col-md-4  d-flex align-items-center" >
+        <img src="{% static 'userapp/images/industries-we-serve.svg' %}" alt="" class="img-fluid">
+      </div>
+            <div class="col-md-4 p-3 d-flex align-items-center">
+        <div class="row">
+        <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-graduation-cap"></i>
+        <p class="industry-title">Education</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-heartbeat"></i>
+        <p class="industry-title">Healthcare</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-university"></i>
+        <p class="industry-title">Fintech</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-plane-departure"></i>
+        <p class="industry-title">Travel & Hospitality</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-store-alt"></i>
+        <p class="industry-title">Retail & E-commerce</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+      <div class="industry-box">
+        <i class="fas fa-truck"></i>
+        <p class="industry-title">Logistics & Supply Chain</p>
+      </div>
+    </div>
+    </div>
+
+      </div>
+    
+  </div>
+  <!-- </div> -->
+</div>
+
+
+  <!-- Section tech start -->
+  <section class=" text-center py-5">
+    <h1 class="fw-bold mb-3 text-blue">Technologies and Platforms We Use</h1>
+    <div class="tabs">
+      <div class="tab" onclick="showTab('frontend', this)">Frontend</div>
+      <div class="tab" onclick="showTab('backend',this)">Backend</div>
+      <div class="tab" onclick="showTab('mobile',this)">Mobile</div>
+      <div class="tab" onclick="showTab('database',this)">Database</div>
+      <div class="tab" onclick="showTab('frameworks',this)">Frameworks</div>
+      <div class="tab" onclick="showTab('cloud',this)">Cloud</div>
+      <div class="tab" onclick="showTab('devops',this)">DevOps</div>
+      <div class="tab" onclick="showTab('ecommerce',this)">Ecommerce</div>
+      <div class="tab" onclick="showTab('cms',this)">CMS</div>
+      <div class="tab" onclick="showTab('platforms',this)">Platforms</div>
+    </div>
+
+    <div id="tabContent" class="tech-grid"></div>
+  </section>
+  <!-- Section tech end -->
+
+  <!-- process start  -->
+  <section class="process-section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3 text-blue">Process of Build App</h2>
+      <p class="mb-5">Delivering work within time and budget which meets client's requirements is our moto.</p>
+
+
+      <div class="timeline py-5">
+
+        <div class="process-box top-step">
+          <div class="step-icon"><i class="fas fa-handshake"></i></div>
+          <div class="step-label">Initial Meeting</div>
+          <div class="circle mb-0">1</div>
+        </div>
+
+        <div class="process-box bottom-step">
+          <div class="circle mt-0">2</div>
+          <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="step-label">Evaluation & Planning</div>
+        </div>
+
+        <div class="process-box top-step">
+          <div class="step-icon"><i class="fas fa-code"></i></div>
+          <div class="step-label">Design & Development</div>
+          <div class="circle mb-0">3</div>
+        </div>
+
+        <div class="process-box bottom-step">
+          <div class="circle mt-0">4</div>
+          <div class="step-icon"><i class="fas fa-thumbs-up"></i></div>
+          <div class="step-label">Quality Testing</div>
+        </div>
+
+        <div class="process-box top-step">
+          <div class="step-icon"><i class="fas fa-cogs"></i></div>
+          <div class="step-label">Maintenance & Enhancement</div>
+          <div class="circle mb-0">5</div>
+        </div>
+
+        <div class="process-box bottom-step">
+          <div class="circle mt-0">6</div>
+          <div class="step-icon"><i class="fas fa-envelope"></i></div>
+          <div class="step-label">Delivery</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- process end -->
+
+  <!-- Section 7 Start -->
+  <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 mt-5">
+    <div class="container">
+      <div class="newsletter-content d-flex justify-content-center align-items-center flex-column py-5 px-4">
+        <h1 class="newsletter-title text-white text-center fw-bold w-75 mb-5">
+          Start Your App Journey With Expert Solutions and Seamless Experiences
+        </h1>
+        <div class="mt-4 mt-md-0">
+          <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section 7 End -->
+
+  <!-- Section 8 Start -->
+  <!-- <div class="container py-5 text-center">
+        <h1 class="mb-3 text-blue fw-bold">How we work?</h1>
+        <ul class="process">
+  <li class="process__item">
+    <span class="process__number">1</span>
+    <span class="process__title">Analysis &amp; Strategy</span>
+    <span class="process__subtitle">We analyse your problem and develop a strategy</span>
+  </li>
+
+  <li class="process__item">
+    <span class="process__number">2</span>
+    <span class="process__title">Make an offer</span>
+    <span class="process__subtitle">We analyse your problem and develop a strategy</span>
+  </li>
+
+  <li class="process__item">
+    <span class="process__number">3</span>
+    <span class="process__title">Develop & Test</span>
+    <span class="process__subtitle">We analyse your problem and develop a strategy</span>
+  </li>
+
+  <li class="process__item">
+    <span class="process__number">4</span>
+    <span class="process__title">Finalize & Deploy</span>
+    <span class="process__subtitle">We analyse your problem and develop a strategy</span>
+  </li>
+</ul>
+     </div> -->
+  <!-- Section 8 End -->
+
+  <!-- Section 9 Start -->
+  <section class="py-5 mt-5">
+    <div class="container">
+      <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
+      <div class="row g-4">
+
+        <!-- Blog Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100 rounded-0">
+            <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">Business tool for your customer</h5>
+              <p class="card-text text-muted small">
+                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                <li class="list-inline-item">
+                  <i class="far fa-calendar-alt me-1"></i> 10 Jul, 2025
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-user me-1"></i> User
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-comments me-1"></i> 38
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100 rounded-0">
+            <img src="{% static 'userapp/images/blog2.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">Growth your business strategy</h5>
+              <p class="card-text text-muted small">
+                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                <li class="list-inline-item">
+                  <i class="far fa-calendar-alt me-1"></i> 25 Jun, 2025
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-user me-1"></i> User
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-comments me-1"></i> 68
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100 rounded-0">
+            <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">Business people success master plan</h5>
+              <p class="card-text text-muted small">
+                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                <li class="list-inline-item">
+                  <i class="far fa-calendar-alt me-1"></i> 16 May, 2025
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-user me-1"></i> User
+                </li>
+                <li class="list-inline-item">
+                  <i class="far fa-comments me-1"></i> 58
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9 End -->
+
+  <!-- Section testimonial Start -->
+  <div class="container py-5">
+    <h2 class="text-start mb-3 mb-md-5 text-blue fw-bold fs-2">What Our Clients Says</h2>
+    <div class="owl-carousel owl-theme">
+      <!-- Testimonial 1 -->
+      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+          style="top: 10px; right: 20px;"></i>
+        <div class="card-body">
+          <h4>"The best Webflow Templates"</h4>
+          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+            and delivered
+            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
+            implemented. We're already planning our next project together!.</p>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
+            <div class="d-flex flex-column text">
+              <span class="mb-0 fw-bold">Sophia Moore</span>
+              <span style="font-size: 12px;">CEO at K Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+          style="top: 10px; right: 20px;"></i>
+        <div class="card-body">
+          <h4>"The best Webflow Templates"</h4>
+          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+            and delivered
+            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
+            implemented. We're already planning our next project together!.</p>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
+            <div class="d-flex flex-column text">
+              <span class="mb-0 fw-bold">Sophia Moore</span>
+              <span style="font-size: 12px;">CEO at K Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+          style="top: 10px; right: 20px;"></i>
+        <div class="card-body">
+          <h4>"The best Webflow Templates"</h4>
+          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+            and delivered
+            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
+            implemented. We're already planning our next project together!.</p>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
+            <div class="d-flex flex-column text">
+              <span class="mb-0 fw-bold">Sophia Moore</span>
+              <span style="font-size: 12px;">CEO at K Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 4 -->
+      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+          style="top: 10px; right: 20px;"></i>
+        <div class="card-body">
+          <h4>"The best Webflow Templates"</h4>
+          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+            and delivered
+            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
+            implemented. We're already planning our next project together!.</p>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
+            <div class="d-flex flex-column text">
+              <span class="mb-0 fw-bold">Sophia Moore</span>
+              <span style="font-size: 12px;">CEO at K Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 5 -->
+      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
+          style="top: 10px; right: 20px;"></i>
+        <div class="card-body">
+          <h4>"The best Webflow Templates"</h4>
+          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+            and delivered
+            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
+            implemented. We're already planning our next project together!.</p>
+          <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
+            <div class="d-flex flex-column text">
+              <span class="mb-0 fw-bold">Sophia Moore</span>
+              <span style="font-size: 12px;">CEO at K Group</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section testimonial End -->
+  <!-- Section 10  Start Contact Us -->
+  <div
+    class="container-fluid d-flex flex-column align-items-center justify-content-center contact-us-section py-4 py-md-0">
+    <h2 class="text-center mb-3 mb-md-5 text-blue fw-bold fs-2">Get in Touch</h2>
+    <div class="container ">
+      <div class="row ">
+        <div class="col-lg-6 col-sm-12 contact-left mb-0 mb-sm-5">
+          <p class="mb-3" style="max-width: 500px;">
+            Get in touch to discuss your development needs. At TechVerse, we provide reliable web and app
+            development solutions, delivering creative, efficient, and tailored services to help your
+            business
+            grow and succeed.
+          </p>
+          <div class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
+            <i class="fa fa-location-dot text-blue"></i>
+            <div>
+              <span class="fw-bold">Location:</span><br>
+              <span>913, The Capital 2,<br>Ahmedabad</span>
+            </div>
+          </div>
+          <div class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
+            <i class="fa fa-phone text-blue"></i>
+            <div>
+              <span class="fw-bold"> Call Us:</span>
+              <span>+91 9081431434</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 contact-right">
+          <form class="d-flex flex-column gap-3">
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark" placeholder="Enter Name"
+                required>
+              <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
+                placeholder="Enter Email" required>
+            </div>
+            <div class="d-flex gap-2">
+              <input type="tel" class="form-control rounded-0 py-3 bg-transparent border-dark" placeholder="Enter Phone"
+                required>
+              <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark" placeholder="Enter City"
+                required>
+            </div>
+            <textarea class="form-control rounded-0 bg-transparent border-dark" placeholder="Enter Message"
+              style="min-height: 100px;"></textarea>
+            <button type="button" class="btn neon-button text-white py-3">Submit Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section 10  End Contact Us -->
+  
+{% endblock %}
