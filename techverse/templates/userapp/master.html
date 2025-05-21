@@ -7,7 +7,7 @@
     <title>Techverse</title>
     <link
       rel="shortcut icon"
-      href="./images/Techverse-F.png"
+      href="{% static 'userapp/images/Techverse-F.png' %}"
       type="image/x-png"
     />
     <link
@@ -44,7 +44,6 @@
 
   <body>
     <!-- Header Start -->
-
     <div class="container-fluid contact-bar bg-primary1 py-2 d-none d-xl-block">
       <div
         class="container-xl d-flex justify-content-between align-items-center"
@@ -107,7 +106,7 @@
         class="container-fluid px-2 px-lg-5 p-2 ps-3 ps-sm-0 nav-container shadow"
       >
         <div class="col-8 col-lg-3">
-          <a href="./index.html" class="d-flex align-items-center">
+          <a href="{% url 'userapp:userindex' %}" class="d-flex align-items-center">
             <img
               src="{% static 'userapp/images/Spectrics_Solutions_logo.png' %}"
               alt="Logo"
@@ -177,227 +176,21 @@
                     <div class="container">
                       <div class="row gy-4">
                         <!-- Data Engineering -->
+                        {% for ab in servicecategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
                           <h5 class="category-title text-blue fw-bold">
-                            Data Engineering
+                            {{ab.name}}
                           </h5>
                           <ul class="category-list list-unstyled">
+                            {% for xy in ab.service_category.all %}
                             <li class="nav-list">
                               <a href="./Service_Detail.html" class="nav-link"
-                                >Data Integration & Orchestration</a
-                              >
+                                >{{xy.name}}</a>
                             </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Data Warehousing & Data Lakes</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Data Analytics and BI</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Cloud Data Engineering</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Data Quality & Governance</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Big Data Technologies</a
-                              >
-                            </li>
+                            {% endfor %}
                           </ul>
                         </div>
-
-                        <!-- AI/ML -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            AI/ML
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Ai_Detail.html" class="nav-link"
-                                >Machine Learning</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Ai_Detail.html" class="nav-link"
-                                >Artificial Intelligence</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Ai_Detail.html" class="nav-link"
-                                >Computer Vision</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Ai_Detail.html" class="nav-link"
-                                >Generative AI Development</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-
-                        <!-- IoT Solutions -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            IoT Solutions
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >IoT Strategy and Consulting</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >IoT Development and Integration</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Smart Devices and Embedded Systems</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >IoT Data Analytics</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Edge Computing Solutions</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Industrial IoT (IIoT)</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-
-                        <!-- Cloud Services -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            Cloud Services
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Cloud Consulting Services</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Cloud Migration Services</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Cloud Application Development</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Cloud Infrastructure Management</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Multi-Cloud and Hybrid Solutions</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-
-                        <!-- Sustainability And Green Tech -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            Sustainability And Green Tech
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Green Cloud Computing</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >IoT for Sustainability</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Carbon Footprint Analytics</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >ESG Reporting</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-
-                        <!-- Software Development -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            Software Development
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Custom Software Development</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Mobile App Development</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Web Application Development</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Enterprise Software Solutions</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-
-                        <!-- Other Services -->
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
-                            Other Services
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Offshore Development Center (ODC) Services</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >Startup Services</a
-                              >
-                            </li>
-                            <li class="nav-list">
-                              <a href="./Service_Detail.html" class="nav-link"
-                                >SAP S/4HANA Public Cloud</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
+                        {% endfor %}
                       </div>
                     </div>
                   </div>
@@ -426,91 +219,16 @@
 
                           <div class="row g-4">
                             <!-- Each industry card -->
+                            {% for ab in industrycategory %}
                             <div class="col-sm-6 col-md-4 industry-card">
                               <a href="#" class="nav-link">
-                                <h4>Education</h4>
+                                <h4>{{ab.name}}</h4>
                                 <p>
-                                  Building the future, one institution at a
-                                  time.
+                                  {{ab.description|safe}}
                                 </p>
                               </a>
                             </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Healthcare</h4>
-                                <p>
-                                  Apps that care better, smarter, and faster.
-                                </p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Fintech</h4>
-                                <p>Robust yet scalable tech solutions.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Real Estate</h4>
-                                <p>
-                                  Streamline your real estate business with us.
-                                </p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Retail</h4>
-                                <p>
-                                  Retail revolution with omnichannel solutions.
-                                </p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Travel & Hospitality</h4>
-                                <p>Design exceptional travel experiences.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Logistics</h4>
-                                <p>Optimize your Supply chain and thrive.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Food & Restaurant</h4>
-                                <p>Custom food and restaurant solutions.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Game</h4>
-                                <p>Develop immersive gaming experiences.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Entertainment</h4>
-                                <p>Crafting engaging apps for all.</p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>On-Demand</h4>
-                                <p>
-                                  Tap into the power of convenience with us.
-                                </p>
-                              </a>
-                            </div>
-                            <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
-                                <h4>Sports</h4>
-                                <p>
-                                  From field to fans—on and off-field solutions.
-                                </p>
-                              </a>
-                            </div>
+                            {% endfor %}
                           </div>
                         </div>
 
@@ -564,7 +282,8 @@
     </nav>
     <!-- Navbar End -->
 
-    {% block content %} {% endblock %}
+    {% block content %} 
+    {% endblock %}
 
     <!-- Footer Start -->
     <div class="container-fluid bg-primary1 py-5">
