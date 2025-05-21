@@ -1,44 +1,50 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView,UpdateView,DeleteView,DetailView,View,CreateView
+from django.contrib import messages
+from app_modules.userapp import models
+from app_modules.userapp import forms 
+from django.urls import reverse_lazy
+
 # Create your views here.
 
 
 class UserIndexView(TemplateView):
-    template_name = "userapp/Home.html"
+    template_name = "userapp/index.html"
     
 class UserAboutusView(TemplateView):
-    template_name = "userapp/About.html"
+    template_name = "userapp/about.html"
     
 class UserServicesView(TemplateView):
-    template_name = "userapp/Services.html"
+    template_name = "userapp/services.html"
 
 class UserIndustriesView(TemplateView):
-    template_name = "userapp/Industries.html"
+    template_name = "userapp/industries.html"
     
 class UserCareerView(TemplateView):
-    template_name = "userapp/Career.html"
+    template_name = "userapp/career.html"
     
-class UserInsightsView(TemplateView):
-    template_name = "userapp/Blog.html"
+class UserBlogView(TemplateView):
+    template_name = "userapp/blog.html"
     
 class UserPortfolioView(TemplateView):
-    template_name = "userapp/Portfolio.html"
+    template_name = "userapp/portfolio.html"
     
 class UserAiDetailView(TemplateView):
-    template_name = "userapp/Ai_Detail.html"
+    template_name = "userapp/ai_detail.html"
     
 class UserBlogDetailView(TemplateView):
-    template_name = "userapp/Blog_Detail.html"
+    template_name = "userapp/blog_detail.html"
     
 class UserContactView(TemplateView):
-    template_name = "userapp/Contact.html"
+    template_name = "userapp/contact.html"
 
 class UserPrivacyPolicyView(TemplateView):
-    template_name = "userapp/Privacy_Policy.html"
+    template_name = "userapp/privacy_policy.html"
     
 class UserServicesDetailView(TemplateView):
-    template_name = "userapp/Service_Detail.html"
+    template_name = "userapp/service_detail.html"
     
 
-class UserTermsAndConditionsView(TemplateView):
-    template_name = "userapp/Terms_and_conditions.html"
+class UserTermsConditionView(TemplateView):
+    template_name = "userapp/terms_condition.html"
+    
