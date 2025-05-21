@@ -2,18 +2,22 @@ from django.contrib import admin
 from django.urls import path
 from app_modules.userapp import views
 
+app_name = "userapp"
+
 urlpatterns = [
-     path('',views.UserIndexView.as_view(),name="UserIndexView"),
-     path('about-us/',views.UserAboutusView.as_view(),name="UserAboutusView"),
-     path('services/',views.UserServicesView.as_view(),name="UserServicesView"),
-     path('industries/',views.UserIndustriesView.as_view(),name="UserIndustriesView"),
-     path('career/',views.UserCareerView.as_view(),name="UserCareerView"),
-     path('blog/',views.UserInsightsView.as_view(),name="UserInsightsView"),
-     path('portfolio/',views.UserPortfolioView.as_view(),name="UserPortfolioView"),
-     path('ai-detail/',views.UserAiDetailView.as_view(),name="UserAiDetailView"),
-     path('blog-detail/',views.UserBlogDetailView.as_view(),name="UserBlogDetailView"),
-     path('contact/',views.UserContactView.as_view(),name="UserContactView"),
-     path('privacy-policy/',views.UserPrivacyPolicyView.as_view(),name="UserPrivacyPolicyView"),
-     path('services-detail/',views.UserServicesDetailView.as_view(),name="UserServicesDetailView"),
-     path('terms_and_conditions/',views.UserTermsAndConditionsView.as_view(),name="UserTermsAndConditionsView"),
-] 
+     path('',views.UserIndexView.as_view(),name="userindex"),
+     path('useraboutus/',views.UserAboutusView.as_view(),name="useraboutus"),
+     path('services/',views.UserServicesView.as_view(),name="services"),
+     path('industries/',views.UserIndustriesView.as_view(),name="industries"),
+     path('career/',views.UserCareerView.as_view(),name="career"),
+     path('blog/',views.UserBlogView.as_view(),name="blog"),
+     path('portfolio/',views.UserPortfolioView.as_view(),name="portfolio"),
+     path('ai_detail/',views.UserAiDetailView.as_view(),name="ai_detail"),
+     path('blog_detail/',views.UserBlogDetailView.as_view(),name="blog_detail"),
+     path('contact/',views.UserContactView.as_view(),name="contact"),
+     path('privacy_policy/',views.UserPrivacyPolicyView.as_view(),name="privacy_policy"),
+     path('services_detail/',views.UserServicesDetailView.as_view(),name="services_detail"),
+     path('terms_condition/',views.UserTermsConditionView.as_view(),name="terms_condition"),
+     
+
+]
