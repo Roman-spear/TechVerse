@@ -4,6 +4,13 @@ from django.contrib import messages
 from app_modules.adminapp import models
 from app_modules.adminapp import forms 
 from django.urls import reverse_lazy
+
+from django.views import View
+from django.http import JsonResponse
+from django.core.paginator import Paginator
+from django.db.models import Q
+from .models import ServiceCategory
+from django.utils.dateparse import parse_date
 # Create your views here.
 
 # --------------------------------------------------- USER-CRUD --------------------------------------------------------
@@ -129,6 +136,69 @@ class ServiceCategoryDeleteView(DeleteView):
         print(form.errors)
         messages.error(self.request, 'Error, Please try again')
         return super().form_invalid(form)
+
+
+class ServiceCategoryDatatableView(View):
+    model = ServiceCategory
+    queryset = ServiceCategory.objects.all().order_by('-id')
+    
+    def _get_actions(self, obj):
+        update_url = f"/adminapp/servicecategory_update/{obj.id}/"
+        return (
+            f'<a href="{update_url}" title="Edit" class="btn btn-primary btn-xs">'
+            '<i class="fa fa-edit"></i></a> '
+            f'<a data-title="{obj.name}" title="Delete" onclick="showDeletemodal({obj.id})" '
+            'data-bs-toggle="modal" class="btn btn-danger btn-xs btn-delete">'
+            '<i class="fa fa-trash" style="color:white;"></i></a>'
+        )
+    
+    def filter_queryset(self, qs):
+        search = self.request.GET.get('search[value]', '')
+        start_date = self.request.GET.get('start_date')
+        end_date = self.request.GET.get('end_date')
+
+        if search:
+            qs = qs.filter(Q(name__icontains=search))
+        if start_date and end_date:
+            start_date_parsed = parse_date(start_date)
+            end_date_parsed = parse_date(end_date)
+            if start_date_parsed and end_date_parsed:
+                qs = qs.filter(created_at__gte=start_date_parsed, created_at__lte=end_date_parsed)
+        return qs
+    
+    def prepare_results(self, qs, start_index):
+        data = []
+        for index, obj in enumerate(qs):
+            data.append({
+                'id': start_index + index + 1,
+                'name': obj.name or '',
+                'actions': self._get_actions(obj)
+            })
+        return data
+
+    def get(self, request, *args, **kwargs):
+        self.request = request  # Fix to allow access in filter_queryset
+        start = int(request.GET.get('start', 0))
+        length = int(request.GET.get('length', 10))
+
+        filtered_qs = self.filter_queryset(self.queryset)
+        paginator = Paginator(filtered_qs, length)
+        page_number = (start // length) + 1
+        page_obj = paginator.get_page(page_number)
+
+        data = self.prepare_results(page_obj, start)
+
+        response = {
+            'draw': int(request.GET.get('draw', 0)),
+            'recordsTotal': self.queryset.count(),
+            'recordsFiltered': filtered_qs.count(),
+            'data': data,
+        }
+        return JsonResponse(response)
+
+
+
+
 
 # --------------------------------------------------- SERVICEDETAIL-CRUD --------------------------------------------------------
 

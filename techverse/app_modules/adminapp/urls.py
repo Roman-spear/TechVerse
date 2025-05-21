@@ -5,7 +5,7 @@ from app_modules.adminapp import views
 app_name = "adminapp"
 
 urlpatterns = [
-     
+    
 
     # --------------------------------------  USER URLS  -------------------------------------------------------
     path('user_add/', views.UserCreateView.as_view(), name="user_add"),
@@ -18,6 +18,7 @@ urlpatterns = [
     path('servicecategory_list/', views.ServiceCategoryListView.as_view(), name="servicecategory_list"),
     path('servicecategory_update/<int:pk>/', views.ServiceCategoryUpdateView.as_view(), name="servicecategory_update"),
     path('servicecategory_delete/<int:pk>/', views.ServiceCategoryDeleteView.as_view(), name="servicecategory_delete"),
+    path('servicecategory_datatable/',views.ServiceCategoryDatatableView.as_view(), name='servicecategory_datatable'),
 
     # --------------------------------------  SERVICEDETAIL URLS  -------------------------------------------------------
     path('servicedetail_add/', views.ServiceDetailCreateView.as_view(), name="servicedetail_add"),
