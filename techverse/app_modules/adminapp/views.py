@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView,UpdateView,DeleteView,DetailView,View,CreateView
 from django.contrib import messages
-from app_modules.userapp import models
-from app_modules.userapp import forms 
+from app_modules.adminapp import models
+from app_modules.adminapp import forms 
 from django.urls import reverse_lazy
 # Create your views here.
 
