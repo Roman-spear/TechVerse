@@ -9,15 +9,42 @@
   <title>Tech Verse</title>
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{% static 'adminapp/assets/css/app.min.css' %}">
+  <link rel="stylesheet" href="{% static 'adminapp/assets/bundles/izitoast/css/iziToast.min.css' %}">
+
   <!-- Template CSS -->
   <link rel="stylesheet" href="{% static 'adminapp/assets/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'adminapp/assets/css/components.css' %}">
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{% static 'adminapp/assets/css/custom.css' %}">
   <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'/>
+  <link rel="stylesheet" href="{% static 'adminapp/assets/bundles/summernote/summernote-bs4.css' %}">
+  <link rel="stylesheet" href="{% static 'adminapp/assets/bundles/codemirror/lib/codemirror.css' %}">
+  <link rel="stylesheet" href="{% static 'adminapp/assets/bundles/codemirror/theme/duotone-dark.css' %}">
+  <link rel="stylesheet" href="{% static 'adminapp/assets/bundles/jquery-selectric/selectric.css' %}">
+  <!-- Extra Links -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+  
 </head>
 
 <body>
+
+  {% if messages %}
+  <div id="popup-messages" style="display: none;">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <div class="loader"></div>
   <div id="app">  
     <div class="main-wrapper main-wrapper-1">
@@ -189,8 +216,8 @@
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Services Page Crud</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{% url 'adminapp:servicecategory_add' %}">Services Category</a></li>
-                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+                <li><a class="nav-link" href="{% url 'adminapp:servicecategory_list' %}">Services Category</a></li>
+                <li><a class="nav-link" href="{% url 'adminapp:servicedetail_list' %}">Services Detail</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -399,15 +426,54 @@
   <!-- General JS Scripts -->
   <script src="{% static 'adminapp/assets/js/app.min.js' %}"></script>
   <!-- JS Libraies -->
+  <script src="{% static 'adminapp/assets/bundles/izitoast/js/iziToast.min.js' %}"></script>
   <script src="{% static 'adminapp/assets/bundles/apexcharts/apexcharts.min.js' %}"></script>
   <!-- Page Specific JS File -->
   <script src="{% static 'adminapp/assets/js/page/index.js' %}"></script>
+  <script src="{% static 'adminapp/assets/bundles/summernote/summernote-bs4.js' %}"></script>
+  <script src="{% static 'adminapp/assets/bundles/codemirror/lib/codemirror.js' %}"></script>
+  <script src="{% static 'adminapp/assets/bundles/codemirror/mode/javascript/javascript.js' %}"></script>
+  <script src="{% static 'adminapp/assets/bundles/jquery-selectric/jquery.selectric.min.js' %}"></script>
+  <script src="{% static 'adminapp/assets/bundles/ckeditor/ckeditor.js' %}"></script>
+  <script src="{% static 'adminapp/assets/js/page/toastr.js' %}"></script>
   <!-- Template JS File -->
   <script src="{% static 'adminapp/assets/js/scripts.js' %}"></script>
   <!-- Custom JS File -->
   <script src="{% static 'adminapp/assets/js/custom.js' %}"></script>
 </body>
 
+
+{% comment %} ----------------------------- POP_UP MESSAGES ----------------------------- {% endcomment %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var messagesDiv = document.getElementById('popup-messages');
+        if (messagesDiv) {
+            var messages = [];
+            var messageElements = messagesDiv.querySelectorAll('p');
+            messageElements.forEach(function (messageElement) {
+                messages.push(messageElement.textContent);
+                console.log("jjjjjjjjjj",messages);
+                console.log("yyyyyyy", messages.forEach);
+            });
+  
+            messages.forEach(function (message) {
+                if (message.startsWith('Error')) {
+                    iziToast.error({
+                        title: 'Error',
+                        message: message,
+                        position: 'topRight'
+                    });
+                } else {
+                    iziToast.success({
+                        title: 'Success',
+                        message: message,
+                        position: 'topRight'
+                    });
+                }
+            });
+        }
+    });
+  </script>
 
 <!-- index.html  21 Nov 2019 03:47:04 GMT -->
 </html>
