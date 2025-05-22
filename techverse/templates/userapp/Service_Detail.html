@@ -2,12 +2,13 @@
 {% load static %} 
 {% block content %}
 
+
     <!-- Section 1 Hero Section Start -->
     <div class="container-fluid position-relative p-0">
         <div class="header-section">
             <div class="header-content">
-                <h1>Service Details</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, reiciendis!</p>
+                <h1>{{service_data.header_name}}</h1>
+                <p>{{service_data.header_description}}</p>
             </div>
         </div>
     </div>
@@ -15,74 +16,167 @@
 
     <!-- Section 2 Start -->
     <!-- Section 1 Industry We Serve Title -->
-    <div class="container py-5">
-        <h2 class="fw-normal display-6">Leading Change and Reinventing Growth for Global Business of Diverse Industries
+    <div class="container py-5 d-flex flex-column align-items-center ">
+        <h2 class="fw-normal display-6 w-75 text-center mb-3">
+          {{service_data.title}}
         </h2>
-        <p class="fs-5" style="font-weight: 100;">Techverse Solutions was born out of a vision to develop tech-based
-            solutions focused on innovation, quality,
-            and personalized services. In today’s ever-changing business environment, most organizations are more than
-            willing to adopt digital innovation and transformation solutions that deliver value and sustainability.
-            Being a Top IT Consultation company, We solve complex business challenges and deliver mission-critical
-            solutions to various clients.</p>
+        <p class="fs-5" style="font-weight: 100;">{{service_data.description}}</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
-     <!-- Section 2 Start -->
-    <div class="container py-5 text-center">
-        <h1 class="mb-5 text-blue fw-bold">Mobile App Development</h1>
-        <div class="row servicedetail">
-  <div class="col-md-6 col-lg-3 servicedetail__item">
-    <span class="servicedetail__icon"><i class="fa-brands fa-android"></i></span>
-    <span class="servicedetail__title">Android</span>
-    <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-  </div>
-
-  <div class="col-md-6 col-lg-3 servicedetail__item">
-    <span class="servicedetail__icon"><i class="fa-brands fa-app-store-ios"></i></span>
-    <span class="servicedetail__title">iOS</span>
-    <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-  </div>
-
-  <div class="col-md-6 col-lg-3 servicedetail__item">
-    <span class="servicedetail__icon"><i class="fa-brands fa-react"></i></span>
-    <span class="servicedetail__title">React Native</span>
-    <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-  </div>
-
-  <div class="col-md-6 col-lg-3 servicedetail__item">
-    <span class="servicedetail__icon"><i class="fa-brands fa-flutter"></i></span>
-    <span class="servicedetail__title">Flutter</span>
-    <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-  </div>
-</div>
-     </div>
-
-    <!-- Section 2 End -->
-    <!-- Section 3 start -->
-     <!-- Section 8 Start -->
-     
-    <!-- Section 8 End -->
-    <!-- Section 3 End -->
 
     <!-- Section 4 Start -->
+    <div class="container my-5 text-center">
+      <h1 class="fw-bold mb-3 text-blue">Our Services</h1>
 
+      <div class="row">
+        <!-- Left Tab Menu -->
+        <div class="col-md-5 mb-4 mb-md-0">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+            <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1
+              Mobile App Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service2">2 Website
+              Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service3">3 Software
+              Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service4">4 AI/ML
+              Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service5">5 Full Stack
+              Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service6">6 Digital
+              Marketing</button>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="col-md-7">
+          <div class="tab-content">
+            <div class="tab-pane fade show active text-center" id="service1">
+              <img src="./images/aboutimg.svg" alt="Mobile App" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">Mobile App Development</h4>
+              <p>We create custom mobile apps for Android and iOS that offer smooth, user-friendly experiences. Our apps
+                help businesses engage with customers, increase reach, and improve accessibility, while meeting specific
+                business needs.</p>
+            </div>
+            <div class="tab-pane fade text-center" id="service2">
+              <img src="./images/herobg.png" alt="Website Development" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">Website Development</h4>
+              <p>We build responsive, high-performance websites tailored to your brand and business goals, ensuring great
+                user experience and fast load times across all devices.</p>
+            </div>
+            <div class="tab-pane fade text-center" id="service3">
+              <img src="./images/heroimg.svg" alt="Software Development" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">Software Development</h4>
+              <p>Our team develops robust custom software solutions to streamline business operations, improve
+                productivity, and support digital transformation.</p>
+            </div>
+            <div class="tab-pane fade text-center" id="service4">
+              <img src="./images/Techverse.svg" alt="AI/ML" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">AI/ML Development</h4>
+              <p>We integrate artificial intelligence and machine learning to build intelligent solutions that automate
+                processes and provide deep insights from data.</p>
+            </div>
+            <div class="tab-pane fade text-center" id="service5">
+              <img src="./images/aboutimg.svg" alt="Full Stack Development" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">Full Stack Development</h4>
+              <p>Our full-stack developers deliver end-to-end solutions using the latest tech stack, from front-end design
+                to back-end infrastructure.</p>
+            </div>
+            <div class="tab-pane fade text-center" id="service6">
+              <img src="./images/Techverse.svg" alt="Digital Marketing" class="img-fluid service-image mb-3">
+              <h4 class="fw-semibold text-blue">Digital Marketing</h4>
+              <p>We provide digital marketing strategies including SEO, social media, email marketing, and PPC to help
+                your brand grow online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Section 4 End -->
+    <section class="py-5">
+      <div class="container">
+        <h1 class="fw-bold mb-3 text-center text-blue">Key Benefits</h1>
+        <div class="row">
+          <!-- Benefit Card 1 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border-bottom rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h6 class="fw-bold">Customized Solutions</h6>
+              <p class="text-muted small mb-0">
+                We collaborate closely with you to understand your unique challenges and goals, to develop tailored AI/ML models that address your specific needs.
+              </p>
+            </div>
+          </div>
 
-    <!-- Section 4 Start -->
-    
+          <!-- Benefit Card 2 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border border-top-0 rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h6 class="fw-bold">Enhanced Efficiency</h6>
+              <p class="text-muted small mb-0">
+                Repetitive tasks become a thing of the past. Our top AI software automate solutions to free up your team’s valuable time and resources for higher-level pursuits.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit Card 3 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border-bottom rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h6 class="fw-bold">Predictive Advantage</h6>
+              <p class="text-muted small mb-0">
+                Gain valuable foresight into future trends and customer behaviour. Our models analyze historical data to predict potential risks and opportunities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit Card 4 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border-top rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-expand-arrows-alt"></i>
+              </div>
+              <h6 class="fw-bold">Scalability and Adaptability</h6>
+              <p class="text-muted small mb-0">
+                Built with the future in mind, our AI/ML solutions seamlessly adapt to your evolving business needs, ensuring sustained success.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit Card 5 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border border-bottom-0 rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h6 class="fw-bold">Transparent and Ethical Development</h6>
+              <p class="text-muted small mb-0">
+                Committed to responsible practices, we uphold stringent ethical guidelines and maintain transparency throughout the development process.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit Card 6 -->
+          <div class="col-md-6 col-lg-4 p-0">
+            <div class="p-4 border-top rounded-0 h-100">
+              <div class="mb-3 text-blue fs-4">
+                <i class="fas fa-users"></i>
+              </div>
+              <h6 class="fw-bold">Dedicated Expertise and Support</h6>
+              <p class="text-muted small mb-0">
+                Benefit from our team of experienced professionals who provide ongoing support and guidance throughout every stage of the journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Section 4 End -->
-
-
-    <!-- Section 5 Start -->
-
-    <!-- Section 5 End -->
-
-    <!-- Section 6 Start -->
-
-    <!-- Section 6 End -->
-
-    <!-- Section tech start -->
-    
-    <!-- Section tech end -->
 
     <!-- process start  -->
     <section class="process-section text-center">
@@ -143,7 +237,7 @@
                     Start Your App Journey With Expert Solutions and Seamless Experiences
                 </h1>
                 <div class="mt-4 mt-md-0">
-                    <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+                    <a href="{% url 'userapp:contact' %}" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
                 </div>
             </div>
         </div>
@@ -151,303 +245,125 @@
     <!-- Section 7 End -->
 
     <!-- Section 8 Start -->
+    <div class="container py-5 text-center">
+      <h1 class="mb-5 text-blue fw-bold">Mobile App Development</h1>
+      <div class="row servicedetail">
+        <div class="col-md-6 col-lg-3 servicedetail__item">
+          <span class="servicedetail__icon"><i class="fa-brands fa-android"></i></span>
+          <span class="servicedetail__title">Android</span>
+          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
+        </div>
 
+        <div class="col-md-6 col-lg-3 servicedetail__item">
+          <span class="servicedetail__icon"><i class="fa-brands fa-app-store-ios"></i></span>
+          <span class="servicedetail__title">iOS</span>
+          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
+        </div>
+
+        <div class="col-md-6 col-lg-3 servicedetail__item">
+          <span class="servicedetail__icon"><i class="fa-brands fa-react"></i></span>
+          <span class="servicedetail__title">React Native</span>
+          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
+        </div>
+
+        <div class="col-md-6 col-lg-3 servicedetail__item">
+          <span class="servicedetail__icon"><i class="fa-brands fa-flutter"></i></span>
+          <span class="servicedetail__title">Flutter</span>
+          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
+        </div>
+      </div>
+    </div>
     <!-- Section 8 End -->
 
     <!-- Section 9 Start -->
     <section class="py-5">
-        <div class="container">
-            <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
-            <div class="row g-4">
+      <div class="container">
+          <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
+          <div class="row g-4">
 
-                <!-- Blog Card 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Business tool for your customer</h5>
-                            <p class="card-text text-muted small">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-white border-0 pt-0">
-                            <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                                <li class="list-inline-item">
-                                    <i class="far fa-calendar-alt me-1"></i> 10 Jul, 2025
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-user me-1"></i> User
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-comments me-1"></i> 38
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <!-- Blog Card 1 -->
+              <div class="col-md-6 col-lg-4">
+                  <div class="card shadow-sm h-100 rounded-0">
+                      <img src="./images/blog1.jpg" class="card-img-top rounded-0" alt="Blog Image">
+                      <div class="card-body">
+                          <h5 class="card-title fw-semibold">Business tool for your customer</h5>
+                          <p class="card-text text-muted small">
+                              Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                          </p>
+                      </div>
+                      <div class="card-footer bg-white border-0 pt-0">
+                          <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                              <li class="list-inline-item">
+                                  <i class="far fa-calendar-alt me-1"></i> 10 Jul, 2025
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-user me-1"></i> User
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-comments me-1"></i> 38
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
 
-                <!-- Blog Card 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog2.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Growth your business strategy</h5>
-                            <p class="card-text text-muted small">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-white border-0 pt-0">
-                            <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                                <li class="list-inline-item">
-                                    <i class="far fa-calendar-alt me-1"></i> 25 Jun, 2025
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-user me-1"></i> User
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-comments me-1"></i> 68
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <!-- Blog Card 2 -->
+              <div class="col-md-6 col-lg-4">
+                  <div class="card shadow-sm h-100 rounded-0">
+                      <img src="images/blog2.jpg" class="card-img-top rounded-0" alt="Blog Image">
+                      <div class="card-body">
+                          <h5 class="card-title fw-semibold">Growth your business strategy</h5>
+                          <p class="card-text text-muted small">
+                              Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                          </p>
+                      </div>
+                      <div class="card-footer bg-white border-0 pt-0">
+                          <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                              <li class="list-inline-item">
+                                  <i class="far fa-calendar-alt me-1"></i> 25 Jun, 2025
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-user me-1"></i> User
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-comments me-1"></i> 68
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
 
-                <!-- Blog Card 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Business people success master plan</h5>
-                            <p class="card-text text-muted small">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                            </p>
-                        </div>
-                        <div class="card-footer bg-white border-0 pt-0">
-                            <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                                <li class="list-inline-item">
-                                    <i class="far fa-calendar-alt me-1"></i> 16 May, 2025
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-user me-1"></i> User
-                                </li>
-                                <li class="list-inline-item">
-                                    <i class="far fa-comments me-1"></i> 58
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <!-- Blog Card 3 -->
+              <div class="col-md-6 col-lg-4">
+                  <div class="card shadow-sm h-100 rounded-0">
+                      <img src="images/blog1.jpg" class="card-img-top rounded-0" alt="Blog Image">
+                      <div class="card-body">
+                          <h5 class="card-title fw-semibold">Business people success master plan</h5>
+                          <p class="card-text text-muted small">
+                              Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                          </p>
+                      </div>
+                      <div class="card-footer bg-white border-0 pt-0">
+                          <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                              <li class="list-inline-item">
+                                  <i class="far fa-calendar-alt me-1"></i> 16 May, 2025
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-user me-1"></i> User
+                              </li>
+                              <li class="list-inline-item">
+                                  <i class="far fa-comments me-1"></i> 58
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
 
-            </div>
-        </div>
+          </div>
+      </div>
     </section>
 
     <!-- Section 9 End -->
 
-    <!-- Section testimonial Start -->
-    <div class="container py-5">
-        <h2 class="text-start mb-3 mb-md-5 text-blue fw-bold fs-2">What Our Clients Says</h2>
-        <div class="owl-carousel owl-theme">
-            <!-- Testimonial 1 -->
-            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-                    style="top: 10px; right: 20px;"></i>
-                <div class="card-body">
-                    <h4>"The best Webflow Templates"</h4>
-                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
-                        from day one
-                        and delivered
-                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
-                        was quickly
-                        implemented. We're already planning our next project together!.</p>
-                    <div class="star-rating">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
-                            style="width: 40px; height: 40px;">
-                        <div class="d-flex flex-column text">
-                            <span class="mb-0 fw-bold">Sophia Moore</span>
-                            <span style="font-size: 12px;">CEO at K Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-                    style="top: 10px; right: 20px;"></i>
-                <div class="card-body">
-                    <h4>"The best Webflow Templates"</h4>
-                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
-                        from day one
-                        and delivered
-                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
-                        was quickly
-                        implemented. We're already planning our next project together!.</p>
-                    <div class="star-rating">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
-                            style="width: 40px; height: 40px;">
-                        <div class="d-flex flex-column text">
-                            <span class="mb-0 fw-bold">Sophia Moore</span>
-                            <span style="font-size: 12px;">CEO at K Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-                    style="top: 10px; right: 20px;"></i>
-                <div class="card-body">
-                    <h4>"The best Webflow Templates"</h4>
-                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
-                        from day one
-                        and delivered
-                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
-                        was quickly
-                        implemented. We're already planning our next project together!.</p>
-                    <div class="star-rating">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
-                            style="width: 40px; height: 40px;">
-                        <div class="d-flex flex-column text">
-                            <span class="mb-0 fw-bold">Sophia Moore</span>
-                            <span style="font-size: 12px;">CEO at K Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 4 -->
-            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-                    style="top: 10px; right: 20px;"></i>
-                <div class="card-body">
-                    <h4>"The best Webflow Templates"</h4>
-                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
-                        from day one
-                        and delivered
-                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
-                        was quickly
-                        implemented. We're already planning our next project together!.</p>
-                    <div class="star-rating">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
-                            style="width: 40px; height: 40px;">
-                        <div class="d-flex flex-column text">
-                            <span class="mb-0 fw-bold">Sophia Moore</span>
-                            <span style="font-size: 12px;">CEO at K Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 5 -->
-            <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-                <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-                    style="top: 10px; right: 20px;"></i>
-                <div class="card-body">
-                    <h4>"The best Webflow Templates"</h4>
-                    <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements
-                        from day one
-                        and delivered
-                        a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave
-                        was quickly
-                        implemented. We're already planning our next project together!.</p>
-                    <div class="star-rating">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle"
-                            style="width: 40px; height: 40px;">
-                        <div class="d-flex flex-column text">
-                            <span class="mb-0 fw-bold">Sophia Moore</span>
-                            <span style="font-size: 12px;">CEO at K Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Section testimonial End -->
-    <!-- Section 10  Start Contact Us -->
-    <div
-        class="container-fluid d-flex flex-column align-items-center justify-content-center contact-us-section py-4 py-md-0">
-        <h2 class="text-center mb-3 mb-md-5 text-blue fw-bold fs-2">Get in Touch</h2>
-        <div class="container ">
-            <div class="row ">
-                <div class="col-lg-6 col-sm-12 contact-left mb-0 mb-sm-5">
-                    <p class="mb-3" style="max-width: 500px;">
-                        Get in touch to discuss your development needs. At TechVerse, we provide reliable web and app
-                        development solutions, delivering creative, efficient, and tailored services to help your
-                        business
-                        grow and succeed.
-                    </p>
-                    <div
-                        class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
-                        <i class="fa fa-location-dot text-blue"></i>
-                        <div>
-                            <span class="fw-bold">Location:</span><br>
-                            <span>913, The Capital 2,<br>Ahmedabad</span>
-                        </div>
-                    </div>
-                    <div
-                        class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
-                        <i class="fa fa-phone text-blue"></i>
-                        <div>
-                            <span class="fw-bold"> Call Us:</span>
-                            <span>+91 9081431434</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 contact-right">
-                    <form class="d-flex flex-column gap-3">
-                        <div class="d-flex gap-2">
-                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
-                                placeholder="Enter Name" required>
-                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
-                                placeholder="Enter Email" required>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <input type="tel" class="form-control rounded-0 py-3 bg-transparent border-dark"
-                                placeholder="Enter Phone" required>
-                            <input type="text" class="form-control rounded-0 py-3 bg-transparent border-dark"
-                                placeholder="Enter City" required>
-                        </div>
-                        <textarea class="form-control rounded-0 bg-transparent border-dark" placeholder="Enter Message"
-                            style="min-height: 100px;"></textarea>
-                        <button type="button" class="btn neon-button text-white py-3">Submit Now</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Section 10  End Contact Us -->
 
 {% endblock %}

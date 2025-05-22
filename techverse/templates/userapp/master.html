@@ -173,16 +173,11 @@
                         <!-- Data Engineering -->
                         {% for ab in servicecategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
+                          <a href="{% url 'userapp:services_detail' ab.id %}" class="nav-link" >
+                            <h5 class="category-title text-blue fw-bold">
                             {{ab.name}}
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            {% for xy in ab.service_category.all %}
-                            <li class="nav-list">
-                              <a href="{% url 'userapp:services_detail' xy.id %}" class="nav-link" >{{xy.name}}</a>
-                            </li>
-                            {% endfor %}
-                          </ul>
+                            </h5>
+                          </a>
                         </div>
                         {% endfor %}
                       </div>
@@ -196,18 +191,13 @@
                     <div class="container">
                       <div class="row gy-4">
                         <!-- Data Engineering -->
-                        {% for ab in servicecategory %}
+                        {% for ab in aicategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                          <h5 class="category-title text-blue fw-bold">
+                          <a href="{% url 'userapp:services_detail' ab.id %}" class="nav-link" >
+                            <h5 class="category-title text-blue fw-bold">
                             {{ab.name}}
-                          </h5>
-                          <ul class="category-list list-unstyled">
-                            {% for xy in ab.service_category.all %}
-                            <li class="nav-list">
-                              <a href="{% url 'userapp:services_detail' xy.id %}" class="nav-link" >{{xy.name}}</a>
-                            </li>
-                            {% endfor %}
-                          </ul>
+                            </h5>
+                          </a>
                         </div>
                         {% endfor %}
                       </div>

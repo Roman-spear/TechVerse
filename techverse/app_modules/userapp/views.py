@@ -60,9 +60,9 @@ class UserPrivacyPolicyView(TemplateView):
     template_name = "userapp/privacy_policy.html"
     
 class UserServicesDetailView(DetailView):
-    model = models.ServiceCategory
+    model = models.ServiceDetail
     template_name = "userapp/service_detail.html"
-    
+    context_object_name = "service_data"
 
 class UserTermsConditionView(TemplateView):
     template_name = "userapp/terms_condition.html"
