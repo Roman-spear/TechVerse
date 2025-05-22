@@ -14,13 +14,6 @@ class ServiceCategory(BaseModel):
     def __str__(self):
         return self.name or "Unnamed Category"
 
-class ServiceDetail(BaseModel):
-    category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='service_category')
-    name = models.CharField(max_length=255, null=True, blank=True)
-
-    def __str__(self):
-        return self.name or "Unnamed Service"
-
 class IndustryCategory(BaseModel):
     name = models.CharField(max_length=255)
     description = models.TextField()

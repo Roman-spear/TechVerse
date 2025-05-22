@@ -12,11 +12,6 @@ class ServiceCategoryForm(forms.ModelForm):
         model = models.ServiceCategory
         fields = "__all__"
 
-class ServiceDetailForm(forms.ModelForm):
-    class Meta:
-        model = models.ServiceDetail
-        fields = "__all__"
-
 class IndustryCategoryForm(forms.ModelForm):
     class Meta:
         model = models.IndustryCategory

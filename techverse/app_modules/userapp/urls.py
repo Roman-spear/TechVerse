@@ -16,7 +16,7 @@ urlpatterns = [
      path('blog_detail/',views.UserBlogDetailView.as_view(),name="blog_detail"),
      path('contact/',views.UserContactView.as_view(),name="contact"),
      path('privacy_policy/',views.UserPrivacyPolicyView.as_view(),name="privacy_policy"),
-     path('services_detail/',views.UserServicesDetailView.as_view(),name="services_detail"),
+     path('services_detail/<int:pk>/',views.UserServicesDetailView.as_view(),name="services_detail"),
      path('terms_condition/',views.UserTermsConditionView.as_view(),name="terms_condition"),
      
 

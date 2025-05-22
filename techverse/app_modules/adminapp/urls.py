@@ -20,12 +20,6 @@ urlpatterns = [
     path('servicecategory_delete/<int:pk>/', views.ServiceCategoryDeleteView.as_view(), name="servicecategory_delete"),
     path('servicecategory_datatable/',views.ServiceCategoryDatatableView.as_view(), name='servicecategory_datatable'),
 
-    # --------------------------------------  SERVICEDETAIL URLS  -------------------------------------------------------
-    path('servicedetail_add/', views.ServiceDetailCreateView.as_view(), name="servicedetail_add"),
-    path('servicedetail_list/', views.ServiceDetailListView.as_view(), name="servicedetail_list"),
-    path('servicedetail_update/<int:pk>/', views.ServiceDetailUpdateView.as_view(), name="servicedetail_update"),
-    path('servicedetail_delete/<int:pk>/', views.ServiceDetailDeleteView.as_view(), name="servicedetail_delete"),
-
     # --------------------------------------  INDUSTRYCATEGORY URLS  -------------------------------------------------------
     path('industrycategory_add/', views.IndustryCategoryCreateView.as_view(), name="industrycategory_add"),
     path('industrycategory_list/', views.IndustryCategoryListView.as_view(), name="industrycategory_list"),
