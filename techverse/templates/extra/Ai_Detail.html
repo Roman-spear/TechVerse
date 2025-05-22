@@ -1,8 +1,4 @@
-{% extends 'userapp/master.html' %}
-{% load static %} 
-{% block content %}
 
-    
     <!-- Section 1 Hero Section Start -->
     <div class="container-fluid position-relative p-0">
         <div class="header-section">
@@ -14,6 +10,7 @@
     </div>
     <!-- Section 1 Hero Section End -->
 
+    <!-- Section 2 Start -->
     <!-- Section 1 Industry We Serve Title -->
     <div class="container py-5 d-flex flex-column align-items-center ">
         <h2 class="fw-normal display-6 w-75 text-center mb-3">Leading Change and Reinventing Growth for Global Business of Diverse Industries
@@ -26,6 +23,8 @@
             solutions to various clients.</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
+     
+    <!-- Section 2 start -->
     <div class="container py-5">
       <h1 class="mb-5 text-blue fw-bold text-center">AI Development</h1>
       <div class="row align-items-start">
@@ -79,7 +78,7 @@
         <!-- Right Column -->
         <div class="col-md-6">
           <div class="info-card">
-            <img src="{% static 'userapp/images/aidetail.jpg' %}" alt="AI Illustration"/>
+            <img src="./images/aidetail.jpg" alt="AI Illustration"/>
 
             <h5 class="fw-semibold mb-3">Comprehensive Integration Framework</h5>
             <p class="text-muted">Our proven integration framework ensures that your AI solutions work seamlessly with your existing stack, minimizing disruption and maximizing ROI.</p>
@@ -125,7 +124,7 @@
           <div class="col-md-6">
             <div class="circle-container">
               <div class="center-ai">
-                <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" />
+                <img src="./images/AI-for.svg" alt="AI Core" />
               </div>
               <div class="circle-item item-1">AI for Fintech</div>
               <div class="circle-item item-2">AI for Healthcare</div>
@@ -182,6 +181,7 @@
     </section>
     <!-- Section 3 End -->
 
+    
     <!-- process start  -->
     <section class="process-section text-center">
         <div class="container">
@@ -231,6 +231,9 @@
         </div>
     </section>
 
+    <!-- process end -->
+
+    <!-- Section 7 Start -->
     <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 mt-5">
         <div class="container">
             <div class="newsletter-content text-center py-5 px-4">
@@ -243,6 +246,7 @@
             </div>
         </div>
     </section>
+    <!-- Section 7 End -->
 
     <!-- Section 9 Start -->
     <section class="py-5">
@@ -253,7 +257,7 @@
                 <!-- Blog Card 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+                        <img src="./images/blog1.jpg" class="card-img-top rounded-0" alt="Blog Image">
                         <div class="card-body">
                             <h5 class="card-title fw-semibold">Business tool for your customer</h5>
                             <p class="card-text text-muted small">
@@ -279,7 +283,7 @@
                 <!-- Blog Card 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog2.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+                        <img src="images/blog2.jpg" class="card-img-top rounded-0" alt="Blog Image">
                         <div class="card-body">
                             <h5 class="card-title fw-semibold">Growth your business strategy</h5>
                             <p class="card-text text-muted small">
@@ -305,7 +309,7 @@
                 <!-- Blog Card 3 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card shadow-sm h-100 rounded-0">
-                        <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+                        <img src="images/blog1.jpg" class="card-img-top rounded-0" alt="Blog Image">
                         <div class="card-body">
                             <h5 class="card-title fw-semibold">Business people success master plan</h5>
                             <p class="card-text text-muted small">
@@ -333,4 +337,4 @@
     </section>
     <!-- Section 9 End -->
 
-{% endblock %}
+    

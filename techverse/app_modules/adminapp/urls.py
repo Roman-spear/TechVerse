@@ -32,4 +32,30 @@ urlpatterns = [
     path('blog_update/<int:pk>/', views.BlogUpdateView.as_view(), name="blog_update"),
     path('blog_delete/<int:pk>/', views.BlogDeleteView.as_view(), name="blog_delete"),
 
+
+    # --------------------------------------  AICATEGORY URLS  -------------------------------------------------------
+    path('aicategory_add/', views.AICategoryCreateView.as_view(), name="aicategory_add"),
+    path('aicategory_list/', views.AICategoryListView.as_view(), name="aicategory_list"),
+    path('aicategory_update/<int:pk>/', views.AICategoryUpdateView.as_view(), name="aicategory_update"),
+    path('aicategory_delete/<int:pk>/', views.AICategoryDeleteView.as_view(), name="aicategory_delete"),
+
+
+    # --------------------------------------  AIDETAIL URLS  -------------------------------------------------------
+    path('aidetail_add/', views.AIDetailCreateView.as_view(), name="aidetail_add"),
+    path('aidetail_list/', views.AIDetailListView.as_view(), name="aidetail_list"),
+    path('aidetail_update/<int:pk>/', views.AIDetailUpdateView.as_view(), name="aidetail_update"),
+    path('aidetail_delete/<int:pk>/', views.AIDetailDeleteView.as_view(), name="aidetail_delete"),
+
+    # --------------------------------------  SERVICEDETAIL URLS  -------------------------------------------------------
+    path('servicedetail_add/', views.ServiceDetailCreateView.as_view(), name="servicedetail_add"),
+    path('servicedetail_list/', views.ServiceDetailListView.as_view(), name="servicedetail_list"),
+    path('servicedetail_update/<int:pk>/', views.ServiceDetailUpdateView.as_view(), name="servicedetail_update"),
+    path('servicedetail_delete/<int:pk>/', views.ServiceDetailDeleteView.as_view(), name="servicedetail_delete"),
+
+    # --------------------------------------  INDUSTRYDETAIL URLS  -------------------------------------------------------
+    path('industrydetail_add/', views.IndustryDetailCreateView.as_view(), name="industrydetail_add"),
+    path('industrydetail_list/', views.IndustryDetailListView.as_view(), name="industrydetail_list"),
+    path('industrydetail_update/<int:pk>/', views.IndustryDetailUpdateView.as_view(), name="industrydetail_update"),
+    path('industrydetail_delete/<int:pk>/', views.IndustryDetailDeleteView.as_view(), name="industrydetail_delete"),
+
 ]

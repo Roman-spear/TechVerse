@@ -320,3 +320,251 @@ class BlogDeleteView(DeleteView):
         print(form.errors)
         messages.error(self.request, 'Error, Please try again')
         return super().form_invalid(form)
+
+# --------------------------------------------------- AICATEGORY-CRUD --------------------------------------------------------
+
+class AICategoryCreateView(CreateView):
+    model = models.AICategory
+    form_class = forms.AICategoryForm
+    template_name = "adminapp/aicategory_add.html"
+    success_url = reverse_lazy("adminapp:aicategory_list")
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
+        messages.success(self.request, 'AICategory Added Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class AICategoryListView(ListView):
+    model = models.AICategory
+    template_name = "adminapp/aicategory_list.html"
+    context_object_name = "aicategory_data"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["aicategory"] = models.AICategory.objects.first()
+        return context
+
+
+class AICategoryUpdateView(UpdateView):
+    model = models.AICategory
+    form_class = forms.AICategoryForm
+    template_name = "adminapp/aicategory_update.html"
+    success_url = reverse_lazy("adminapp:aicategory_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'AICategory Updated Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class AICategoryDeleteView(DeleteView):
+    model = models.AICategory
+    template_name = "adminapp/aicategory_list.html"
+    success_url = reverse_lazy("adminapp:aicategory_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'AICategory Deleted Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+# --------------------------------------------------- AIDETAIL-CRUD --------------------------------------------------------
+
+class AIDetailCreateView(CreateView):
+    model = models.AIDetail
+    form_class = forms.AIDetailForm
+    template_name = "adminapp/aidetail_add.html"
+    success_url = reverse_lazy("adminapp:aidetail_list")
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
+        messages.success(self.request, 'AIDetail Added Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class AIDetailListView(ListView):
+    model = models.AIDetail
+    template_name = "adminapp/aidetail_list.html"
+    context_object_name = "aidetail_data"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["aidetail"] = models.AIDetail.objects.first()
+        return context
+
+
+class AIDetailUpdateView(UpdateView):
+    model = models.AIDetail
+    form_class = forms.AIDetailForm
+    template_name = "adminapp/aidetail_update.html"
+    success_url = reverse_lazy("adminapp:aidetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'AIDetail Updated Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class AIDetailDeleteView(DeleteView):
+    model = models.AIDetail
+    template_name = "adminapp/aidetail_list.html"
+    success_url = reverse_lazy("adminapp:aidetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'AIDetail Deleted Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+# --------------------------------------------------- SERVICEDETAIL-CRUD --------------------------------------------------------
+
+class ServiceDetailCreateView(CreateView):
+    model = models.ServiceDetail
+    form_class = forms.ServiceDetailForm
+    template_name = "adminapp/servicedetail_add.html"
+    success_url = reverse_lazy("adminapp:servicedetail_list")
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
+        messages.success(self.request, 'ServiceDetail Added Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class ServiceDetailListView(ListView):
+    model = models.ServiceDetail
+    template_name = "adminapp/servicedetail_list.html"
+    context_object_name = "servicedetail_data"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["servicedetail"] = models.ServiceDetail.objects.first()
+        return context
+
+
+class ServiceDetailUpdateView(UpdateView):
+    model = models.ServiceDetail
+    form_class = forms.ServiceDetailForm
+    template_name = "adminapp/servicedetail_update.html"
+    success_url = reverse_lazy("adminapp:servicedetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'ServiceDetail Updated Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class ServiceDetailDeleteView(DeleteView):
+    model = models.ServiceDetail
+    template_name = "adminapp/servicedetail_list.html"
+    success_url = reverse_lazy("adminapp:servicedetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'ServiceDetail Deleted Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+# --------------------------------------------------- INDUSTRYDETAIL-CRUD --------------------------------------------------------
+
+class IndustryDetailCreateView(CreateView):
+    model = models.IndustryDetail
+    form_class = forms.IndustryDetailForm
+    template_name = "adminapp/industrydetail_add.html"
+    success_url = reverse_lazy("adminapp:industrydetail_list")
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
+        messages.success(self.request, 'IndustryDetail Added Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class IndustryDetailListView(ListView):
+    model = models.IndustryDetail
+    template_name = "adminapp/industrydetail_list.html"
+    context_object_name = "industrydetail_data"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["industrydetail"] = models.IndustryDetail.objects.first()
+        return context
+
+
+class IndustryDetailUpdateView(UpdateView):
+    model = models.IndustryDetail
+    form_class = forms.IndustryDetailForm
+    template_name = "adminapp/industrydetail_update.html"
+    success_url = reverse_lazy("adminapp:industrydetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'IndustryDetail Updated Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)
+
+
+class IndustryDetailDeleteView(DeleteView):
+    model = models.IndustryDetail
+    template_name = "adminapp/industrydetail_list.html"
+    success_url = reverse_lazy("adminapp:industrydetail_list")
+
+    def form_valid(self, form):
+        messages.success(self.request, 'IndustryDetail Deleted Successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.errors)
+        messages.error(self.request, 'Error, Please try again')
+        return super().form_invalid(form)

@@ -21,3 +21,23 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = models.Blog
         fields = "__all__"
+
+class AICategoryForm(forms.ModelForm):
+    class Meta:
+        model = models.AICategory
+        fields = "__all__"
+
+class AIDetailForm(forms.ModelForm):
+    class Meta:
+        model = models.AIDetail
+        fields = "__all__"
+
+class ServiceDetailForm(forms.ModelForm):
+    class Meta:
+        model = models.ServiceDetail
+        fields = "__all__"
+
+class IndustryDetailForm(forms.ModelForm):
+    class Meta:
+        model = models.IndustryDetail
+        fields = "__all__"

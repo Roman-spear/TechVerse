@@ -12,7 +12,13 @@ class ServiceCategory(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return self.name or "Unnamed Category"
+        return self.name 
+
+class AICategory(BaseModel):
+    name = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.name 
 
 class IndustryCategory(BaseModel):
     name = models.CharField(max_length=255)
@@ -30,4 +36,18 @@ class Blog(BaseModel):
     
     def __str__(self): 
         return self.title
+    
+class AIDetail(BaseModel):
+    header_name = models.CharField(max_length=255,null=True,blank=True)
+    header_description = models.TextField(null=True,blank=True)
+    title = models.CharField(max_length=255,null=True,blank=True)
+    description = models.TextField(null=True,blank=True)
+    
+class ServiceDetail(BaseModel):
+    header_name = models.CharField(max_length=255,null=True,blank=True)
+    header_description = models.TextField(null=True,blank=True)
+    
+class IndustryDetail(BaseModel):
+    header_name = models.CharField(max_length=255,null=True,blank=True)
+    header_description = models.TextField(null=True,blank=True)
     

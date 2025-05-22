@@ -51,7 +51,7 @@ class {model_name}CreateView(CreateView):
         obj = form.save(commit=False)
         obj.user = self.request.user
         obj.save()
-        messages.success(self.request, '{model_name_upper} Added Successfully')
+        messages.success(self.request, '{model_name} Added Successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -78,7 +78,7 @@ class {model_name}UpdateView(UpdateView):
     success_url = reverse_lazy("adminapp:{model_name_lower}_list")
 
     def form_valid(self, form):
-        messages.success(self.request, '{model_name_upper} Updated Successfully')
+        messages.success(self.request, '{model_name} Updated Successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -93,7 +93,7 @@ class {model_name}DeleteView(DeleteView):
     success_url = reverse_lazy("adminapp:{model_name_lower}_list")
 
     def form_valid(self, form):
-        messages.success(self.request, '{model_name_upper} Deleted Successfully')
+        messages.success(self.request, '{model_name} Deleted Successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
