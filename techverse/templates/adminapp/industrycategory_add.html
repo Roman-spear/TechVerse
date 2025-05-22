@@ -1,0 +1,38 @@
+{% extends 'adminapp/master.html' %}
+{% load static %}
+{% block content %}
+
+<div class="main-content">
+  <section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Add Industry Category</h4>
+            </div>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Industry Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="Enter Industry Name" required />
+                </div>
+                <div class="form-group">
+                    <label>Descriptions</label>
+                    <textarea placeholder="Enter Industry Description" name="description" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="card-footer text-right">
+                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                <a href="{% url 'adminapp:industrycategory_list' %}" class="btn btn-danger">Close</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

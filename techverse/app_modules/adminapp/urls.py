@@ -25,6 +25,7 @@ urlpatterns = [
     path('industrycategory_list/', views.IndustryCategoryListView.as_view(), name="industrycategory_list"),
     path('industrycategory_update/<int:pk>/', views.IndustryCategoryUpdateView.as_view(), name="industrycategory_update"),
     path('industrycategory_delete/<int:pk>/', views.IndustryCategoryDeleteView.as_view(), name="industrycategory_delete"),
+    path('industrycategoryajax/', views.IndustryCategoryDatatableView.as_view(), name="industrycategoryajax"),
 
     # --------------------------------------  BLOG URLS  -------------------------------------------------------
     path('blog_add/', views.BlogCreateView.as_view(), name="blog_add"),
@@ -45,6 +46,8 @@ urlpatterns = [
     path('aidetail_list/', views.AIDetailListView.as_view(), name="aidetail_list"),
     path('aidetail_update/<int:pk>/', views.AIDetailUpdateView.as_view(), name="aidetail_update"),
     path('aidetail_delete/<int:pk>/', views.AIDetailDeleteView.as_view(), name="aidetail_delete"),
+    path('aicategoryajax/',views.AiCategoryDatatableView.as_view(), name='aicategoryajax'),
+    
 
     # --------------------------------------  SERVICEDETAIL URLS  -------------------------------------------------------
     path('servicedetail_add/', views.ServiceDetailCreateView.as_view(), name="servicedetail_add"),

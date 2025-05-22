@@ -214,10 +214,23 @@
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                  data-feather="briefcase"></i><span>Services Page Crud</span></a>
+                  data-feather="briefcase"></i><span>Services Page</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{% url 'adminapp:servicecategory_list' %}">Services Category</a></li>
-                <li><a class="nav-link" href="{% url 'adminapp:servicedetail_list' %}">Services Detail</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="briefcase"></i><span>AI Page</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{% url 'adminapp:aicategory_list' %}">AI Category</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="briefcase"></i><span>Industry Category Page</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{% url 'adminapp:industrycategory_list' %}">Industry Category</a></li>
               </ul>
             </li>
             <li class="dropdown">

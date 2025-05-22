@@ -16,12 +16,23 @@ class ServiceCategory(BaseModel):
     def __str__(self):
         return self.name 
 
+    def get_update_url(self):
+        return reverse("adminapp:servicecategory_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:servicecategory_delete",kwargs={'pk':self.pk})
 
 class AICategory(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name 
+    
+    def get_update_url(self):
+        return reverse("adminapp:aicategory_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:aicategory_delete",kwargs={'pk':self.pk})
 
 class IndustryCategory(BaseModel):
     name = models.CharField(max_length=255)
@@ -29,6 +40,12 @@ class IndustryCategory(BaseModel):
     
     def __str__(self):
         return self.name
+    
+    def get_update_url(self):
+        return reverse("adminapp:industrycategory_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:industrycategory_delete",kwargs={'pk':self.pk})
     
 class Blog(BaseModel):
     title = models.CharField(max_length=255)
@@ -40,6 +57,12 @@ class Blog(BaseModel):
     def __str__(self): 
         return self.title
     
+    def get_update_url(self):
+        return reverse("adminapp:blog_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:blog_delete",kwargs={'pk':self.pk})
+    
 class AIDetail(BaseModel):
     header_name = models.CharField(max_length=255,null=True,blank=True)
     header_description = models.TextField(null=True,blank=True)
@@ -49,8 +72,14 @@ class AIDetail(BaseModel):
     def __str__(self): 
         return self.header_name
     
-# -------------------------------------------------------------------------------------------------------------
 
+    def get_update_url(self):
+        return reverse("adminapp:aidetail_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:aidetail_delete",kwargs={'pk':self.pk})
+# ------------------------------------------------------------------------------------------------------------
+    
 class ServiceDetail(BaseModel):
     header_name = models.CharField(max_length=255,null=True,blank=True)
     header_description = models.TextField(null=True,blank=True)
@@ -95,7 +124,12 @@ class ServiceTechnology(BaseModel):
     def __str__(self): 
         return self.name
     
-# -------------------------------------------------------------------------------------------------------------
+    def get_update_url(self):
+        return reverse("adminapp:servicedetail_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:servicedetail_delete",kwargs={'pk':self.pk})
+    
 
 class IndustryDetail(BaseModel):
     header_name = models.CharField(max_length=255,null=True,blank=True)
@@ -103,3 +137,9 @@ class IndustryDetail(BaseModel):
     
     def __str__(self): 
         return self.header_name
+    def get_update_url(self):
+        return reverse("adminapp:industrydetail_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:industrydetail_delete",kwargs={'pk':self.pk})
+    
