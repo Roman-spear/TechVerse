@@ -35,8 +35,10 @@ class AICategory(BaseModel):
         return reverse("adminapp:aicategory_delete",kwargs={'pk':self.pk})
 
 class IndustryCategory(BaseModel):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = models.TextField(null=True,blank=True)
+    title = models.CharField(max_length=255,null=True,blank=True)
+    title_description = models.TextField(null=True,blank=True)
     
     def __str__(self):
         return self.name
@@ -72,12 +74,12 @@ class AIDetail(BaseModel):
     def __str__(self): 
         return self.header_name
     
-
     def get_update_url(self):
         return reverse("adminapp:aidetail_update",kwargs={'pk':self.pk})
     
     def get_delete_url(self):
         return reverse("adminapp:aidetail_delete",kwargs={'pk':self.pk})
+    
 # ------------------------------------------------------------------------------------------------------------
     
 class ServiceDetail(BaseModel):
@@ -96,7 +98,7 @@ class ServiceOption(BaseModel):
     image = models.FileField(upload_to='serviceoption_image',null=True,blank=True)
     
     def __str__(self): 
-        return self.name
+        return f"{self.service_detail.header_name} - {self.name}"
     
 class ServiceBenefit(BaseModel):
     service_detail = models.ForeignKey(ServiceDetail,on_delete=models.CASCADE,related_name='service_benefit')
@@ -105,7 +107,7 @@ class ServiceBenefit(BaseModel):
     description = models.TextField(null=True,blank=True)
     
     def __str__(self): 
-        return self.name
+        return f"{self.service_detail.header_name} - {self.name}"
     
 class ServiceProcess(BaseModel):
     service_detail = models.ForeignKey(ServiceDetail,on_delete=models.CASCADE,related_name='service_process')
@@ -113,7 +115,7 @@ class ServiceProcess(BaseModel):
     name = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
-        return self.name
+        return f"{self.service_detail.header_name} - {self.name}"
     
 class ServiceTechnology(BaseModel):
     service_detail = models.ForeignKey(ServiceDetail,on_delete=models.CASCADE,related_name='service_technology')
@@ -122,7 +124,7 @@ class ServiceTechnology(BaseModel):
     description = models.TextField(null=True,blank=True)
     
     def __str__(self): 
-        return self.name
+        return f"{self.service_detail.header_name} - {self.name}"
     
     def get_update_url(self):
         return reverse("adminapp:servicedetail_update",kwargs={'pk':self.pk})
@@ -132,11 +134,13 @@ class ServiceTechnology(BaseModel):
     
 
 class IndustryDetail(BaseModel):
-    header_name = models.CharField(max_length=255,null=True,blank=True)
-    header_description = models.TextField(null=True,blank=True)
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = models.TextField(null=True,blank=True)
+    image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
     
     def __str__(self): 
-        return self.header_name
+        return self.name
+    
     def get_update_url(self):
         return reverse("adminapp:industrydetail_update",kwargs={'pk':self.pk})
     

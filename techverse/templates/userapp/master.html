@@ -229,7 +229,7 @@
                             <!-- Each industry card -->
                             {% for ab in industrycategory %}
                             <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="#" class="nav-link">
+                              <a href="{% url 'userapp:industry_detail' ab.id %}" class="nav-link">
                                 <h4>{{ab.name}}</h4>
                                 <p>
                                   {{ab.description|safe}}

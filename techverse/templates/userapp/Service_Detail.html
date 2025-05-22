@@ -32,8 +32,10 @@
         <!-- Left Tab Menu -->
         <div class="col-md-5 mb-4 mb-md-0">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-            <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1
+            {% for ab in service_option %}
+            <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service{{ab.id}}">1
               Mobile App Development</button>
+            {% endfor %}
             <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service2">2 Website
               Development</button>
             <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service3">3 Software
@@ -50,13 +52,17 @@
         <!-- Right Content -->
         <div class="col-md-7">
           <div class="tab-content">
-            <div class="tab-pane fade show active text-center" id="service1">
-              <img src="./images/aboutimg.svg" alt="Mobile App" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">Mobile App Development</h4>
-              <p>We create custom mobile apps for Android and iOS that offer smooth, user-friendly experiences. Our apps
-                help businesses engage with customers, increase reach, and improve accessibility, while meeting specific
-                business needs.</p>
+            {% for ab in service_option %}
+            <div class="tab-pane fade show active text-center" id="service{{ab.id}}">
+              {% if ab.image %}
+              <img src="{{ab.image.url}}" alt="Mobile App" class="img-fluid service-image mb-3">
+              {% else %} 
+              <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
+              {% endif %} 
+              <h4 class="fw-semibold text-blue">{{ab.name}}</h4>
+              <p>{{ab.description}}</p>
             </div>
+            {% endfor %}
             <div class="tab-pane fade text-center" id="service2">
               <img src="./images/herobg.png" alt="Website Development" class="img-fluid service-image mb-3">
               <h4 class="fw-semibold text-blue">Website Development</h4>

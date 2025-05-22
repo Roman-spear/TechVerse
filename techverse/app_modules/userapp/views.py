@@ -26,6 +26,11 @@ class UserServicesView(TemplateView):
 class UserIndustriesView(TemplateView):
     template_name = "userapp/industries.html"
     
+class UserIndustryDetailView(DetailView):
+    model = models.IndustryCategory
+    template_name = "userapp/industry_detail.html"
+    context_object_name = "industry_data"
+    
 class UserCareerView(TemplateView):
     template_name = "userapp/career.html"
     
@@ -63,6 +68,14 @@ class UserServicesDetailView(DetailView):
     model = models.ServiceDetail
     template_name = "userapp/service_detail.html"
     context_object_name = "service_data"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["service_option"] = models.ServiceOption.objects.all()
+        context["service_option"] = models.ServiceOption.objects.all()
+        context["service_option"] = models.ServiceOption.objects.all()
+        return context
+    
 
 class UserTermsConditionView(TemplateView):
     template_name = "userapp/terms_condition.html"
