@@ -41,14 +41,14 @@ class UserIndustryDetailView(DetailView):
 class UserCareerView(TemplateView):
     template_name = "userapp/career.html"
     
-class UserBlogView(TemplateView):
-    template_name = "userapp/blog.html"
-    
 class UserPortfolioView(TemplateView):
     template_name = "userapp/portfolio.html"
     
-class UserAiDetailView(TemplateView):
-    template_name = "userapp/ai_detail.html"
+class UserAIView(TemplateView):
+    template_name = "userapp/ai.html"
+
+class UserBlogView(TemplateView):
+    template_name = "userapp/blog.html"
     
 class UserBlogDetailView(TemplateView):
     template_name = "userapp/blog_detail.html"

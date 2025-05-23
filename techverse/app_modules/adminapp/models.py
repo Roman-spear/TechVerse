@@ -12,6 +12,7 @@ class User(AbstractUser):
 
 class ServiceCategory(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
+    
 
     def __str__(self):
         return self.name 
@@ -54,6 +55,7 @@ class IndustryDetail(BaseModel):
     name = models.CharField(max_length=255,null=True,blank=True)
     description = models.TextField(null=True,blank=True) 
     image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
+    header_image = models.FileField(upload_to='industrytitle_image',null=True,blank=True)
     
     def __str__(self):
         return f"{self.industry_category.name} - {self.name}"
@@ -83,6 +85,7 @@ class BlogCategory(BaseModel):
 
 class Blog(BaseModel):
     title = models.CharField(max_length=255,null=True,blank=True)
+    category = models.ForeignKey(BlogCategory,on_delete=models.CASCADE,null=True,blank=True,related_name='blog_category')
     image = models.FileField(upload_to='blog_image',null=True,blank=True)
     description = models.TextField(null=True,blank=True)
     date = models.DateTimeField(null=True,blank=True)
@@ -100,6 +103,7 @@ class Blog(BaseModel):
 class AIDetail(BaseModel):
     header_name = models.CharField(max_length=255,null=True,blank=True)
     header_description = models.TextField(null=True,blank=True)
+    header_image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
     title = models.CharField(max_length=255,null=True,blank=True)
     description = models.TextField(null=True,blank=True)
     
@@ -119,6 +123,7 @@ class ServiceDetail(BaseModel):
     header_description = models.TextField(null=True,blank=True)
     title = models.CharField(max_length=255,null=True,blank=True)
     description = models.TextField(null=True,blank=True)
+    header_image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
     
     def __str__(self): 
         return self.header_name

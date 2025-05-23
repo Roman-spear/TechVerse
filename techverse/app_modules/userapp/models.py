@@ -7,10 +7,14 @@ from app_modules.base.models import BaseModel
 class ContactEnquiry(BaseModel):
     first_name = models.CharField(max_length=255,null=True,blank=True)
     last_name = models.CharField(max_length=255,null=True,blank=True)
+    company = models.CharField(max_length=255,null=True,blank=True)
     email = models.EmailField(null=True,blank=True)
     subject = models.TextField(null=True,blank=True)
     phone = models.BigIntegerField(null=True,blank=True)
     message = models.TextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.email
     
 class CareerEnquiry(BaseModel):
     first_name = models.CharField(max_length=255,null=True,blank=True)

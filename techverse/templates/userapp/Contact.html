@@ -25,42 +25,37 @@
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="contact-form">
-          <form>
+          <form method="post">
+            {% csrf_token %} 
             <div class="row mb-4">
               <div class="col-md-6">
                 <label class="form-label">First Name</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="first_name" class="form-control" placeholder="">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Last Name</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="last_name" class="form-control" placeholder="">
               </div>
             </div>
             <div class="row mb-4">
               <div class="col-md-6">
                 <label class="form-label">Company</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="company" class="form-control" placeholder="">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email Address</label>
-                <input type="email" class="form-control" placeholder="">
+                <input type="email" name="email" class="form-control" placeholder="">
               </div>
             </div>
-            <!-- <div class="mb-4">
-              <div class="range">
-                <label class="form-label">Project Budget <span class="fw-bold">$</span><span id="budgetValue"
-                    class="fw-bold">5500</span> </label>
-                <input type="range" min="1000" max="10000" id="budgetRange" />
-              </div>
-            </div> -->
+            
             <div class="mb-4">
               <label class="form-label">Subject</label>
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" name="subject" class="form-control" placeholder="">
 
             </div>
             <div class="mb-4">
               <label class="form-label">Message</label>
-              <textarea class="form-control" rows="4" placeholder="Start typing here..."></textarea>
+              <textarea class="form-control" name="message" rows="4" placeholder="Start typing here..."></textarea>
             </div>
             <button type="submit" class="btn neon-button text-white px-4">Send</button>
           </form>
