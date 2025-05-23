@@ -185,7 +185,7 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue service-page-link" href="{% url 'userapp:services' %}" id="serviceDropdown"
+                  <a class="nav-link text-blue service-page-link" href="{% url 'userapp:ai' %}" id="serviceDropdown"
                     role="button">AI/ML</a>
                   <div class="service-drop-div">
                     <div class="container">
@@ -193,7 +193,7 @@
                         <!-- Data Engineering -->
                         {% for ab in aicategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                          <a href="{% url 'userapp:services_detail' ab.id %}" class="nav-link" >
+                          <a href="{% url 'userapp:ai_detail' ab.id %}" class="nav-link" >
                             <h5 class="category-title text-blue fw-bold">
                             {{ab.name}}
                             </h5>
@@ -277,7 +277,7 @@
                 >
                 <button
                   onclick="startVoiceRecognition()"
-                  class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative"
+                  class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative ms-2"
                   style="height: 40px; width: 40px"
                 >
                   <i class="fa-solid fa-headphones"></i>
@@ -380,7 +380,7 @@
         </div>
       </div>
     </div> {% endcomment %}
-    <div class="container-fluid bg-primary1 py-5">
+    <div class="container-fluid bg-primary1 py-5 mt-5">
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-12 mb-3 mb-md-0">

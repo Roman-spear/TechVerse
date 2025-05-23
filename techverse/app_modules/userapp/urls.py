@@ -14,6 +14,7 @@ urlpatterns = [
      path('blog/',views.UserBlogView.as_view(),name="blog"),
      path('portfolio/',views.UserPortfolioView.as_view(),name="portfolio"),
      path('ai/',views.UserAIView.as_view(),name="ai"),
+     path('ai_detail/<int:pk>/',views.UserAIDetailView.as_view(),name="ai_detail"),
      path('blog_detail/',views.UserBlogDetailView.as_view(),name="blog_detail"),
      path('contact/',views.UserContactView.as_view(),name="contact"),
      path('privacy_policy/',views.UserPrivacyPolicyView.as_view(),name="privacy_policy"),

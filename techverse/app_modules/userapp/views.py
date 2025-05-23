@@ -47,6 +47,11 @@ class UserPortfolioView(TemplateView):
 class UserAIView(TemplateView):
     template_name = "userapp/ai.html"
 
+class UserAIDetailView(DetailView):
+    model = models.AICategory
+    template_name = "userapp/ai.html"
+    context_object_name = "ai_data"
+
 class UserBlogView(TemplateView):
     template_name = "userapp/blog.html"
     
