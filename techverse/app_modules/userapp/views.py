@@ -31,6 +31,13 @@ class UserIndustryDetailView(DetailView):
     template_name = "userapp/industry_detail.html"
     context_object_name = "industry_data"
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["industry_detail"] = models.IndustryDetail.objects.filter(industry_category=self.get_object())
+        context["industry_process"] = models.IndustryProcess.objects.filter(industry_category=self.get_object())
+        return context
+    
+    
 class UserCareerView(TemplateView):
     template_name = "userapp/career.html"
     
@@ -71,9 +78,10 @@ class UserServicesDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["service_option"] = models.ServiceOption.objects.all()
-        context["service_option"] = models.ServiceOption.objects.all()
-        context["service_option"] = models.ServiceOption.objects.all()
+        context["service_option"] = models.ServiceOption.objects.filter(service_detail=self.get_object())
+        context["service_benefit"] = models.ServiceBenefit.objects.filter(service_detail=self.get_object())
+        context["service_process"] = models.ServiceProcess.objects.filter(service_detail=self.get_object())
+        context["service_technology"] = models.ServiceTechnology.objects.filter(service_detail=self.get_object())
         return context
     
 

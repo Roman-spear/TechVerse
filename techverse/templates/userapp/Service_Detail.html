@@ -33,66 +33,25 @@
         <div class="col-md-5 mb-4 mb-md-0">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
             {% for ab in service_option %}
-            <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service{{ab.id}}">1
-              Mobile App Development</button>
+            <button class="my-1 w-100 p-3 rounded nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="pill" data-bs-target="#service{{ab.id}}">{{forloop.counter}} {{ab.name}}</button>
             {% endfor %}
-            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service2">2 Website
-              Development</button>
-            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service3">3 Software
-              Development</button>
-            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service4">4 AI/ML
-              Development</button>
-            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service5">5 Full Stack
-              Development</button>
-            <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service6">6 Digital
-              Marketing</button>
           </div>
         </div>
-
         <!-- Right Content -->
         <div class="col-md-7">
           <div class="tab-content">
-            {% for ab in service_option %}
-            <div class="tab-pane fade show active text-center" id="service{{ab.id}}">
-              {% if ab.image %}
+            {% for ab in service_option %} 
+            <div class="tab-pane fade {% if forloop.first %}show active{% endif %} text-center" id="service{{ab.id}}">
+              {% if ab.image %} 
               <img src="{{ab.image.url}}" alt="Mobile App" class="img-fluid service-image mb-3">
               {% else %} 
               <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
               {% endif %} 
               <h4 class="fw-semibold text-blue">{{ab.name}}</h4>
-              <p>{{ab.description}}</p>
+              <p>{{ab.description|safe}}</p>
             </div>
             {% endfor %}
-            <div class="tab-pane fade text-center" id="service2">
-              <img src="./images/herobg.png" alt="Website Development" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">Website Development</h4>
-              <p>We build responsive, high-performance websites tailored to your brand and business goals, ensuring great
-                user experience and fast load times across all devices.</p>
-            </div>
-            <div class="tab-pane fade text-center" id="service3">
-              <img src="./images/heroimg.svg" alt="Software Development" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">Software Development</h4>
-              <p>Our team develops robust custom software solutions to streamline business operations, improve
-                productivity, and support digital transformation.</p>
-            </div>
-            <div class="tab-pane fade text-center" id="service4">
-              <img src="./images/Techverse.svg" alt="AI/ML" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">AI/ML Development</h4>
-              <p>We integrate artificial intelligence and machine learning to build intelligent solutions that automate
-                processes and provide deep insights from data.</p>
-            </div>
-            <div class="tab-pane fade text-center" id="service5">
-              <img src="./images/aboutimg.svg" alt="Full Stack Development" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">Full Stack Development</h4>
-              <p>Our full-stack developers deliver end-to-end solutions using the latest tech stack, from front-end design
-                to back-end infrastructure.</p>
-            </div>
-            <div class="tab-pane fade text-center" id="service6">
-              <img src="./images/Techverse.svg" alt="Digital Marketing" class="img-fluid service-image mb-3">
-              <h4 class="fw-semibold text-blue">Digital Marketing</h4>
-              <p>We provide digital marketing strategies including SEO, social media, email marketing, and PPC to help
-                your brand grow online.</p>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -103,82 +62,19 @@
         <h1 class="fw-bold mb-3 text-center text-blue">Key Benefits</h1>
         <div class="row">
           <!-- Benefit Card 1 -->
+          {% for ab in service_benefit %}
           <div class="col-md-6 col-lg-4 p-0">
             <div class="p-4 border-bottom rounded-0 h-100">
               <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-cogs"></i>
+                <i class="{{ab.icon}}"></i>
               </div>
-              <h6 class="fw-bold">Customized Solutions</h6>
+              <h6 class="fw-bold">{{ab.name}}</h6>
               <p class="text-muted small mb-0">
-                We collaborate closely with you to understand your unique challenges and goals, to develop tailored AI/ML models that address your specific needs.
+                {{ab.description|safe}}
               </p>
             </div>
           </div>
-
-          <!-- Benefit Card 2 -->
-          <div class="col-md-6 col-lg-4 p-0">
-            <div class="p-4 border border-top-0 rounded-0 h-100">
-              <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <h6 class="fw-bold">Enhanced Efficiency</h6>
-              <p class="text-muted small mb-0">
-                Repetitive tasks become a thing of the past. Our top AI software automate solutions to free up your team’s valuable time and resources for higher-level pursuits.
-              </p>
-            </div>
-          </div>
-
-          <!-- Benefit Card 3 -->
-          <div class="col-md-6 col-lg-4 p-0">
-            <div class="p-4 border-bottom rounded-0 h-100">
-              <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h6 class="fw-bold">Predictive Advantage</h6>
-              <p class="text-muted small mb-0">
-                Gain valuable foresight into future trends and customer behaviour. Our models analyze historical data to predict potential risks and opportunities.
-              </p>
-            </div>
-          </div>
-
-          <!-- Benefit Card 4 -->
-          <div class="col-md-6 col-lg-4 p-0">
-            <div class="p-4 border-top rounded-0 h-100">
-              <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-expand-arrows-alt"></i>
-              </div>
-              <h6 class="fw-bold">Scalability and Adaptability</h6>
-              <p class="text-muted small mb-0">
-                Built with the future in mind, our AI/ML solutions seamlessly adapt to your evolving business needs, ensuring sustained success.
-              </p>
-            </div>
-          </div>
-
-          <!-- Benefit Card 5 -->
-          <div class="col-md-6 col-lg-4 p-0">
-            <div class="p-4 border border-bottom-0 rounded-0 h-100">
-              <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h6 class="fw-bold">Transparent and Ethical Development</h6>
-              <p class="text-muted small mb-0">
-                Committed to responsible practices, we uphold stringent ethical guidelines and maintain transparency throughout the development process.
-              </p>
-            </div>
-          </div>
-
-          <!-- Benefit Card 6 -->
-          <div class="col-md-6 col-lg-4 p-0">
-            <div class="p-4 border-top rounded-0 h-100">
-              <div class="mb-3 text-blue fs-4">
-                <i class="fas fa-users"></i>
-              </div>
-              <h6 class="fw-bold">Dedicated Expertise and Support</h6>
-              <p class="text-muted small mb-0">
-                Benefit from our team of experienced professionals who provide ongoing support and guidance throughout every stage of the journey.
-              </p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -189,45 +85,23 @@
         <div class="container">
             <h1 class="mb-3 text-blue fw-bold text-center">Process of Building App</h1>
             <p class="mb-5">Delivering work within time and budget which meets client's requirements is our moto.</p>
-
-
             <div class="timeline py-5">
-
+              {% for ab in service_process %}
+                {% if forloop.counter|divisibleby:"2" %}
                 <div class="process-box top-step">
-                    <div class="step-icon"><i class="fas fa-handshake"></i></div>
-                    <div class="step-label">Initial Meeting</div>
-                    <div class="circle mb-0">1</div>
+                    <div class="step-icon"><i class="{{ab.icon}}"></i></div>
+                    <div class="step-label">{{ab.name}}</div>
+                    <div class="circle mb-0">{{forloop.counter}}</div>
                 </div>
-
+                {% else %}
                 <div class="process-box bottom-step">
-                    <div class="circle mt-0">2</div>
-                    <div class="step-icon"><i class="fas fa-file-alt"></i></div>
-                    <div class="step-label">Evaluation & Planning</div>
+                  <div class="circle mt-0">{{forloop.counter}}</div>
+                  <div class="step-icon"><i class="{{ab.icon}}"></i></div>
+                  <div class="step-label">{{ab.name}}</div>
                 </div>
+                {% endif %}
+              {% endfor %}
 
-                <div class="process-box top-step">
-                    <div class="step-icon"><i class="fas fa-code"></i></div>
-                    <div class="step-label">Design & Development</div>
-                    <div class="circle mb-0">3</div>
-                </div>
-
-                <div class="process-box bottom-step">
-                    <div class="circle mt-0">4</div>
-                    <div class="step-icon"><i class="fas fa-thumbs-up"></i></div>
-                    <div class="step-label">Quality Testing</div>
-                </div>
-
-                <div class="process-box top-step">
-                    <div class="step-icon"><i class="fas fa-cogs"></i></div>
-                    <div class="step-label">Maintenance & Enhancement</div>
-                    <div class="circle mb-0">5</div>
-                </div>
-
-                <div class="process-box bottom-step">
-                    <div class="circle mt-0">6</div>
-                    <div class="step-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="step-label">Delivery</div>
-                </div>
 
             </div>
         </div>
@@ -254,29 +128,13 @@
     <div class="container py-5 text-center">
       <h1 class="mb-5 text-blue fw-bold">Mobile App Development</h1>
       <div class="row servicedetail">
+        {% for ab in service_technology %}
         <div class="col-md-6 col-lg-3 servicedetail__item">
-          <span class="servicedetail__icon"><i class="fa-brands fa-android"></i></span>
-          <span class="servicedetail__title">Android</span>
-          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
+          <span class="servicedetail__icon"><i class="{{ab.icon}}"></i></span>
+          <span class="servicedetail__title">{{ab.name}}</span>
+          <span class="servicedetail__subtitle">{{ab.description}}</span>
         </div>
-
-        <div class="col-md-6 col-lg-3 servicedetail__item">
-          <span class="servicedetail__icon"><i class="fa-brands fa-app-store-ios"></i></span>
-          <span class="servicedetail__title">iOS</span>
-          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-        </div>
-
-        <div class="col-md-6 col-lg-3 servicedetail__item">
-          <span class="servicedetail__icon"><i class="fa-brands fa-react"></i></span>
-          <span class="servicedetail__title">React Native</span>
-          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-        </div>
-
-        <div class="col-md-6 col-lg-3 servicedetail__item">
-          <span class="servicedetail__icon"><i class="fa-brands fa-flutter"></i></span>
-          <span class="servicedetail__title">Flutter</span>
-          <span class="servicedetail__subtitle">We analyse your problem and develop a strategy</span>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <!-- Section 8 End -->

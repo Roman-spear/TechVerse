@@ -49,12 +49,44 @@ class IndustryCategory(BaseModel):
     def get_delete_url(self):
         return reverse("adminapp:industrycategory_delete",kwargs={'pk':self.pk})
     
+class IndustryDetail(BaseModel):
+    industry_category = models.ForeignKey(IndustryCategory,on_delete=models.CASCADE,related_name='industry_detail')
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = models.TextField(null=True,blank=True) 
+    image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
+    
+    def __str__(self):
+        return f"{self.industry_category.name} - {self.name}"
+    
+    def get_update_url(self):
+        return reverse("adminapp:industrydetail_update",kwargs={'pk':self.pk})
+    
+    def get_delete_url(self):
+        return reverse("adminapp:industrydetail_delete",kwargs={'pk':self.pk})
+    
+class IndustryProcess(BaseModel):
+    industry_category = models.ForeignKey(IndustryCategory,on_delete=models.CASCADE,related_name='industry_process')
+    icon = models.CharField(max_length=255,null=True,blank=True)
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = models.TextField(null=True,blank=True) 
+    
+    def __str__(self):
+        return f"{self.industry_category.name} - {self.name}"
+    
+# --------------------------------------------------------------------------------------------------------------
+
+class BlogCategory(BaseModel):
+    name = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.name
+
 class Blog(BaseModel):
-    title = models.CharField(max_length=255)
-    image = models.FileField(upload_to='blog_image')
-    description = models.TextField()
-    date = models.DateTimeField()
-    author = models.CharField(max_length=255)
+    title = models.CharField(max_length=255,null=True,blank=True)
+    image = models.FileField(upload_to='blog_image',null=True,blank=True)
+    description = models.TextField(null=True,blank=True)
+    date = models.DateTimeField(null=True,blank=True)
+    author = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return self.title
@@ -131,19 +163,4 @@ class ServiceTechnology(BaseModel):
     
     def get_delete_url(self):
         return reverse("adminapp:servicedetail_delete",kwargs={'pk':self.pk})
-    
-
-class IndustryDetail(BaseModel):
-    name = models.CharField(max_length=255,null=True,blank=True)
-    description = models.TextField(null=True,blank=True)
-    image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
-    
-    def __str__(self): 
-        return self.name
-    
-    def get_update_url(self):
-        return reverse("adminapp:industrydetail_update",kwargs={'pk':self.pk})
-    
-    def get_delete_url(self):
-        return reverse("adminapp:industrydetail_delete",kwargs={'pk':self.pk})
     
