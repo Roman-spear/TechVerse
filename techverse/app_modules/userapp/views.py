@@ -14,6 +14,9 @@ class UserIndexView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["service_category"] = models.ServiceCategory.objects.all()
+        context["ai_category"] = models.AICategory.objects.all()
+        context["industry_category"] = models.IndustryCategory.objects.all()
         return context
     
     
@@ -49,8 +52,20 @@ class UserAIView(TemplateView):
 
 class UserAIDetailView(DetailView):
     model = models.AICategory
-    template_name = "userapp/ai.html"
+    template_name = "userapp/ai_detail.html"
     context_object_name = "ai_data"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["ai_images"] = models.AIImages.objects.filter(ai_category=self.get_object()) 
+        try:
+            context["ai_detail"] = models.AIDetail.objects.get(ai_category=self.get_object()) 
+        except:
+            context["ai_detail"] = None
+        context["ai_process"] = models.AIProcess.objects.filter(ai_category=self.get_object()) 
+        context["ai_benefit"] = models.AIBenefit.objects.filter(ai_category=self.get_object()) 
+        return context
+    
 
 class UserBlogView(TemplateView):
     template_name = "userapp/blog.html"
