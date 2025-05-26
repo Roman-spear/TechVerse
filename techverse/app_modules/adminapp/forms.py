@@ -1,6 +1,6 @@
 from django import forms
 from . import models
-
+from django_summernote.widgets import SummernoteWidget
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -11,6 +11,9 @@ class ServiceCategoryForm(forms.ModelForm):
     class Meta:
         model = models.ServiceCategory
         fields = "__all__"
+        widgets = {
+            'description': SummernoteWidget(attrs={'class': 'summernote', 'style': 'height: 300px;'})  # ✅ Valid
+        }
 
 class IndustryCategoryForm(forms.ModelForm):
     class Meta:

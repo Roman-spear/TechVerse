@@ -96,7 +96,7 @@
           <h5 class="fw-bold">Who We Are?</h5>
           <p class="mb-2">TechVerse is an ISO-certified software development company offering a variety of IT solutions
             to clients worldwide. We specialize in web development, mobile apps, AI/ML, and software services. Our
-            skilled team is focused on meeting customer needs and solving problems efficiently.
+            skilled team is focused on meeting customer needs and solving problems efficiently.<br><br>
             At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.
           </p>
           <!-- <p class="mb-2">At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.</p> -->
@@ -118,54 +118,22 @@
       <!-- Left Tab Menu -->
       <div class="col-md-5 mb-4 mb-md-0">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-          <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1
-            Mobile App Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service2">2 Website
-            Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service3">3 Software
-            Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service4">4 AI/ML
-            Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service5">5 Full Stack
-            Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link" data-bs-toggle="pill" data-bs-target="#service6">6 Digital
-            Marketing</button>
+          {% for ab in service_category %}
+          <button class="my-1 w-100 p-3 rounded nav-link {% if forloop.first %} active {% endif %}" data-bs-toggle="pill" data-bs-target="#service{{forloop.counter}}">{{forloop.counter}} {{ab.name}}</button>
+          {% endfor %}
         </div>
       </div>
 
       <!-- Right Content -->
       <div class="col-md-7">
         <div class="tab-content">
-          <div class="tab-pane fade show active text-center" id="service1">
+          {% for ab in service_category %}
+          <div class="tab-pane fade {% if forloop.first %} show active {% endif %} text-center" id="service{{forloop.counter}}">
             <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">Mobile App Development</h4>
-            <p>We build custom mobile apps for Android and iOS that provide easy and seamless user experiences. Our apps help businesses engage with customers, increase reach, and improve accessibility, driving growth while meeting specific business needs and ensuring a great user experience.</p>
+            <h4 class="fw-semibold text-blue">{{ab.name}}</h4>
+            <p>{{ab.description|safe}}</p>
           </div>
-          <div class="tab-pane fade text-center" id="service2">
-            <img src="{% static 'userapp/images/herobg.png' %}" alt="Website Development" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">Website Development</h4>
-            <p>We create websites that are responsive, secure, and easy to use, working smoothly on all devices. Our websites are designed to attract customers, enhance online presence, and boost conversions, offering modern designs, fast loading speeds, and strong functionality tailored to your business goals.</p>
-          </div>
-          <div class="tab-pane fade text-center" id="service3">
-            <img src="{% static 'userapp/images/heroimg.svg' %}" alt="Software Development" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">Software Development</h4>
-            <p>We make custom software to make business work easier, improve efficiency, and help it grow. Our team focuses on building reliable, scalable applications that are tailored to your needs, helping streamline operations and solve challenges while enhancing overall performance.</p>
-          </div>
-          <div class="tab-pane fade text-center" id="service4">
-            <img src="{% static 'userapp/images/Techverse.svg' %}" alt="AI/ML" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">AI/ML Development</h4>
-            <p>Our AI and ML solutions help businesses automate processes, improve decision-making, and gain insights from data. By integrating smart systems into your business workflows, we create innovative solutions that enhance efficiency, drive performance, and give you a competitive edge in your industry.</p>
-          </div>
-          <div class="tab-pane fade text-center" id="service5">
-            <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Full Stack Development" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">Full Stack Development</h4>
-            <p>We do full-stack development, building the front and back parts of websites and apps. Our team creates scalable, secure, and intuitive solutions that ensure seamless user experiences, offering end-to-end services to help your business grow and succeed in the digital world.</p>
-          </div>
-          <div class="tab-pane fade text-center" id="service6">
-            <img src="{% static 'userapp/images/Techverse.svg' %}" alt="Digital Marketing" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">Digital Marketing</h4>
-            <p>We offer digital marketing services, including SEO, social media, and content marketing, to help businesses reach the right audience and grow their online presence. Our strategies increase brand visibility, engage customers, and drive traffic, ultimately converting leads into long-term sales and success.</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -183,53 +151,22 @@
             <div class="center-ai">
               <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" class="img-fluid" />
             </div>
-            <div class="circle-item item-1">AI for Fintech</div>
-            <div class="circle-item item-2">AI for Healthcare</div>
-            <div class="circle-item item-3">AI for Media & Entertainment</div>
-            <div class="circle-item item-4">AI for Retail & e-Commerce</div>
-            <div class="circle-item item-5">AI for Education</div>
-            <div class="circle-item item-6">AI for Logistics</div>
+            {% for ab in ai_category %}
+            <div class="circle-item item-{{forloop.counter}}">{{ab.name}}</div>
+            {% endfor %}
           </div>
         </div>
         <!-- Right Description Boxes -->
         <div class="col-md-6 bg-primary1 text-white p-0">
           <div class="row h-100 g-0">
+            {% for ab in ai_category %}
             <div class="col-6 d-flex align-items-center justify-content-center border p-3">
               <div>
-                <h4 class="fw-bold">AI for Fintech</h4>
-                <p class="mb-0">We build AI tools that help financial companies detect fraud, automate transactions, and offer better customer support. Our solutions use data to make faster, smarter decisions, improving accuracy, security, and overall user experience in banking and financial services.</p>
+                <h4 class="fw-bold">{{ab.name}}</h4>
+                <p class="mb-0">{{ab.description|safe}}</p>
               </div>
             </div>
-            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-              <div>
-                <h4 class="fw-bold">AI for Healthcare</h4>
-                <p class="mb-0">Our AI systems help hospitals and clinics with fast diagnosis, treatment planning, and patient monitoring. Machine learning models analyze medical data to find patterns, predict diseases early, and improve care quality while reducing the workload on healthcare professionals.</p>
-              </div>
-            </div>
-            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-              <div>
-                <h4 class="fw-bold">AI for Media & Entertainment</h4>
-                <p class="mb-0">We create AI solutions that personalize content, track viewer preferences, and improve user engagement. These tools help platforms suggest videos, music, or articles users love, while also helping media companies understand audience behavior and create targeted content more efficiently.</p>
-              </div>
-            </div>
-            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-              <div>
-                <h4 class="fw-bold">AI for Retail & e-Commerce</h4>
-                <p class="mb-0">Our AI tools help online and retail stores offer smart product suggestions, manage stock levels, and adjust pricing based on demand. These solutions increase sales, improve customer experience, and make daily operations easier for retail and e-commerce businesses</p>
-              </div>
-            </div>
-            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-              <div>
-                <h4 class="fw-bold">AI for Education</h4>
-                <p class="mb-0">We develop AI platforms that support virtual classrooms, automate grading, and personalize learning paths. These tools help teachers save time and let students learn at their own pace, improving engagement and making education more effective and accessible for everyone.</p>
-              </div>
-            </div>
-            <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-              <div>
-                <h4 class="fw-bold">AI for Logistics</h4>
-                <p class="mb-0">Our AI systems optimize delivery routes, track shipments, and predict supply chain issues before they happen. These smart solutions save time, reduce costs, and help logistics companies run smoother and more efficiently with better decision-making tools.</p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
         <!-- </div> -->
@@ -332,106 +269,102 @@
   <h1 class="fw-bold mb-3 text-blue text-center">Industries We Serve</h1>
   <div class="container-fluid bg-primary1 text-center">
 
-    <!-- <div class=""> -->
       <div class="row">
         <div class="col-md-4 p-3  d-flex align-items-center">
           <div class="row">
-          <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-graduation-cap"></i>
-          <p class="industry-title">Education</p>
-        </div>
-      </div>
+            {% for ab in industry_category %}
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="{{ab.icon}}"></i>
+                <p class="industry-title">Education</p>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-heartbeat"></i>
+                <p class="industry-title">Healthcare</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-heartbeat"></i>
-          <p class="industry-title">Healthcare</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-university"></i>
+                <p class="industry-title">Fintech</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-university"></i>
-          <p class="industry-title">Fintech</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-plane-departure"></i>
+                <p class="industry-title">Travel & Hospitality</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-plane-departure"></i>
-          <p class="industry-title">Travel & Hospitality</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-store-alt"></i>
+                <p class="industry-title">Retail & E-commerce</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-store-alt"></i>
-          <p class="industry-title">Retail & E-commerce</p>
-        </div>
-      </div>
-
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-truck"></i>
-          <p class="industry-title">Logistics & Supply Chain</p>
-        </div>
-      </div>
-      </div>
-
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-truck"></i>
+                <p class="industry-title">Logistics & Supply Chain</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-4  d-flex align-items-center" >
           <img src="{% static 'userapp/images/industries-we-serve.svg' %}" alt="" class="img-fluid">
         </div>
-              <div class="col-md-4 p-3 d-flex align-items-center">
+        <div class="col-md-4 p-3 d-flex align-items-center">
           <div class="row">
-          <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-graduation-cap"></i>
-          <p class="industry-title">Education</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-graduation-cap"></i>
+                <p class="industry-title">Education</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-heartbeat"></i>
-          <p class="industry-title">Healthcare</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-heartbeat"></i>
+                <p class="industry-title">Healthcare</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-university"></i>
-          <p class="industry-title">Fintech</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-university"></i>
+                <p class="industry-title">Fintech</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-plane-departure"></i>
-          <p class="industry-title">Travel & Hospitality</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-plane-departure"></i>
+                <p class="industry-title">Travel & Hospitality</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-store-alt"></i>
-          <p class="industry-title">Retail & E-commerce</p>
-        </div>
-      </div>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-store-alt"></i>
+                <p class="industry-title">Retail & E-commerce</p>
+              </div>
+            </div>
 
-      <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-        <div class="industry-box">
-          <i class="fas fa-truck"></i>
-          <p class="industry-title">Logistics & Supply Chain</p>
+            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
+              <div class="industry-box">
+                <i class="fas fa-truck"></i>
+                <p class="industry-title">Logistics & Supply Chain</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-
-        </div>
-      
-    </div>
-    <!-- </div> -->
   </div>
 
 

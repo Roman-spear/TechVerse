@@ -1,0 +1,580 @@
+
+    <style>
+        .AIfeature-container {
+            width: 100%;
+            /*max-width: 56rem;*/
+            padding: 2rem;
+        }
+
+        .AIfeature-grid {
+            display: grid;
+            gap: 5rem;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 24rem;
+            perspective: 1000px;
+        }
+
+        .AIfeature-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .AIfeature-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 50px;
+            width: 120%;
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 0.25rem;
+        }
+
+        .designation {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .quote {
+            font-size: 1.125rem;
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        .arrow-buttons {
+            display: flex;
+            gap: 1rem;
+            padding-top: 3rem;
+        }
+
+        .arrow-button {
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .arrow-button svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: #f1f1f7;
+            transition: transform 0.3s;
+        }
+
+        .arrow-button:hover svg {
+            fill: #ffffff;
+        }
+
+        .prev-button:hover svg {
+            transform: rotate(-12deg);
+        }
+
+        .next-button:hover svg {
+            transform: rotate(12deg);
+        }
+
+        @media (min-width: 768px) {
+            .AIfeature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .arrow-buttons {
+                padding-top: 0;
+            }
+        }
+
+        /* Section 4 */
+        .step-section {
+            padding: 60px 20px 0 20px;
+        }
+
+        .step-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: start;
+        }
+
+        .step-desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 20px;
+            text-align: start;
+        }
+
+        .stack-container {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .stack-layer {
+            position: absolute;
+            width: 300px;
+            height: 80px;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+        }
+
+        .stack-layer svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .stack-label-left,
+        .stack-label-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 500;
+            font-size: 14px;
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .stack-label-left {
+            left: -300px;
+            text-align: right;
+        }
+
+        .stack-label-right {
+            right: -300px;
+            text-align: left;
+        }
+
+        .stack-layer.active svg path {
+            fill: #004ce6;
+        }
+
+        .stack-label-left.active,
+        .stack-label-right.active {
+            font-weight: bold;
+            color: #004ce6;
+        }
+
+        .mySwiper {
+            width: 400px;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <!-- Section 1 Hero Section Start -->
+    <div class="container-fluid position-relative p-0">
+        <div class="header-section">
+            <div class="header-content">
+                <h1>Healthcare AI</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, reiciendis!</p>
+            </div>
+        </div>
+    </div>
+    <!-- Section 1 Hero Section End -->
+
+    <!-- Section 2 Start -->
+    <!-- Section 1 Industry We Serve Title -->
+    <div class="container py-5 d-flex flex-column align-items-center ">
+        <h2 class="fw-normal display-6 w-75 text-center mb-3 text-blue">What is Automated Machine Learning ?
+        </h2>
+        <p class="fs-5" style="font-weight: 100;">Automated machine learning (AutoML) streamlines various stages of the
+            data science lifecycle by automating complex processes, helping data scientists develop AI solutions more
+            accurately and efficiently. It also makes machine learning more accessible to non-experts by offering
+            intuitive interfaces, allowing business users and IT professionals with basic technical skills to easily
+            incorporate machine learning into their regular operations.</p>
+    </div>
+    <!-- Section 1 Industry We Serve Title -->
+
+    <!-- Section 2 start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-xl-5">
+                    <div class="card shadow-none p-4 border-0 rounded-0 bg-transparent">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="./images/1.png" alt="Icon" style="width: 60px; height: 60px;">
+                            <div>
+                                <h3 class="fw-bold text-blue">Driverless AI</h3>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-muted">
+                            TechVerse Driverless AI automates the entire feature engineering
+                            process to include detecting relevant features in a given dataset, finding the
+                            interactions within those features,
+                            handling missing values, deriving new features from data, comparing the existing and
+                            the newly generated features
+                            and showing the relative importance of each of these features. Features are
+                            transformed into meaningful values
+                            that machine learning algorithms can easily consume.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-7">
+                    <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+                        <swiper-slide class="swiper-slide rounded-4"><img src="./images/driver-1.jpg" alt="Driver Less"
+                                class="w-100 h-100 object-fit-cover rounded-4"></swiper-slide>
+                        <swiper-slide class="swiper-slide rounded-4"><img src="./images/driver-2.jpg" alt="Driver Less"
+                                class="w-100 h-100 object-fit-cover rounded-4"></swiper-slide>
+                        <swiper-slide class="swiper-slide rounded-4"><img src="./images/driver-3.jpg" alt="Driver Less"
+                                class="w-100 h-100 object-fit-cover rounded-4"></swiper-slide>
+                        <swiper-slide class="swiper-slide rounded-4"><img src="./images/driver-4.jpg" alt="Driver Less"
+                                class="w-100 h-100 object-fit-cover rounded-4"></swiper-slide>
+                        <swiper-slide class="swiper-slide rounded-4"><img src="./images/driver-5.jpg" alt="Driver Less"
+                                class="w-100 h-100 object-fit-cover rounded-4"></swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section 2 End -->
+
+    <!-- Section 3 start  -->
+    <div class="container position-relative">
+        <h1 class="fw-bold mb-3 text-blue text-center">Key Benefits</h1>
+        <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, non?</p>
+        <div class="AIfeature-container">
+            <div class="AIfeature-grid">
+                <div class="image-container" id="image-container"></div>
+                <div class="AIfeature-content">
+                    <div>
+                        <h3 class="name" id="name"></h3>
+                        <p class="designation" id="designation"></p>
+                        <p class="quote" id="quote"></p>
+                    </div>
+                    <div class="arrow-buttons">
+                        <button class="btn rounded-circle bg-secondary-subtle me-2" id="prev-button"><i
+                                class="fa-solid fa-chevron-left text-blue"></i></button>
+                        <button class="btn rounded-circle bg-secondary-subtle" id="next-button"><i
+                                class="fa-solid fa-chevron-right text-blue"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section 3 end -->
+
+
+    <!-- Section 4 Start -->
+    <div class="container-fluid step-section">
+        <div class="row">
+            <!-- Left: Text + Carousel Controls -->
+            <div class="col-md-12 col-lg-4 mb-5 mb-md-0 d-flex flex-column justify-content-start">
+                <div class="step-number" style="font-size: 5rem; font-weight: bold; color: #00327829;" id="step-number">
+                    01.
+                </div>
+                <h2 class="step-title" id="step-title">Model Development and Training</h2>
+                <p class="step-desc" id="step-desc">
+                    We develop AI models using the selected algorithms and tools. This involves coding, configuring
+                    model
+                    parameters, and setting up neural networks if using deep learning techniques. We then train the
+                    models on the
+                    prepared data, adjusting and fine-tuning them to improve accuracy and performance.
+                </p>
+
+                <div class="mt-4">
+                    <button class="btn rounded-circle bg-secondary-subtle me-2" id="prevStep"><i
+                            class="fa-solid fa-chevron-left text-blue"></i></button>
+                    <button class="btn rounded-circle bg-secondary-subtle" id="nextStep"><i
+                            class="fa-solid fa-chevron-right text-blue"></i></button>
+                </div>
+            </div>
+
+            <!-- Right: Stack -->
+            <div class="col-md-12 col-lg-8 stack-container d-none d-md-block" id="stackContainer">
+                <!-- Stack layers will be injected here -->
+            </div>
+        </div>
+    </div>
+    <!-- Section 4 End -->
+
+    <!-- Section 5 Start -->
+    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 my-5">
+        <div class="container">
+            <div class="newsletter-content text-center py-5 px-4">
+                <h1 class="newsletter-title text-white fw-bold">
+                    Start Your App Journey With Expert Solutions and Seamless Experiences
+                </h1>
+                <div class="mt-4 mt-md-0">
+                    <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 5 End -->
+
+
+
+    <script>
+        //    <!-- Image opacity can be adjusted in const opacity = index === activeIndex ? 1 : 1; -->
+
+        const AIfeatures = [
+            {
+                quote:
+                    "I was impressed by the food — every dish is bursting with flavor! And I could really tell that they use high-quality ingredients. The staff was friendly and attentive, going the extra mile. I'll definitely be back for more!",
+                name: "Intelligent feature transformation",
+                src:
+                    "./images/blog1.jpg"
+            },
+            {
+                quote:
+                    "This place exceeded all expectations! The atmosphere is inviting, and the staff truly goes above and beyond to ensure a fantastic visit. I'll definitely keep returning for more exceptional dining experience.",
+                name: "Expert recommender system",
+                src:
+                    "/images/blog2.jpg"
+            },
+            {
+                quote:
+                    "Shining Yam is a hidden gem! From the moment I walked in, I knew I was in for a treat. The impeccable service and overall attention to detail created a memorable experience. I highly recommend it!",
+                name: "Automated model development",
+                src:
+                    "./images/aidetail.jpg"
+            },
+            {
+                quote:
+                    "This place exceeded all expectations! The atmosphere is inviting, and the staff truly goes above and beyond to ensure a fantastic visit. I'll definitely keep returning for more exceptional dining experience.",
+                name: "Expert recommender system",
+                src:
+                    "/images/page-hero-bg.svg"
+            },
+            {
+                quote:
+                    "Shining Yam is a hidden gem! From the moment I walked in, I knew I was in for a treat. The impeccable service and overall attention to detail created a memorable experience. I highly recommend it!",
+                name: "Automated model development",
+                src:
+                    "./images/industry-Ai.jpg"
+            }
+        ];
+
+        let activeIndex = 0;
+        const imageContainer = document.getElementById("image-container");
+        const nameElement = document.getElementById("name");
+        const designationElement = document.getElementById("designation");
+        const quoteElement = document.getElementById("quote");
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+
+        function calculateGap(width) {
+            const minWidth = 1024;
+            const maxWidth = 1456;
+            const minGap = 60;
+            const maxGap = 86;
+
+            if (width <= minWidth) return minGap;
+            if (width >= maxWidth)
+                return Math.max(minGap, maxGap + 0.06018 * (width - maxWidth));
+
+            return (
+                minGap + (maxGap - minGap) * ((width - minWidth) / (maxWidth - minWidth))
+            );
+        }
+
+        function updateAIfeature(direction) {
+            const oldIndex = activeIndex;
+            activeIndex =
+                (activeIndex + direction + AIfeatures.length) % AIfeatures.length;
+
+            const containerWidth = imageContainer.offsetWidth;
+            const gap = calculateGap(containerWidth);
+            const maxStickUp = gap * 0.8; // 80% of the calculated gap
+
+            AIfeatures.forEach((AIfeature, index) => {
+                let img = imageContainer.querySelector(`[data-index="${index}"]`);
+                if (!img) {
+                    img = document.createElement("img");
+                    img.src = AIfeature.src;
+                    img.alt = AIfeature.name;
+                    img.classList.add("AIfeature-image");
+                    img.dataset.index = index;
+                    imageContainer.appendChild(img);
+                }
+
+                const offset =
+                    (index - activeIndex + AIfeatures.length) % AIfeatures.length;
+                const zIndex = AIfeatures.length - Math.abs(offset);
+                const opacity = index === activeIndex ? 1 : 1;
+                const scale = index === activeIndex ? 1 : 0.85;
+
+                let translateX, translateY, rotateY;
+                if (offset === 0) {
+                    translateX = "0%";
+                    translateY = "0%";
+                    rotateY = "0deg";
+                } else if (offset === 1 || offset === -2) {
+                    translateX = "20%";
+                    translateY = `-${(maxStickUp / img.offsetHeight) * 100}%`;
+                    rotateY = "-15deg";
+                } else {
+                    translateX = "-20%";
+                    translateY = `-${(maxStickUp / img.offsetHeight) * 100}%`;
+                    rotateY = "15deg";
+                }
+
+                img.style.zIndex = zIndex;
+                img.style.opacity = opacity;
+                img.style.transform = `translate(${translateX}, ${translateY}) scale(${scale}) rotateY(${rotateY})`;
+            });
+
+            nameElement.textContent = AIfeatures[activeIndex].name;
+            designationElement.textContent = AIfeatures[activeIndex].designation;
+            quoteElement.innerHTML = AIfeatures[activeIndex].quote
+                .split(" ")
+                .map((word) => `<span class="word">${word}</span>`)
+                .join(" ");
+
+            animateWords();
+        }
+
+        function animateWords() {
+            const words = quoteElement.querySelectorAll(".word");
+            words.forEach((word, index) => {
+                word.style.opacity = "0";
+                word.style.transform = "translateY(10px)";
+                word.style.filter = "blur(10px)";
+                setTimeout(() => {
+                    word.style.transition =
+                        "opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out";
+                    word.style.opacity = "1";
+                    word.style.transform = "translateY(0)";
+                    word.style.filter = "blur(0)";
+                }, index * 20);
+            });
+        }
+
+        function handleNext() {
+            updateAIfeature(1);
+        }
+
+        function handlePrev() {
+            updateAIfeature(-1);
+        }
+
+        prevButton.addEventListener("click", handlePrev);
+        nextButton.addEventListener("click", handleNext);
+
+        // Initial setup
+        updateAIfeature(0);
+
+        // Autoplay functionality
+        const autoplayInterval = setInterval(handleNext, 5000);
+
+        // Stop autoplay on user interaction
+        [prevButton, nextButton].forEach((button) => {
+            button.addEventListener("click", () => {
+                clearInterval(autoplayInterval);
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", () => updateAIfeature(0));
+
+    </script>
+
+    <script>
+        const steps = [
+            { title: "Defining Objectives and Requirements", desc: "Clarify what the AI model is expected to achieve by defining clear business objectives and user needs." },
+            { title: "Data Collection and Preparation", desc: "Gather relevant data, clean and pre-process it to ensure it's suitable for training AI models." },
+            { title: "Choosing AI Technologies and Tools", desc: "Select appropriate algorithms, frameworks, and tools that best fit the project goals." },
+            { title: "Model Development and Training", desc: "Develop and train AI models, configure parameters, and fine-tune to enhance performance." },
+            { title: "Model Evaluation and Testing", desc: "Assess the trained model using evaluation metrics to ensure accuracy, precision, and reliability." },
+            { title: "Integration and Deployment", desc: "Integrate the AI model into applications or systems and deploy it in the production environment." },
+            { title: "Compliance and Security", desc: "Ensure the model complies with legal regulations and incorporates security measures for data safety." },
+            { title: "Monitoring and Maintenance", desc: "Regularly monitor the AI model and retrain or update it to maintain performance over time." }
+        ];
+
+        const stackContainer = document.getElementById("stackContainer");
+        const stepTitle = document.getElementById("step-title");
+        const stepDesc = document.getElementById("step-desc");
+        const stepNumber = document.getElementById("step-number");
+        const prevBtn = document.getElementById("prevStep");
+        const nextBtn = document.getElementById("nextStep");
+
+        let currentStep = 0;
+
+        function renderStack() {
+            stackContainer.innerHTML = '';
+
+            steps.forEach((step, index) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'stack-layer';
+                wrapper.style.top = `${index * 40}px`;
+                wrapper.style.zIndex = `${100 - index}`;
+
+                if (index === currentStep) {
+                    wrapper.classList.add('active');
+                }
+
+                const svg = `
+          <svg viewBox="0 0 260 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.95">
+              <path d="M260 43.2L130 86.3L0 43.2L130 0L260 43.2Z" fill="#F1F1F1"></path>
+              <path d="M0 43.2002V55.0002L130 98.1002V86.3002L0 43.2002Z" fill="#E6E6E9"></path>
+              <path d="M260 43.2002V55.0002L130 98.1002V86.3002L260 43.2002Z" fill="#D1D1DA"></path>
+            </g>
+          </svg>
+        `;
+                wrapper.innerHTML = svg;
+
+                const label = document.createElement('div');
+                const isOdd = (index + 1) % 2 !== 0;
+
+                label.className = isOdd ? 'stack-label-left' : 'stack-label-right';
+                label.innerText = `${String(index + 1).padStart(2, '0')}. ${step.title}`;
+
+                if (index === currentStep) {
+                    label.classList.add('active');
+                }
+
+                label.addEventListener('mouseenter', () => {
+                    currentStep = index;
+                    updateContent();
+                });
+
+                wrapper.appendChild(label);
+                stackContainer.appendChild(wrapper);
+            });
+        }
+
+        function updateContent() {
+            stepTitle.textContent = steps[currentStep].title;
+            stepDesc.textContent = steps[currentStep].desc;
+            stepNumber.textContent = String(currentStep + 1).padStart(2, '0') + '.';
+            renderStack();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentStep = (currentStep - 1 + steps.length) % steps.length;
+            updateContent();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentStep = (currentStep + 1) % steps.length;
+            updateContent();
+        });
+
+        // Initial render
+        updateContent();
+    </script>

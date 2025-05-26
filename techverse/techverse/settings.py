@@ -50,7 +50,7 @@ LOCAL_APPS = [
 ]
 
 THIRDPARTY_APPS = [
-    
+    'django_summernote',
 ]
 
 INSTALLED_APPS = THIRDPARTY_APPS + DJANGO_APPS + LOCAL_APPS

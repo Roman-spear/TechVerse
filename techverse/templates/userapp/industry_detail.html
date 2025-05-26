@@ -7,7 +7,7 @@
         <div class="header-section">
             <div class="header-content">
                 <h1>{{industry_data.name}}</h1>
-                <p>{{industry_data.description}}</p>
+                <p>{{industry_data.description|safe}}</p>
             </div>
         </div>
      </div>
@@ -18,7 +18,7 @@
     <div class="container py-5 d-flex flex-column align-items-center ">
         <h2 class="fw-normal display-6 w-75 text-center mb-3">{{industry_data.title}}
         </h2> 
-        <p class="fs-5" style="font-weight: 100;">{{industry_data.title_description}}</p>
+        <p class="fs-5" style="font-weight: 100;">{{industry_data.title_description|safe}}</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
     <!-- Section 2 Industry we Serve -->
