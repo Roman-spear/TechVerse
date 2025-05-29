@@ -23,6 +23,7 @@ class CareerEnquiry(BaseModel):
     position = models.CharField(max_length=255,null=True,blank=True)
     resume = models.FileField(upload_to='careerenquiry_cv',null=True,blank=True)
     message = SummernoteTextField(null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self):
         return f"{self.first_name or 'Unknown'} - {self.position or 'Unknown'}"

@@ -58,6 +58,9 @@ class IndustryDetail(BaseModel):
     description = SummernoteTextField(null=True,blank=True) 
     image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
     header_image = models.FileField(upload_to='industrytitle_image',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
+    header_alt = models.CharField(max_length=255,null=True,blank=True)
+    
     
     def __str__(self):
         return f"{self.industry_category.name} - {self.name}"
@@ -92,6 +95,7 @@ class Blog(BaseModel):
     description = SummernoteTextField(null=True,blank=True)
     date = models.DateTimeField(null=True,blank=True)
     author = models.CharField(max_length=255,null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return self.title
@@ -114,6 +118,8 @@ class AIDetail(BaseModel):
     about_description = SummernoteTextField()
     about_image = models.FileField(upload_to='ai_aboutimage',null=True,blank=True)
     benefit_description = SummernoteTextField()
+    header_alt = models.CharField(max_length=255,null=True,blank=True)
+    about_alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return self.header_name
@@ -127,6 +133,7 @@ class AIDetail(BaseModel):
 class AIImages(BaseModel):
     ai_category = models.ForeignKey(AICategory,on_delete=models.CASCADE,related_name='aiimages_category')
     image = models.FileField(upload_to='ai_images',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return self.ai_category.name
@@ -144,6 +151,7 @@ class AIBenefit(BaseModel):
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField()
     image = models.FileField(upload_to='aibenefit_image',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return f"{self.ai_category.name} - {self.name}"
@@ -156,6 +164,7 @@ class ServiceDetail(BaseModel):
     title = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
     header_image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return self.header_name
@@ -165,6 +174,7 @@ class ServiceOption(BaseModel):
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
     image = models.FileField(upload_to='serviceoption_image',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 
         return f"{self.service_detail.header_name} - {self.name}"
