@@ -14,7 +14,7 @@ class UserIndexView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["service_category"] = models.ServiceCategory.objects.all()
+        context["service_category"] = models.ServiceCategory.objects.all()[:5]
         context["ai_category"] = models.AICategory.objects.all()
         context["industry_category"] = models.IndustryCategory.objects.all()
         return context
