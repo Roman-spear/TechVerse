@@ -25,103 +25,21 @@
     <div class="container py-5">
         <h1 class="fw-bold mb-5 text-blue text-center">Technology Solutions for Every Industry</h1>
         <div class="row">
+            {% for ab in industry_category %}
+            <style>
+                .service-card-{{forloop.counter}} {
+                    background: url({% if ab.image %} {{ab.image.url}} {% endif %});
+                }
+            </style>
             <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
+                <div class="service-card service-card-{{forloop.couter}}" style="height: 300px;">
                     <div class="service-card-info w-75">
-                        <h1>Education</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
+                        <h1>{{ab.name}}</h1>
+                        <a href="{% url 'userapp:industry_detail' ab.id %}" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Healthcare</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Fintech</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Real Estate</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Retail</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Travel & Hospitality</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Logistics</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Food & Restaurant</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Gaming</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Entertainment</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>On-Demand</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card" style="height: 300px;">
-                    <div class="service-card-info w-75">
-                        <h1>Sports</h1>
-                        <a href="" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            
+            {% endfor %}
         </div>
     
     </div>
@@ -160,8 +78,6 @@
         <div class="container">
             <h2 class="fw-bold mb-3">Our Working Process</h2>
             <p class="mb-5">We follow clear steps to build the right industry solution.</p>
-
-
             <div class="timeline py-5">
 
                 <div class="process-box top-step">

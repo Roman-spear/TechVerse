@@ -26,8 +26,18 @@ class UserAboutusView(TemplateView):
 class UserServicesView(TemplateView):
     template_name = "userapp/services.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["services"] = models.ServiceCategory.objects.all()
+        return context
+
 class UserIndustriesView(TemplateView):
     template_name = "userapp/industries.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["industry_category"] = models.IndustryCategory.objects.all()
+        return context
     
 class UserIndustryDetailView(DetailView):
     model = models.IndustryCategory
@@ -50,6 +60,11 @@ class UserPortfolioView(TemplateView):
 class UserAIView(TemplateView):
     template_name = "userapp/ai.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["ai_category"] = models.AICategory.objects.all()
+        return context
+    
 class UserAIDetailView(DetailView):
     model = models.AICategory
     template_name = "userapp/ai_detail.html"

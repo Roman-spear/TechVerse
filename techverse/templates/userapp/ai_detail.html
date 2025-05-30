@@ -328,8 +328,8 @@
             {% for ab in ai_benefit %}
             {
                 quote:
-                    "{{ab.description|safe}}",
-                name: "{{ab.name}}",
+                    "{{ab.description|escapejs }}",
+                name: "{{ab.name|escapejs}}",
                 src:
                     "{% if ab.image %}{{ab.image.url}}{% else %}{% static 'userapp/images/blog2.jpg' %} {% endif %}"
             },
@@ -407,10 +407,7 @@
 
             nameElement.textContent = AIfeatures[activeIndex].name;
             designationElement.textContent = AIfeatures[activeIndex].designation;
-            quoteElement.innerHTML = AIfeatures[activeIndex].quote
-                .split(" ")
-                .map((word) => `<span class="word">${word}</span>`)
-                .join(" ");
+            quoteElement.innerHTML = AIfeatures[activeIndex].quote;
 
             animateWords();
         }
@@ -463,7 +460,7 @@
     <script>
         const steps = [
             {% for ab in ai_process %}
-            { title: "{{ab.name}}", desc: "{{ab.description|safe}}" },
+            { title: "{{ab.name|escapejs}}", desc: "{{ab.description|escapejs}}" },
             {% endfor %}
             
         ];

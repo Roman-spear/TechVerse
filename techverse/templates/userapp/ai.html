@@ -122,53 +122,22 @@
               <div class="center-ai">
                 <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" />
               </div>
-              <div class="circle-item item-1">AI for Fintech</div>
-              <div class="circle-item item-2">AI for Healthcare</div>
-              <div class="circle-item item-3">AI for Media & Entertainment</div>
-              <div class="circle-item item-4">AI for Retail & e-Commerce</div>
-              <div class="circle-item item-5">AI for Education</div>
-              <div class="circle-item item-6">AI for Marketing</div>
+              {% for ab in ai_category %}
+              <div class="circle-item item-{{forloop.counter}}">{{ab.name}}</div>
+              {% endfor %}
             </div>
           </div>
           <!-- Right Description Boxes -->
           <div class="col-md-6 bg-primary1 text-white p-0">
             <div class="row h-100 g-0">
+              {% for ab in ai_category %}
               <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Fintech</h4>
-                  <p class="mb-0">AI tools for fraud detection, automation, and smarter financial services.</p>
-                </div>
+                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color: whitesmoke;"><div>
+                  <h4 class="fw-bold">{{ab.name}}</h4>
+                  <p class="mb-0">{{ab.description|safe}}</p>
+                </div></a>
               </div>
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Healthcare</h4>
-                  <p class="mb-0">AI diagnoses, plans treatment, monitors patients, reduces staff workload.</p>
-                </div>
-              </div>
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Media & Entertainment</h4>
-                  <p class="mb-0">AI personalizes content, tracks preferences, boosts platform engagement.</p>
-                </div>
-              </div>
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Retail & e-Commerce</h4>
-                  <p class="mb-0">AI suggests products, manages inventory, adjusts pricing, boosts sales.</p>
-                </div>
-              </div>
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Education</h4>
-                  <p class="mb-0">AI supports learning, automates grading, personalizes lessons, improves outcomes.</p>
-                </div>
-              </div>
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <div>
-                  <h4 class="fw-bold">AI for Logistics</h4>
-                  <p class="mb-0">AI optimizes routes, tracks shipments, predicts delays, increases efficiency.</p>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
           <!-- </div> -->
@@ -233,7 +202,7 @@
                     Let’s Turn Your AI Ideas Into Real Solutions For Business Success
                 </h1>
                 <div class="mt-4 mt-md-0">
-                    <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+                    <a href="{% url 'userapp:contact' %}" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
                 </div>
             </div>
         </div>

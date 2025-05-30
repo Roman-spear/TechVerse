@@ -1,6 +1,7 @@
 {% extends 'userapp/master.html' %}
 {% load static %} 
 {% block content %}
+{% load custom_filters %}
 
   <!-- Section 1 Hero Section Start -->
   <img src="{% static 'userapp/images/herobg.png' %}" alt="" class="herobg img-fluid">
@@ -268,52 +269,17 @@
 
   <h1 class="fw-bold mb-3 text-blue text-center">Industries We Serve</h1>
   <div class="container-fluid bg-primary1 text-center">
-
       <div class="row">
         <div class="col-md-4 p-3  d-flex align-items-center">
           <div class="row">
-            {% for ab in industry_category %}
+            {% for ab in industry_category|split_half:"first" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
                 <i class="{{ab.icon}}"></i>
-                <p class="industry-title">Education</p>
+                <p class="industry-title">{{ab.name}}</p>
               </div>
             </div>
             {% endfor %}
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-heartbeat"></i>
-                <p class="industry-title">Healthcare</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-university"></i>
-                <p class="industry-title">Fintech</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-plane-departure"></i>
-                <p class="industry-title">Travel & Hospitality</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-store-alt"></i>
-                <p class="industry-title">Retail & E-commerce</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-truck"></i>
-                <p class="industry-title">Logistics & Supply Chain</p>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-md-4  d-flex align-items-center" >
@@ -321,47 +287,14 @@
         </div>
         <div class="col-md-4 p-3 d-flex align-items-center">
           <div class="row">
+            {% for ab in industry_category|split_half:"second" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
-                <i class="fas fa-graduation-cap"></i>
-                <p class="industry-title">Education</p>
+                <i class="{{ab.icon}}"></i>
+                <p class="industry-title">{{ab.name}}</p>
               </div>
             </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-heartbeat"></i>
-                <p class="industry-title">Healthcare</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-university"></i>
-                <p class="industry-title">Fintech</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-plane-departure"></i>
-                <p class="industry-title">Travel & Hospitality</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-store-alt"></i>
-                <p class="industry-title">Retail & E-commerce</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
-              <div class="industry-box">
-                <i class="fas fa-truck"></i>
-                <p class="industry-title">Logistics & Supply Chain</p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -729,7 +662,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-control" placeholder="">
+                <input type="email" name="email" class="form-control" placeholder="" required>
               </div>
             </div>
             

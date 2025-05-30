@@ -13,6 +13,7 @@ class User(AbstractUser):
 class ServiceCategory(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
     description = SummernoteTextField(null=True,blank=True)
+    image = models.ImageField(upload_to='service_category_image',null=True,blank=True)
 
     def __str__(self):
         return self.name 
@@ -42,6 +43,7 @@ class IndustryCategory(BaseModel):
     description = SummernoteTextField(null=True,blank=True)
     title = models.CharField(max_length=255,null=True,blank=True)
     title_description = SummernoteTextField(null=True,blank=True)
+    image = models.FileField(upload_to='industry_category_image',null=True,blank=True)
     
     def __str__(self):
         return self.name
