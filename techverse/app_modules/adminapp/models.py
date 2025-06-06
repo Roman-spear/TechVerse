@@ -13,7 +13,7 @@ class User(AbstractUser):
 class ServiceCategory(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
     description = SummernoteTextField(null=True,blank=True)
-    image = models.ImageField(upload_to='service_category_image',null=True,blank=True)
+    image = models.FileField(upload_to='service_category_image',null=True,blank=True)
 
     def __str__(self):
         return self.name 
@@ -153,6 +153,16 @@ class AIBenefit(BaseModel):
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField()
     image = models.FileField(upload_to='aibenefit_image',null=True,blank=True)
+    alt = models.CharField(max_length=255,null=True,blank=True)
+    
+    def __str__(self): 
+        return f"{self.ai_category.name} - {self.name}"
+    
+class AIServices(BaseModel):
+    ai_category = models.ForeignKey(AICategory,on_delete=models.CASCADE,related_name='aiservice_category')
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = SummernoteTextField()
+    image = models.FileField(upload_to='aiservice_image',null=True,blank=True)
     alt = models.CharField(max_length=255,null=True,blank=True)
     
     def __str__(self): 

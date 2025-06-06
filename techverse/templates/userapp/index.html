@@ -55,7 +55,7 @@
     <div class="row align-items-center mb-4">
       <!-- Left Image -->
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="{% static 'userapp/images/Techverse.svg' %}" alt="Woman with laptop" class="img-fluid rounded">
+        <img src="{% static 'userapp/images/tv.svg' %}" alt="Woman with laptop" class="img-fluid rounded">
       </div>
 
       <!-- Right Stats -->
@@ -117,22 +117,48 @@
       <!-- Left Tab Menu -->
       <div class="col-md-5 mb-4 mb-md-0">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-          {% for ab in service_category %}
-          <button class="my-1 w-100 p-3 rounded nav-link {% if forloop.first %} active {% endif %}" data-bs-toggle="pill" data-bs-target="#service{{forloop.counter}}">{{forloop.counter}} {{ab.name}}</button>
-          {% endfor %}
+          <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1. Mobile App Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service2">2. Website Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service3">3. Software Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service4">4. AI/ML Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service5">5. Digital Marketing</button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service6">6 Full Stack Development</button>
         </div>
       </div>
 
       <!-- Right Content -->
       <div class="col-md-7">
         <div class="tab-content">
-          {% for ab in service_category %}
-          <div class="tab-pane fade {% if forloop.first %} show active {% endif %} text-center" id="service{{forloop.counter}}">
-            <img src="{% static 'userapp/images/aboutimg.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
-            <h4 class="fw-semibold text-blue">{{ab.name}}</h4>
-            <p>{{ab.description|safe}}</p>
+          <div class="tab-pane fade show active text-center" id="service1">
+            <img src="{% static 'userapp/images/mobile.svg' %}" alt="Mobile App" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Mobile App Development</h4>
+            <p>We build custom mobile apps for Android and iOS that provide easy and seamless user experiences. Our apps help businesses engage with customers, increase reach, and improve accessibility, driving growth while meeting specific business needs and ensuring a great user experience.</p>
           </div>
-          {% endfor %}
+          <div class="tab-pane fade text-center" id="service2">
+            <img src="{% static 'userapp/images/website.svg' %}" alt="Website Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Website Development</h4>
+            <p>We create websites that are responsive, secure, and easy to use, working smoothly on all devices. Our websites are designed to attract customers, enhance online presence, and boost conversions, offering modern designs, fast loading speeds, and strong functionality tailored to your business goals.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service3">
+            <img src="{% static 'userapp/images/software.svg' %}" alt="Software Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Software Development</h4>
+            <p>We make custom software to make business work easier, improve efficiency, and help it grow. Our team focuses on building reliable, scalable applications that are tailored to your needs, helping streamline operations and solve challenges while enhancing overall performance.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service4">
+            <img src="{% static 'userapp/images/aiml.svg' %}" alt="AI/ML Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">AI/ML Development</h4>
+            <p>We make custom software to make business work easier, improve efficiency, and help it grow. Our team focuses on building reliable, scalable applications that are tailored to your needs, helping streamline operations and solve challenges while enhancing overall performance.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service5">
+            <img src="{% static 'userapp/images/marketing.svg' %}" alt="Digital Marketing" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Digital Marketing</h4>
+            <p>We offer digital marketing services, including SEO, social media, and content marketing, to help businesses reach the right audience and grow their online presence. Our strategies increase brand visibility, engage customers, and drive traffic, ultimately converting leads into long-term sales and success.</p>
+          </div>
+          <div class="tab-pane fade text-center" id="service6">
+            <img src="{% static 'userapp/images/full-stack.svg' %}" alt="Full Stack Development" class="img-fluid service-image mb-3">
+            <h4 class="fw-semibold text-blue">Full Stack Development</h4>
+            <p>We do full-stack development, building the front and back parts of websites and apps. Our team creates scalable, secure, and intuitive solutions that ensure seamless user experiences, offering end-to-end services to help your business grow and succeed in the digital world.</p>
+          </div>
         </div>
       </div>
     </div>

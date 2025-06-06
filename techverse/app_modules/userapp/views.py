@@ -79,6 +79,7 @@ class UserAIDetailView(DetailView):
             context["ai_detail"] = None
         context["ai_process"] = models.AIProcess.objects.filter(ai_category=self.get_object()) 
         context["ai_benefit"] = models.AIBenefit.objects.filter(ai_category=self.get_object()) 
+        context["ai_service"] = models.AIServices.objects.filter(ai_category=self.get_object()) 
         print("context",context)
         return context
     

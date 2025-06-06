@@ -21,5 +21,6 @@ admin.site.register(models.AIDetail)
 admin.site.register(models.AIImages)
 admin.site.register(models.AIBenefit)
 admin.site.register(models.AIProcess)
+admin.site.register(models.AIServices)
 
 admin.site.register(models.Blog)
