@@ -281,7 +281,7 @@
     <!-- Section 2 End -->
 
     <!-- Section 3 start  -->
-    <div class="container position-relative">
+    <!-- <div class="container position-relative">
         <h1 class="fw-bold mb-3 text-blue text-center">Key Benefits</h1>
         <p class="text-center mb-5">{{ai_detail.benefit_description|safe}}</p>
         <div class="AIfeature-container">
@@ -302,7 +302,22 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <!-- Section 3 Start -->
+<div class="container-fluid py-5 text-center">
+    <h1 class="fw-bold mb-3 text-center text-blue">Key Benefits</h1>
+        <ul class="process">
+            {% for ab in ai_benefit %}
+            <li class="process__item text-center text-lg-start">
+                <span class="process__number">{{forloop.counter}}</span>
+                <span class="process__title">{{ab.name}}</span>
+                <span class="process__subtitle">{{ab.description|safe}}</span>
+            </li>
+            {% endfor %}
+        </ul>
+     </div>
+    <!-- Section 3 End -->
     <!-- Section 3 end -->
 
 
