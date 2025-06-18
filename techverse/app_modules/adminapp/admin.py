@@ -24,3 +24,4 @@ admin.site.register(models.AIProcess)
 admin.site.register(models.AIServices)
 
 admin.site.register(models.Blog)
+admin.site.register(models.BlogCategory)
