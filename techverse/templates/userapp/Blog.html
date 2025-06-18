@@ -14,7 +14,7 @@
   <!-- Section 1 Hero Section End -->
 
  <section class="container py-5">
-    <h2 class="fw-bold text-blue text-center">Find Articles and Blogs About Technology</h2>
+    <h1 class="fw-bold mb-3 text-blue text-center mx-5">Find Articles and Blogs About Technology</h1>
     <p class="text-center">A clear spot for you to explore tech ideas on special subjects.</p>
     <!-- Filter -->
     <div class="filter py-4">
@@ -53,7 +53,7 @@
     <div class="row g-4">
       <!-- Blog Card 1 -->
       <div class="col-md-6 col-lg-4">
-        <a href="Blog_Detail.html">
+        <a href="{% url 'userapp:blog_detail' %}">
           <div class="card shadow-sm h-100 rounded-0">
             <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
             <div class="card-body">

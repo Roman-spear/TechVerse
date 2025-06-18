@@ -17,9 +17,9 @@
     <!-- Section 2 Start -->
     <!-- Section 1 Industry We Serve Title -->
     <div class="container py-5">
-        <h2 class="fw-normal display-6">At TechVerse, We Build Websites, Apps, And Software That Boost Your Business
-        </h2>
-        <p class="fs-5" style="font-weight: 100;">At TechVerse, we build innovative digital solutions that help businesses grow. Our expert team specializes in Mobile App Development, Website Development, Software Development, Digital Marketing, AI/ML Development, and Full Stack Development. We combine creativity, technology, and strategy to deliver high-quality products that meet real business needs. Whether you're a startup or an established brand, TechVerse is your trusted partner for building smart, scalable, and user-friendly digital experiences. We focus on results, innovation, and long-term value. Let’s turn your ideas into impactful digital solutions and drive your success forward — with TechVerse by your side.</p>
+        <h1 class="fw-bold mb-3 text-blue text-center mx-5">At TechVerse, We Build Websites, Apps, And Software That Boost Your Business
+        </h1>
+        <p class="mb-4 text-center" style="line-height: 30px;">At TechVerse, we build innovative digital solutions that help businesses grow. Our expert team specializes in Mobile App Development, Website Development, Software Development, Digital Marketing, AI/ML Development, and Full Stack Development. We combine creativity, technology, and strategy to deliver high-quality products that meet real business needs. Whether you're a startup or an established brand, TechVerse is your trusted partner for building smart, scalable, and user-friendly digital experiences. We focus on results, innovation, and long-term value. Let’s turn your ideas into impactful digital solutions and drive your success forward — with TechVerse by your side.</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
     <!-- Section 2 Start -->
@@ -30,6 +30,7 @@
             <style>
                 .service-card-{{forloop.counter}} {
                     background: url({% if ab.image %}{{ab.image.url}}{% endif %});
+                    background-size: cover;
                 }
             </style>
             <div class="col-md-4 col-sm-6 p-0">
@@ -42,7 +43,6 @@
             </div>
             {% endfor %}
         </div>
-    
     </div>
 
     <!-- Section 2 End -->
@@ -158,7 +158,7 @@
     <!-- process start  -->
     <section class="process-section text-center">
         <div class="container">
-            <h2 class="fw-bold mb-3">Our Working Process</h2>
+           <h2 class="fw-bold mb-3 text-blue text-center mx-5">Our Working Process</h2>
             <p class="mb-5">We Build Success Step by Step With Clear, Simple Workflows</p>
 
 
@@ -207,7 +207,7 @@
     <!-- process end -->
 
     <!-- Section 7 Start -->
-    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 mt-5">
+    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 my-5">
         <div class="container">
             <div class="newsletter-content text-center py-5 px-4">
                 <h1 class="newsletter-title text-white fw-bold">

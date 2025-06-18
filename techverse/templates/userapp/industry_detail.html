@@ -16,9 +16,9 @@
     <!-- Section 2 Start -->
      <!-- Section 1 Industry We Serve Title -->
     <div class="container py-5 d-flex flex-column align-items-center ">
-        <h2 class="fw-normal display-6 w-75 text-center mb-3">{{industry_data.title}}
-        </h2> 
-        <p class="fs-5" style="font-weight: 100;">{{industry_data.title_description|safe}}</p>
+        <h1 class="fw-bold mb-3 text-blue text-center mx-5">{{industry_data.title}}
+        </h1> 
+        <p class="mb-3 text-center" style="line-height: 30px;">{{industry_data.title_description|safe}}</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
     <!-- Section 2 Industry we Serve -->
@@ -28,7 +28,7 @@
           {% if forloop.counter|divisibleby:"2" %}
           <div class="row bg-secondary-subtle py-5 px-4 mb-3 mb-md-5">
               <div class="col-lg-6 col-sm-12">
-                  <h2 class="fw-bold display-6">{{ab.name}}</h2>
+                  <h2 class="fw-bold display-6 text-blue">{{ab.name}}</h2>
                   <p class="mb-4" style="line-height: 30px;">{{ab.description|safe}}</p>
               </div>
               <div class="col-lg-6 col-sm-12">
@@ -50,7 +50,7 @@
                 {% endif %}
               </div>
               <div class="col-lg-6 col-sm-12">
-                  <h2 class="fw-bold display-6">{{ab.name}}</h2>
+                  <h2 class="fw-bold display-6 text-blue">{{ab.name}}</h2>
                   <p class="mb-4" style="line-height: 30px;">{{ab.description|safe}}</p>
               </div>
           </div>
@@ -62,7 +62,7 @@
     <!-- process start  -->
     <section class="process-section text-center">
       <div class="container">
-        <h2 class="fw-bold mb-3">Process of Build App</h2>
+        <h2 class="fw-bold mb-3 text-blue text-center mx-5">Process of Build App</h2>
         <p class="mb-5">Delivering work within time and budget which meets client's requirements is our moto.</p>
 
         <div class="timeline py-5">
@@ -87,7 +87,7 @@
     <!-- process end -->
 
     <!-- Section 7 Start -->
-    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 mt-5">
+    <section class="container newsletter-section position-relative overflow-hidden py-5 rounded-4 my-5">
       <div class="container">
         <div class="newsletter-content text-center py-5 px-4">
           <h1 class="newsletter-title text-white fw-bold">

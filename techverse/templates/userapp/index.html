@@ -35,11 +35,11 @@
       <div class="col-md-6 order-0 order-md-1">
         <div class="h-100 d-flex flex-column justify-content-center text-blue">
           <h1 class="fw-bold mb-3">We Help Businesses Reach Goals with Support</h1>
-          <p class="mb-3 fw-semibold">At TechVerse, we help businesses grow with smart and simple digital solutions. Our
+          <p class="mb-3">At TechVerse, we help businesses grow with smart and simple digital solutions. Our
             services include mobile app development, web development, website design, software development, digital
             marketing, AI/ML, and full-stack development. Whether you’re starting fresh or improving an existing system,
             we use the right tools to fit your needs.</p>
-          <p class="mb-3 fw-semibold">We work with all types of clients—startups, small businesses, large companies, and
+          <p class="mb-3">We work with all types of clients—startups, small businesses, large companies, and
             digital agencies. We listen to your goals, create a clear plan, and deliver quality results. Every project
             is focused on your success and business growth.</p>
           <div><a href="{% url 'userapp:useraboutus' %}" class="btn neon-button text-white px-3 py-2">About Us</a></div>
@@ -50,63 +50,36 @@
 
   <!-- Section 2 About Section End -->
 
-  <!-- Section 3 Start -->
+
+  <!-- Section 3 About Section Start -->
+   <!-- Section 3 Start -->
   <div class="container py-5">
     <div class="row align-items-center mb-4">
-      <!-- Left Image -->
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="{% static 'userapp/images/tv.svg' %}" alt="Woman with laptop" class="img-fluid rounded">
-      </div>
-
-      <!-- Right Stats -->
-      <div class="col-lg-6">
-        <div class="row text-center gy-4">
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">👩‍💼</div>
-            <h5 class="mb-1">12+</h5>
-            <p class="mb-0 small">Years of Experience</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">📱</div>
-            <h5 class="mb-1">4500+</h5>
-            <p class="mb-0 small">Mobile Apps Developed</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">🌐</div>
-            <h5 class="mb-1">2200+</h5>
-            <p class="mb-0 small">Websites Developed</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">⭐</div>
-            <h5 class="mb-1">4.9</h5>
-            <p class="mb-0 small">Ratings on Clutch.co</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">📥</div>
-            <h5 class="mb-1">110M</h5>
-            <p class="mb-0 small">App Downloads</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="stats-icon">👨‍💻</div>
-            <h5 class="mb-1">1200+</h5>
-            <p class="mb-0 small">Dedicated Developers</p>
-          </div>
-        </div>
+      
+      <!-- Left Stats -->
+      <div class="col-lg-6 mh-100">
+        
         <!-- CTA Section -->
-        <div class="cta-box mt-4 text-center text-lg-start">
-          <h5 class="fw-bold">Who We Are?</h5>
-          <p class="mb-2">TechVerse is an ISO-certified software development company offering a variety of IT solutions
-            to clients worldwide. We specialize in web development, mobile apps, AI/ML, and software services. Our
-            skilled team is focused on meeting customer needs and solving problems efficiently.<br><br>
-            At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.
-          </p>
+        <div class="cta-box mt-4 text-center text-lg-start mh-100">
+          <h4 class="fw-bold">Who We Are?</h4>
+          <p class="mb-2">TechVerse is an ISO-certified software development company delivering top-notch IT solutions to clients around the globe. From web and mobile app development to AI/ML and full-scale software services — we do it all.</p>
+          <p class="mb-2">Our team is a tight-knit group of problem-solvers, dedicated to building smart, scalable, and efficient solutions that actually move the needle. Quality isn’t just a checkbox for us — it’s at the core of everything we deliver.</p>
+          <p class="mb-2">We proudly serve industries like business, finance, healthcare, hospitality, education, travel, and automotive — helping brands grow, adapt, and lead in the digital age. </p>
           <!-- <p class="mb-2">At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.</p> -->
           <a href="#">➜ Hire Developers</a>
         </div>
       </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="{% static 'userapp/images/tv.svg' %}" alt="Woman with laptop" class="img-fluid rounded">
+      </div>
     </div>
   </div>
   <!-- Section 3 End -->
+  <!-- Section 3 About Section End -->
+
+
 
   <!-- Section 4 Start -->
   <div class="container my-5 text-center">
@@ -114,17 +87,7 @@
     <h6 class="text-muted mb-4">We help our partners drive fast change and growth.</h6>
 
     <div class="row">
-      <!-- Left Tab Menu -->
-      <div class="col-md-5 mb-4 mb-md-0">
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-          <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1. Mobile App Development </button>
-          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service2">2. Website Development </button>
-          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service3">3. Software Development </button>
-          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service4">4. AI/ML Development</button>
-          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service5">5. Digital Marketing</button>
-          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service6">6 Full Stack Development</button>
-        </div>
-      </div>
+      
 
       <!-- Right Content -->
       <div class="col-md-7">
@@ -161,6 +124,18 @@
           </div>
         </div>
       </div>
+
+      <!-- Left Tab Menu -->
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+          <button class="my-1 w-100 p-3 rounded nav-link active" data-bs-toggle="pill" data-bs-target="#service1">1. Mobile App Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service2">2. Website Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service3">3. Software Development </button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service4">4. AI/ML Development</button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service5">5. Digital Marketing</button>
+          <button class="my-1 w-100 p-3 rounded nav-link " data-bs-toggle="pill" data-bs-target="#service6">6 Full Stack Development</button>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Section 4 End -->
@@ -171,16 +146,7 @@
       <h1 class="fw-bold mb-3 text-blue">AI Use Cases</h1>
       <p>Our AI and ML Development Services</p>
       <div class="row">
-        <div class="col-md-6">
-          <div class="circle-container">
-            <div class="center-ai">
-              <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" class="img-fluid" />
-            </div>
-            {% for ab in ai_category %}
-            <div class="circle-item item-{{forloop.counter}}">{{ab.name}}</div>
-            {% endfor %}
-          </div>
-        </div>
+        
         <!-- Right Description Boxes -->
         <div class="col-md-6 bg-primary1 text-white p-0">
           <div class="row h-100 g-0">
@@ -191,6 +157,18 @@
                 <p class="mb-0">{{ab.description|safe}}</p>
               </div>
             </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="circle-container">
+            <div class="center-ai">
+              <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" class="img-fluid" />
+            </div>
+            {% for ab in ai_category %}
+            <div class="circle-item item-{{forloop.counter}}">{{ab.name}}</div>
             {% endfor %}
           </div>
         </div>
@@ -294,8 +272,8 @@
   <h1 class="fw-bold mb-3 text-blue text-center">Industries We Serve</h1>
   <div class="container-fluid bg-primary1 text-center">
       <div class="row">
-        <div class="col-md-4 p-3  d-flex align-items-center">
-          <div class="row">
+        <div class="col-md-4 p-3  d-flex align-items-center justify-content-center">
+          <div class="row h-100 w-100">
             {% for ab in industry_category|split_half:"first" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
@@ -306,11 +284,11 @@
             {% endfor %}
           </div>
         </div>
-        <div class="col-md-4  d-flex align-items-center" >
+        <div class="col-md-4  d-flex align-items-center justify-content-center" >
           <img src="{% static 'userapp/images/industries-we-serve.svg' %}" alt="" class="img-fluid">
         </div>
-        <div class="col-md-4 p-3 d-flex align-items-center">
-          <div class="row">
+        <div class="col-md-4 p-3 d-flex align-items-center justify-content-center">
+          <div class="row h-100 w-100">
             {% for ab in industry_category|split_half:"second" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
@@ -509,11 +487,8 @@
         <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
-          <h4>"The best Webflow Templates"</h4>
-          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
-            and delivered
-            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
-            implemented. We're already planning our next project together!.</p>
+          
+          <p class="mt-5">Working with their AI and ML team transformed our business. Their solutions are smart, scalable, and incredibly effective. We saw real results faster than expected. Highly recommended!</p>
           <div class="star-rating">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -524,8 +499,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sophia Moore</span>
-              <span style="font-size: 12px;">CEO at K Group</span>
+              <span class="mb-0 fw-bold">Emily Carter</span>
+              <span style="font-size: 12px;">CEO</span>
             </div>
           </div>
         </div>
@@ -535,11 +510,7 @@
         <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
-          <h4>"The best Webflow Templates"</h4>
-          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
-            and delivered
-            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
-            implemented. We're already planning our next project together!.</p>
+          <p class="mt-5">Working with this team was a game-changer for our business. Their full stack development expertise delivered beyond expectations. Highly recommend!</p>
           <div class="star-rating">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -550,8 +521,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sophia Moore</span>
-              <span style="font-size: 12px;">CEO at K Group</span>
+              <span class="mb-0 fw-bold">Lucas M.</span>
+              <span style="font-size: 12px;">Co-Founder</span>
             </div>
           </div>
         </div>
@@ -561,11 +532,8 @@
         <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
-          <h4>"The best Webflow Templates"</h4>
-          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
-            and delivered
-            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
-            implemented. We're already planning our next project together!.</p>
+          <p class="mt-5">Our iOS app turned out better than we imagined. The team was responsive, skilled, and professional throughout the project. Delivered on time and exceeded expectations.
+</p>
           <div class="star-rating">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -576,8 +544,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sophia Moore</span>
-              <span style="font-size: 12px;">CEO at K Group</span>
+              <span class="mb-0 fw-bold">James T.</span>
+              <span style="font-size: 12px;">CEO</span>
             </div>
           </div>
         </div>
@@ -587,11 +555,7 @@
         <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
-          <h4>"The best Webflow Templates"</h4>
-          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
-            and delivered
-            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
-            implemented. We're already planning our next project together!.</p>
+          <p class="mt-5">TechVerse delivered exactly what we needed. From concept to launch, everything was seamless. Their team understood healthcare requirements perfectly.</p>
           <div class="star-rating">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -602,19 +566,18 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sophia Moore</span>
-              <span style="font-size: 12px;">CEO at K Group</span>
+              <span class="mb-0 fw-bold">Sarah M.</span>
+              <span style="font-size: 12px;">IT Director</span>
             </div>
           </div>
         </div>
       </div>
       <!-- Testimonial 5 -->
-      <div class="card shadow-sm rounded-0 testimonial-card position-relative">
+      {% comment %} <div class="card shadow-sm rounded-0 testimonial-card position-relative">
         <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
-          <h4>"The best Webflow Templates"</h4>
-          <p class="mb-0">Working with this team was an absolute pleasure. They understood our requirements from day one
+          <p class="mt-5">Working with this team was an absolute pleasure. They understood our requirements from day one
             and delivered
             a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
             implemented. We're already planning our next project together!.</p>
@@ -633,7 +596,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
   <!-- Section testimonial End -->
