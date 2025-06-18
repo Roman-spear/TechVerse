@@ -168,9 +168,9 @@
                         <!-- Data Engineering -->
                         {% for ab in servicecategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                          <a href="{% url 'userapp:services_detail' ab.id %}" class="nav-link" >
+                          <a href="{% url 'userapp:services_detail' ab.slug %}" class="nav-link" >
                             <h5 class="category-title text-blue fw-bold">
-                            {{ab.name}}
+                            {{ab.header_name}}
                             </h5>
                           </a>
                         </div>
@@ -188,7 +188,7 @@
                         <!-- Data Engineering -->
                         {% for ab in aicategory %}
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                          <a href="{% url 'userapp:ai_detail' ab.id %}" class="nav-link" >
+                          <a href="{% url 'userapp:ai_detail' ab.slug %}" class="nav-link" >
                             <h5 class="category-title text-blue fw-bold">
                             {{ab.name}}
                             </h5>
@@ -224,7 +224,7 @@
                             <!-- Each industry card -->
                             {% for ab in industrycategory %}
                             <div class="col-sm-6 col-md-4 industry-card">
-                              <a href="{% url 'userapp:industry_detail' ab.id %}" class="nav-link">
+                              <a href="{% url 'userapp:industry_detail' ab.slug %}" class="nav-link">
                                 <h4>{{ab.name}}</h4>
                                 <p>
                                   {{ab.description|safe}}
@@ -290,92 +290,6 @@
     {% endblock %}
 
     <!-- Footer Start -->
-    {% comment %} <div class="container-fluid bg-primary1 py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-12 mb-3 mb-md-0">
-            <div>
-              <h2 class="text-white">Techverse</h2>
-            </div>
-            <p
-              class="text-white mt-3"
-              style="max-width: 300px; line-height: 30px"
-            >
-              Unlock breakthrough ideas with top-tier remote tech experts. We
-              provide a complete freelance team tailored to your project’s
-              needs.
-            </p>
-
-            <div class="d-flex justify-content-start gap-2 social-icons">
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-facebook-f icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-twitter icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-linkedin-in icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-pinterest icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-instagram icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-              <a href="#" class="text-white"
-                ><i
-                  class="fab fa-youtube icon-bg d-flex justify-content-center align-items-center"
-                ></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <h4 class="text-white">Useful Links</h4>
-            <ul class="list-unstyled mt-4">
-              <li><a href="#" class="text-white">About Us</a></li>
-              <li><a href="#" class="text-white">Contact Us</a></li>
-              <li><a href="#" class="text-white">Career</a></li>
-              <li><a href="#" class="text-white">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <h4 class="text-white">Contact Information</h4>
-            <ul class="list-unstyled mt-4">
-              <li class="mb-2">
-                <a href="#" class="text-white"
-                  ><i class="fa-solid fa-phone-volume me-2 text-white"></i>+91
-                  9081431434</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-white"
-                  ><i class="fa-regular fa-envelope me-2 text-white"></i
-                  >info@spectricssolutions.com</a
-                >
-              </li>
-
-              <li></li>
-              <li class="mb-2">
-                <a href="#" class="text-white"
-                  ><i class="fa-solid fa-location-dot me-2 text-white"></i
-                  >Ahmedabad, Gujarat</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div> {% endcomment %}
     <div class="container-fluid bg-primary1 py-5">
       <div class="container">
         <div class="row">
@@ -405,7 +319,8 @@
               <li><a href="{% url 'userapp:useraboutus' %}" class="text-white">About Us</a></li>
               <li><a href="{% url 'userapp:contact' %}" class="text-white">Contact Us</a></li>
               <li><a href="{% url 'userapp:career' %}" class="text-white">Career</a></li>
-              <li><a href="{% url 'userapp:privacy_policy' %}"" class="text-white">Privacy Policy</a></li>
+              <li><a href="{% url 'userapp:privacy_policy' %}" class="text-white">Privacy Policy</a></li>
+              <li><a href="{% url 'userapp:terms_condition' %}" class="text-white">Terms and Condition</a></li>
             </ul>
           </div>
           <div class="col-md-3 col-12 mb-3 mb-md-0">

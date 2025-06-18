@@ -66,7 +66,7 @@
           <p class="mb-2">Our team is a tight-knit group of problem-solvers, dedicated to building smart, scalable, and efficient solutions that actually move the needle. Quality isn’t just a checkbox for us — it’s at the core of everything we deliver.</p>
           <p class="mb-2">We proudly serve industries like business, finance, healthcare, hospitality, education, travel, and automotive — helping brands grow, adapt, and lead in the digital age. </p>
           <!-- <p class="mb-2">At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.</p> -->
-          <a href="#">➜ Hire Developers</a>
+          <a href="{% url 'userapp:contact' %}">➜ Hire Developers</a>
         </div>
       </div>
 
@@ -153,8 +153,10 @@
             {% for ab in ai_category %}
             <div class="col-6 d-flex align-items-center justify-content-center border p-3">
               <div>
-                <h4 class="fw-bold">{{ab.name}}</h4>
-                <p class="mb-0">{{ab.description|safe}}</p>
+                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color:white;">
+                  <h4 class="fw-bold">{{ab.name}}</h4>
+                  <p class="mb-0">{{ab.description|safe}}</p>
+                </a>
               </div>
             </div>
             {% endfor %}
@@ -277,8 +279,10 @@
             {% for ab in industry_category|split_half:"first" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
-                <i class="{{ab.icon}}"></i>
-                <p class="industry-title">{{ab.name}}</p>
+                <a href="{% url 'userapp:industry_detail' ab.id %}">
+                  <i class="{{ab.icon}}"></i>
+                  <p class="industry-title">{{ab.name}}</p>
+                </a>
               </div>
             </div>
             {% endfor %}
@@ -292,8 +296,10 @@
             {% for ab in industry_category|split_half:"second" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
-                <i class="{{ab.icon}}"></i>
-                <p class="industry-title">{{ab.name}}</p>
+                <a href="{% url 'userapp:industry_detail' ab.id %}">
+                  <i class="{{ab.icon}}"></i>
+                  <p class="industry-title">{{ab.name}}</p>
+                </a>
               </div>
             </div>
             {% endfor %}
@@ -533,7 +539,7 @@
           style="top: 10px; right: 20px;"></i>
         <div class="card-body">
           <p class="mt-5">Our iOS app turned out better than we imagined. The team was responsive, skilled, and professional throughout the project. Delivered on time and exceeded expectations.
-</p>
+          </p>
           <div class="star-rating">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -572,31 +578,6 @@
           </div>
         </div>
       </div>
-      <!-- Testimonial 5 -->
-      {% comment %} <div class="card shadow-sm rounded-0 testimonial-card position-relative">
-        <i class="fa-solid fa-quote-right position-absolute display-5 opacity-25 text-blue"
-          style="top: 10px; right: 20px;"></i>
-        <div class="card-body">
-          <p class="mt-5">Working with this team was an absolute pleasure. They understood our requirements from day one
-            and delivered
-            a high-quality product ahead of schedule. Communication was seamless, and any feedback we gave was quickly
-            implemented. We're already planning our next project together!.</p>
-          <div class="star-rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-          </div>
-          <div class="d-flex align-items-center gap-3">
-            <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
-            <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sophia Moore</span>
-              <span style="font-size: 12px;">CEO at K Group</span>
-            </div>
-          </div>
-        </div>
-      </div> {% endcomment %}
     </div>
   </div>
   <!-- Section testimonial End -->

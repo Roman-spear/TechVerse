@@ -35,7 +35,7 @@
                 <div class="service-card service-card-{{forloop.couter}}" style="height: 300px;">
                     <div class="service-card-info w-75">
                         <h1>{{ab.name}}</h1>
-                        <a href="{% url 'userapp:industry_detail' ab.id %}" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
+                        <a href="{% url 'userapp:industry_detail' ab.slug %}" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                     We Help Businesses Work Better with Easy Technology
                 </h1>
                 <div class="mt-4 mt-md-0">
-                    <a href="#contact" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
+                    <a href="{% url 'userapp:contact' %}" class="btn bg-light px-4 py-2 newslatter-button">Let's Get Started</a>
                 </div>
             </div>
         </div>

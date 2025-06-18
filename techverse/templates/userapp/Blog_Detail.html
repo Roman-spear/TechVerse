@@ -6,8 +6,8 @@
     <div class="container-fluid position-relative p-0">
         <div class="header-section">
             <div class="header-content">
-                <h1>Insights</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, reiciendis!</p>
+                <h1>Insight Detail</h1>
+                <p></p>
             </div>
         </div>
     </div>
@@ -17,109 +17,27 @@
     <div class="container pt-3">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-8">
-                <p class="text-uppercase text-dark mb-0" style="font-size: 14px;">Mobile App Development</p>
-                <h2 class="text-blue">How to Promote Your App for Free: Proven Strategies to Grow Without a Budget</h2>
+                <p class="text-uppercase text-dark mb-0" style="font-size: 14px;">{{data.category.name}}</p>
+                <h2 class="text-blue">{{data.title}}</h2>
                 <!-- Owner Name and Link -->
                 <div class="d-flex align-items-center justify-content-start my-2">
                     <div class="d-flex align-items-center gap-2">
-                        <img src="{% static 'userapp/images/user-1.jpg' %}" alt="techverse" class="rounded-circle" width="30" height="30">
-                        <p class="fw-bold text-blue mb-0">Techverse</p>
+                        Written By - <p class="fw-bold text-blue mb-0">{{data.author}}</p>
                         <span>|</span>
-                        <p class="text-secondary mb-0">May 16, 2025</p>
+                        <p class="text-secondary mb-0">{{data.date|date:'M d, Y'}}</p>
                     </div>
                 </div>
                 <!-- Blog Detail -->
                 <div class="blog-detail py-3">
-                    <img src="{% static 'userapp/images/blog1.jpg' %}" alt="Blog 1" class="img-fluid rounded-0"
-                        style="width: 100%; height: 500px;">
+                    {% if data.image %}
+                    <img src="{{data.image.url}}" alt="Blog 1" class="img-fluid rounded-0" style="width: 100%; height: 500px;">
+                    {% else %}
+                    <img src="{% static 'userapp/images/blog1.jpg' %}" alt="Blog 1" class="img-fluid rounded-0" style="width: 100%; height: 500px;">
+                    {% endif %}
                     <!-- Detail -->
                     <div class="detail py-3">
                         <p>
-                            Mobile app development is entering a golden age of innovation. As consumer expectations
-                            rise, so do the
-                            technologies used to meet them. From AI-powered personalization to AR/VR-enabled
-                            experiences, developers
-                            must adapt quickly to stay relevant in 2025’s mobile-first landscape.
-                        </p>
-                        <!-- Section: Key Trends in 2025 -->
-                        <h4 class="mt-4">Key Trends Shaping the Industry</h4>
-                        <ul class="list-unstyled">
-                            <li class="nav-item"><strong>5G Integration:</strong> Ultra-fast data speeds enable smoother
-                                real-time
-                                experiences, from
-                                video streaming to multiplayer gaming.</li>
-                            <li class="nav-item"><strong>AI & Machine Learning:</strong> Predictive features, smart
-                                assistants, and
-                                contextual app
-                                behavior are becoming standard.</li>
-                            <li class="nav-item"><strong>Cross-Platform Development:</strong> Tools like Flutter and
-                                React Native
-                                allow faster
-                                development across Android and iOS.</li>
-                            <li class="nav-item"><strong>Voice-Enabled Interfaces:</strong> With the rise of Alexa,
-                                Siri, and Google
-                                Assistant, voice UX
-                                is more important than ever.</li>
-                            <li class="nav-item"><strong>Wearable Integration:</strong> Apps are extending functionality
-                                to watches,
-                                AR glasses, and
-                                other IoT devices.</li>
-                        </ul>
-                        <!-- Section: Popular Tools and Frameworks -->
-                        <h4 class="mt-4">Popular Tools & Frameworks in 2025</h4>
-                        <p>To keep up with modern demands, developers are leaning into efficient, scalable, and reliable
-                            tech
-                            stacks:
-                        </p>
-                        <ul class="list-unstyled">
-                            <li class="nav-item"><strong>Flutter:</strong> Google's UI toolkit for building natively
-                                compiled apps
-                                from a single
-                                codebase.</li>
-                            <li class="nav-item"><strong>React Native:</strong> Backed by Meta, it allows developers to
-                                write
-                                components in JavaScript
-                                and render them as native UI.</li>
-                            <li class="nav-item"><strong>Kotlin Multiplatform:</strong> Enables code sharing between
-                                Android and iOS
-                                in a native
-                                development environment.</li>
-                            <li class="nav-item"><strong>SwiftUI:</strong> Apple's declarative framework to simplify UI
-                                development
-                                for all its
-                                platforms.</li>
-                        </ul>
-                        <!-- Section: Challenges Developers Face -->
-                        <h4 class="mt-4">Challenges in Modern App Development</h4>
-                        <p>
-                            While tools have evolved, so have the challenges:
-                        <ul class="list-unstyled">
-                            <li class="nav-item">Ensuring data privacy and security with stricter regulations (like
-                                GDPR, CCPA).</li>
-                            <li class="nav-item">Maintaining performance on a variety of devices and OS versions.</li>
-                            <li class="nav-item">Designing intuitive UIs for multiple screen sizes and interactions.
-                            </li>
-                            <li class="nav-item">Handling battery and resource consumption effectively.</li>
-                        </ul>
-                        </p>
-                        <!-- Section: What's Next? -->
-                        <h4 class="mt-4">What’s Next?</h4>
-                        <p>
-                            Looking ahead, mobile apps will increasingly blend with the physical world through AR, IoT,
-                            and ambient
-                            computing. Developers should also prepare for decentralized apps (dApps), blockchain-based
-                            authentication,
-                            and integration with AI copilots.
-                        </p>
-                        <!-- Conclusion -->
-                        <h4 class="mt-4">Conclusion</h4>
-                        <p>
-                            Mobile app development in 2025 is about more than just functionality—it's about creating
-                            intelligent,
-                            immersive, and secure experiences. By embracing the latest tools and trends, developers can
-                            build
-                            solutions
-                            that not only meet today's needs but also anticipate tomorrow’s demands.
+                            {{data.description|safe}}
                         </p>
                     </div>
                 </div>
@@ -137,7 +55,7 @@
                             <li class="nav-item mb-3">Engagging UI/UX Design</li>
                             <li class="nav-item mb-3">Enterprise-Grade Software Solutions</li>
                         </ul>
-                        <a href="#" class="btn btn-light fw-semibold">Let's Talk</a>
+                        <a href="{% url 'userapp:contact' %}" class="btn btn-light fw-semibold">Let's Talk</a>
                         </p>
                     </div>
                 </div>

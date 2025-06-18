@@ -28,7 +28,7 @@ class UserServicesView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["services"] = models.ServiceCategory.objects.all()
+        context["services"] = models.ServiceDetail.objects.all()
         return context
 
 class UserIndustriesView(TemplateView):
@@ -43,6 +43,8 @@ class UserIndustryDetailView(DetailView):
     model = models.IndustryCategory
     template_name = "userapp/industry_detail.html"
     context_object_name = "industry_data"
+    slug_url_kwarg = "slug"
+    slug_field = "slug"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -69,6 +71,8 @@ class UserAIDetailView(DetailView):
     model = models.AICategory
     template_name = "userapp/ai_detail.html"
     context_object_name = "ai_data"
+    slug_field = "slug"
+    slug_url_kwarg = "slug"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -87,8 +91,26 @@ class UserAIDetailView(DetailView):
 class UserBlogView(TemplateView):
     template_name = "userapp/blog.html"
     
-class UserBlogDetailView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_id = self.request.GET.get('category')
+        blogs = models.Blog.objects.all() 
+        if category_id:
+            category_data = models.BlogCategory.objects.get(id=category_id)
+            blogs = blogs.filter(category=category_data)
+        
+        context["blog_category"] = models.BlogCategory.objects.all() 
+        context["blogs"] = blogs
+        context["category_id"] = category_id
+        return context
+    
+    
+class UserBlogDetailView(DetailView):
+    model = models.Blog
     template_name = "userapp/blog_detail.html"
+    slug_field = "slug"
+    slug_url_kwarg = "slug"
+    context_object_name="data"
     
 class UserContactView(TemplateView):
     template_name = "userapp/contact.html"
@@ -112,6 +134,8 @@ class UserServicesDetailView(DetailView):
     model = models.ServiceDetail
     template_name = "userapp/service_detail.html"
     context_object_name = "service_data"
+    slug_url_kwarg = "slug"
+    slug_field = "slug"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

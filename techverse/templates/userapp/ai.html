@@ -132,7 +132,7 @@
             <div class="row h-100 g-0">
               {% for ab in ai_category %}
               <div class="col-6 d-flex align-items-center justify-content-center border p-3">
-                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color: whitesmoke;"><div>
+                <a href="{% url 'userapp:ai_detail' ab.slug %}" style="color: whitesmoke;"><div>
                   <h4 class="fw-bold">{{ab.name}}</h4>
                   <p class="mb-0">{{ab.description|safe}}</p>
                 </div></a>

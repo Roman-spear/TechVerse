@@ -25,6 +25,7 @@ class ServiceCategory(BaseModel):
         return reverse("adminapp:servicecategory_delete",kwargs={'pk':self.pk})
 
 class AICategory(BaseModel):
+    slug = models.CharField(max_length=255,null=True,blank=True)
     name = models.CharField(max_length=255, null=True, blank=True)
     description = SummernoteTextField(null=True,blank=True)
 
@@ -38,6 +39,7 @@ class AICategory(BaseModel):
         return reverse("adminapp:aicategory_delete",kwargs={'pk':self.pk})
 
 class IndustryCategory(BaseModel):
+    slug = models.CharField(max_length=255,null=True,blank=True)
     icon = models.CharField(max_length=255,null=True,blank=True)
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
@@ -91,6 +93,7 @@ class BlogCategory(BaseModel):
         return self.name
 
 class Blog(BaseModel):
+    slug = models.CharField(max_length=255,null=True,blank=True)
     title = models.CharField(max_length=255,null=True,blank=True)
     category = models.ForeignKey(BlogCategory,on_delete=models.CASCADE,null=True,blank=True,related_name='blog_category')
     image = models.FileField(upload_to='blog_image',null=True,blank=True)
@@ -171,6 +174,7 @@ class AIServices(BaseModel):
 # ------------------------------------------------------------------------------------------------------------
     
 class ServiceDetail(BaseModel):
+    slug = models.CharField(max_length=255,null=True,blank=True)
     header_name = models.CharField(max_length=255,null=True,blank=True)
     header_description = SummernoteTextField(null=True,blank=True)
     title = models.CharField(max_length=255,null=True,blank=True)
