@@ -153,7 +153,7 @@
             {% for ab in ai_category %}
             <div class="col-6 d-flex align-items-center justify-content-center border p-3">
               <div>
-                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color:white;">
+                <a href="{% url 'userapp:ai_detail' ab.slug %}" style="color:white;">
                   <h4 class="fw-bold">{{ab.name}}</h4>
                   <p class="mb-0">{{ab.description|safe}}</p>
                 </a>
@@ -289,7 +289,7 @@
           </div>
         </div>
         <div class="col-md-4  d-flex align-items-center justify-content-center" >
-          <img src="{% static 'userapp/images/industries-we-serve.svg' %}" alt="" class="img-fluid">
+          <img src="{% static 'userapp/images/tv.svg' %}" alt="" class="img-fluid" style="height: 450px;">
         </div>
         <div class="col-md-4 p-3 d-flex align-items-center justify-content-center">
           <div class="row h-100 w-100">
@@ -307,7 +307,7 @@
         </div>
       </div>
   </div>
-
+  
 
   <!-- Section tech start -->
   <section class=" text-center py-5">
@@ -402,82 +402,39 @@
       <div class="row g-4">
 
         <!-- Blog Card 1 -->
+        {% for ab in blogs %}
         <div class="col-md-6 col-lg-4">
-          <div class="card shadow-sm h-100 rounded-0">
-            <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Business tool for your customer</h5>
-              <p class="card-text text-muted small">
-                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-              </p>
+          <a href="{% url 'userapp:blog_detail' ab.slug %}">
+            <div class="card shadow-sm h-100 rounded-0">
+              {% if ab.image %}
+              <img src="{{ab.image.url}}" class="card-img-top rounded-0" alt="Blog Image">
+              {% else %}
+              <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">{{ab.title}}</h5>
+                <p class="card-text text-muted small">
+                  {{ab.description|safe|slice:':200'}}....
+                </p>
+              </div>
+              <div class="card-footer bg-white border-0 pt-0">
+                <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                  <li class="list-inline-item">
+                    <i class="far fa-calendar-alt me-1"></i> {{ab.date|date:'d M, Y'}}
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="far fa-user me-1"></i> {{ab.author}}
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="far fa-comments me-1"></i> 38
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 10 Jul, 2025
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 38
-                </li>
-              </ul>
-            </div>
-          </div>
+          </a>
         </div>
-
-        <!-- Blog Card 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card shadow-sm h-100 rounded-0">
-            <img src="{% static 'userapp/images/blog2.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Growth your business strategy</h5>
-              <p class="card-text text-muted small">
-                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-              </p>
-            </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 25 Jun, 2025
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 68
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card shadow-sm h-100 rounded-0">
-            <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Business people success master plan</h5>
-              <p class="card-text text-muted small">
-                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-              </p>
-            </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 16 May, 2025
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 58
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        
 
       </div>
     </div>
