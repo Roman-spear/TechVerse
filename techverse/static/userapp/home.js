@@ -1,64 +1,13 @@
 window.addEventListener('scroll', function () {
     const navbar = document.getElementById('glass-navbar');
-    if (window.scrollY > 80) {
+    if (window.scrollY > 20) {
       navbar.classList.add('navbar-hidden');
     } else {
       navbar.classList.remove('navbar-hidden');
     }
   });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const serviceLink = document.getElementById('serviceDropdown');
-  const dropdown = document.querySelector('.service-drop-div');
-
-  if (serviceLink && dropdown) {
-    // Toggle dropdown on mobile
-    serviceLink.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent closing immediately
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-      }
-    });
-
-    // Prevent closing dropdown when clicking inside it
-    dropdown.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile && !e.target.closest('.nav-item')) {
-        dropdown.style.display = 'none';
-      }
-    });
-  }
-});
-
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.getElementById('industriesDropdown');
-    const dropdownContent = document.getElementById('industriesDropContent');
-
-    dropdownToggle.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        e.preventDefault(); // prevent link navigation
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-      }
-    });
-
-    // Optional: close dropdown on outside click
-    document.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile && !e.target.closest('.nav-item')) {
-        dropdownContent.style.display = 'none';
-      }
-    });
-  });
-
+// Remove Dropdown JS
 
   function showTab(tabName, el = null) {
     const technologies = {

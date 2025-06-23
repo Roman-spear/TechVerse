@@ -21,6 +21,7 @@ class UserIndexView(TemplateView):
         return context
     
     
+    
 class UserAboutusView(TemplateView):
     template_name = "userapp/about.html"
     

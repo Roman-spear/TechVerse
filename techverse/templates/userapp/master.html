@@ -1,229 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techverse</title>
-    <link
-      rel="shortcut icon"
-      href="{% static 'userapp/images/Techverse-F.png' %}"
-      type="image/x-png"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+{% load static %}
 
-    <!-- Icons for phone and search -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techverse</title>
+  <link rel="shortcut icon" href="{% static 'userapp/images/Techverse-F.png' %}" type="image/x-png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- External Links -->
-    <link rel="stylesheet" href="{% static 'userapp/home.css' %}" />
+  <!-- Icons for phone and search -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-    <!-- AOS CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
+  <!-- External Links -->
+  <link rel="stylesheet" href="{% static 'userapp/home.css' %}" />
 
-    <!-- Owl carousel -->
-    <!-- Owl Carousel CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-  </head>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-  <body>
-    <!-- Header Start -->
-    <div class="container-fluid contact-bar bg-primary1 py-2 d-none d-xl-block">
-      <div
-        class="container-xl d-flex justify-content-between align-items-center"
-      >
-        <div class="col-lg-9 col-xl-8 d-flex align-items-center gap-5">
-          <a href="#" class="text-white"
-            ><i class="fa-solid fa-phone-volume me-2"></i>+91 9081431434</a
-          >
-          <a href="#" class="text-white"
-            ><i class="fa-regular fa-envelope me-2"></i
-            >info@techversesolutions.com</a
-          >
-        </div>
+  <!-- Owl carousel -->
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
-        <div
-          class="col-lg-3 col-xl-4 d-flex justify-content-end gap-2 social-icons"
-        >
-          <a href="https://www.facebook.com/techverse.solutionss/" class="text-white"
-            ><i
-              class="fab fa-facebook-f icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-          <a href="https://x.com/Tech_Verse_" class="text-white"
-            ><i
-              class="fa-brands fa-x-twitter icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-          <a href="https://www.linkedin.com/company/tech-verse-solutions/" class="text-white"
-            ><i
-              class="fab fa-linkedin-in icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-          <a href="https://www.pinterest.com/techversesolutions/" class="text-white"
-            ><i
-              class="fab fa-pinterest icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-          <a href="https://www.instagram.com/techverse.solutions/" class="text-white"
-            ><i
-              class="fab fa-instagram icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-        </div>
+  <style>
+    .modal-backdrop {
+      display: none;
+    }
+
+    .modal-title {
+      color: #003378;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Start -->
+  <div class="container-fluid contact-bar bg-primary1 py-2 d-none d-lg-block">
+    <div class="container-xl d-flex justify-content-between align-items-center">
+      <div class="col-lg-9 col-xl-8 d-flex align-items-center gap-5">
+        <a href="#" class="text-white"><i class="fa-solid fa-phone-volume me-2"></i>+91 9081431434</a>
+        <a href="#" class="text-white"><i class="fa-regular fa-envelope me-2"></i>info@techversesolutions.com</a>
+      </div>
+
+      <div class="col-lg-3 col-xl-4 d-flex justify-content-end gap-2 social-icons">
+        <a href="https://www.facebook.com/techverse.solutionss/" class="text-white"><i
+            class="fab fa-facebook-f icon-bg d-flex justify-content-center align-items-center"></i></a>
+        <a href="https://x.com/Tech_Verse_" class="text-white"><i
+            class="fa-brands fa-x-twitter icon-bg d-flex justify-content-center align-items-center"></i></a>
+        <a href="https://www.linkedin.com/company/tech-verse-solutions/" class="text-white"><i
+            class="fab fa-linkedin-in icon-bg d-flex justify-content-center align-items-center"></i></a>
+        <a href="https://www.pinterest.com/techversesolutions/" class="text-white"><i
+            class="fab fa-pinterest icon-bg d-flex justify-content-center align-items-center"></i></a>
+        <a href="https://www.instagram.com/techverse.solutions/" class="text-white"><i
+            class="fab fa-instagram icon-bg d-flex justify-content-center align-items-center"></i></a>
       </div>
     </div>
-    <!-- Header End -->
+  </div>
+  <!-- Header End -->
 
-    <!-- Navbar Start -->
-    <nav
-      id="glass-navbar"
-      class="navbar navbar-expand-lg w-100 position-fixed transition-top bg-light"
-      style="z-index: 110"
-    >
-      <div
-        class="container-fluid px-2 px-lg-5 p-2 ps-3 ps-sm-0 nav-container shadow"
-      >
-        <div class="col-8 col-lg-3">
-          <a href="{% url 'userapp:userindex' %}" class="d-flex align-items-center">
-            <img
-              src="{% static 'userapp/images/Techverse.png' %}"
-              alt="Logo"
-              width="250"
-              height="60"
-              class="me-2"
-            />
-            <div class="text-blue text-start">
-              <!-- <span class="d-block fs-5 lh-1 fw-bold text-blue">TechVerse</span> -->
-              <!-- <span class="d-block fs-5 fw-bold text-blue">Solutions</span> -->
-            </div>
-          </a>
-        </div>
-
-        <div class="col-2 col-lg-9">
-          <div
-            class="navbar-toggler border-0"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasMenu"
-            aria-controls="offcanvasMenu"
-          >
-            <div class="toggler-icon">
-              <span class="hb-1 bg-blue"></span>
-              <span class="hb-2 bg-blue"></span>
-              <span class="hb-3 bg-blue"></span>
-            </div>
+  <!-- Navbar Start -->
+  <nav id="glass-navbar" class="navbar navbar-expand-lg w-100 position-fixed transition-top bg-light"
+    style="z-index: 110">
+    <div class="container-fluid px-2 px-lg-5 p-2 ps-3 ps-sm-0 nav-container shadow">
+      <div class="col-8 col-lg-3">
+        <a href="{% url 'userapp:userindex' %}" class="d-flex align-items-center">
+          <img src="{% static 'userapp/images/Techverse.png' %}" alt="Logo" width="250" height="60" class="me-2" />
+          <div class="text-blue text-start">
+            <!-- <span class="d-block fs-5 lh-1 fw-bold text-blue">TechVerse</span> -->
+            <!-- <span class="d-block fs-5 fw-bold text-blue">Solutions</span> -->
           </div>
-          <div
-            class="offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasMenu"
-            aria-labelledby="offcanvasMenuLabel"
-          >
-            <div class="offcanvas-header">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div
-              class="offcanvas-body d-flex justify-content-start justify-content-lg-end"
-            >
-              <ul class="navbar-nav mb-3 mb-lg-0" id="navbar-main">
-                <li class="nav-item">
-                  <a class="nav-link text-blue" href="{% url 'userapp:userindex' %}"
-                    >Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link text-blue"
-                    href="{% url 'userapp:useraboutus' %}"
-                    >About Us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-blue service-page-link" href="{% url 'userapp:services' %}" id="serviceDropdown"
-                    role="button">Service</a>
-                  <div class="service-drop-div">
-                    <div class="container">
-                      <div class="row gy-4">
-                        <!-- Data Engineering -->
-                        {% for ab in servicecategory %}
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <a href="{% url 'userapp:services_detail' ab.slug %}" class="nav-link" >
-                            <h5 class="category-title text-blue fw-bold">
+        </a>
+      </div>
+
+      <div class="col-2 col-lg-9">
+        <div class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+          aria-controls="offcanvasMenu">
+          <div class="toggler-icon">
+            <span class="hb-1 bg-blue"></span>
+            <span class="hb-2 bg-blue"></span>
+            <span class="hb-3 bg-blue"></span>
+          </div>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex justify-content-start justify-content-lg-end">
+            <!-- UL Chane -->
+            <ul class="navbar-nav mb-3 mb-lg-0 w-100" id="navbar-main">
+              <li class="nav-item">
+                <a class="nav-link text-blue" href="{% url 'userapp:userindex' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-blue" href="{% url 'userapp:useraboutus' %}">About Us</a>
+              </li>
+              <!-- Service -->
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:services' %}"
+                  role="button">Service
+                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                <div class="service-drop-div dropdown-menu">
+                  <div class="container">
+                    <div class="row gy-4">
+                      <!-- Data Engineering -->
+                      {% for ab in servicecategory %}
+                      <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="{% url 'userapp:services_detail' ab.slug %}" class="nav-link">
+                          <h5 class="category-title text-blue fw-bold">
                             {{ab.header_name}}
-                            </h5>
-                          </a>
-                        </div>
-                        {% endfor %}
+                          </h5>
+                        </a>
                       </div>
+                      {% endfor %}
                     </div>
                   </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-blue service-page-link" href="{% url 'userapp:ai' %}" id="serviceDropdown"
-                    role="button">AI/ML</a>
-                  <div class="service-drop-div">
-                    <div class="container">
-                      <div class="row gy-4">
-                        <!-- Data Engineering -->
-                        {% for ab in aicategory %}
-                        <div class="col-lg-3 col-md-6 col-sm-12">
-                          <a href="{% url 'userapp:ai_detail' ab.slug %}" class="nav-link" >
-                            <h5 class="category-title text-blue fw-bold">
+                </div>
+              </li>
+              <!-- AI -->
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:ai' %}"
+                  role="button"> AI
+                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                <div class="service-drop-div">
+                  <div class="container">
+                    <div class="row gy-4">
+                      <!-- Data Engineering -->
+                      {% for ab in aicategory %}
+                      <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="{% url 'userapp:ai_detail' ab.slug %}" class="nav-link">
+                          <h5 class="category-title text-blue fw-bold">
                             {{ab.name}}
-                            </h5>
-                          </a>
-                        </div>
-                        {% endfor %}
+                          </h5>
+                        </a>
                       </div>
+                      {% endfor %}
                     </div>
                   </div>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link text-blue service-page-link"
-                    href="{% url 'userapp:industries' %}"
-                    id="industriesDropdown"
-                    role="button"
-                    >Industries</a
-                  >
-                  <div class="service-drop-div" id="industriesDropContent">
-                    <div class="container">
-                      <div class="row align-items-center">
-                        <!-- Left Content -->
-                        <div class="col-lg-9">
-                          <h2 class="fw-bold">
-                            Top IT Company Rendering Industry Specific Solutions
-                          </h2>
-                          <p class="mb-5">
-                            We cater to every booming industry and offer the
-                            best-in-class technology for all.
-                          </p>
-                          <div class="p-3" style="max-height: 300px; overflow-y: auto;">
+                </div>
+              </li>
+              <!-- Industries -->
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:industries' %}"
+                  role="button">Industries
+                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                <div class="service-drop-div">
+                  <div class="container">
+                    <div class="row align-items-center">
+                       <!-- Right Banner -->
+                      <div class="col-lg-3 mb-3 mb-md-0">
+                        <img src="{% static 'userapp/images/industry-AI.jpg' %}" alt="Industries" class="w-100" style="min-height: 200px;" />
+                      </div>
+                      <!-- Left Content -->
+                      <div class="col-lg-9">
+                        <h2 class="fw-bold">
+                          Top IT Company Rendering Industry Specific Solutions
+                        </h2>
+                        <p class="mb-5">
+                          We cater to every booming industry and offer the
+                          best-in-class technology for all.
+                        </p>
+                        <div class="p-3" style="max-height: 300px; overflow-y: auto;">
                           <div class="row g-4">
                             <!-- Each industry card -->
                             {% for ab in industrycategory %}
-                            <div class="col-sm-6 col-md-4 industry-card">
+                            <div class="col-md-6 col-xl-4 industry-card">
                               <a href="{% url 'userapp:industry_detail' ab.slug %}" class="nav-link">
                                 <h4>{{ab.name}}</h4>
                                 <p>
@@ -233,235 +175,276 @@
                             </div>
                             {% endfor %}
                           </div>
-                          </div>
-                        </div>
-
-                        <!-- Right Banner -->
-                        <div class="col-lg-3 h-100">
-                          <img
-                            src="{% static 'userapp/images/industry-AI.jpg' %}"
-                            alt="Industries"
-                            class="w-100"
-                          />
                         </div>
                       </div>
+
+                     
                     </div>
                   </div>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link text-blue"
-                    href="{% url 'userapp:career' %}"
-                    >Career</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-blue" href="{% url 'userapp:blog' %}">Insights</a>
-                </li>
-                <li class="nav-item">
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-blue" href="{% url 'userapp:career' %}">Careers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-blue" href="{% url 'userapp:blog' %}">Insights</a>
+              </li>
+              <!-- <li class="nav-item">
                   <a class="nav-link text-blue" href="{% url 'userapp:portfolio' %}"
                     >Portfolio</a
                   >
-                </li>
-                <a href="{% url 'userapp:contact' %}">
-                  <button
-                    type="button"
-                    class="px-2 py-2 px-xl-3 py-xl-2 text-dark btn text-white text-wrap neon-button"
-                  >
-                    Let's Talk
-                  </button></a
-                >
-                <button
-                  onclick="startVoiceRecognition()"
-                  class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative ms-2"
-                  style="height: 40px; width: 40px"
-                >
-                  <i class="fa-solid fa-headphones"></i>
-                </button>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- Navbar End -->
+                </li> -->
+              <li class="nav-item">
+                <a class="nav-link text-blue" href="{% url 'userapp:contact' %}">Contact Us</a>
+              </li>
+              <button type="button" class="px-2 py-2 px-xl-3 py-xl-2 text-dark btn text-white text-wrap neon-button"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-backdrop="false">
+                Let's Talk
+              </button>
+              <button onclick="startVoiceRecognition()"
+                class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative ms-2 mt-2 mt-xl-0"
+                style="height: 40px; width: 40px">
+                <i class="fa-solid fa-headphones"></i>
+              </button>
+            </ul>
 
-    {% block content %} 
-    {% endblock %}
+            <!-- Contact us modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Let's Talk</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="contact-form">
+                      <form method="post">
+                        <div class="row mb-4">
+                          <div class="col-md-6">
+                            <label class="form-label">First Name</label>
+                            <input type="text" name="first_name" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" name="last_name" class="form-control" placeholder="">
+                          </div>
+                        </div>
+                        <div class="row mb-4">
+                          <div class="col-md-6">
+                            <label class="form-label">Company</label>
+                            <input type="text" name="company" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="email" class="form-control" placeholder="">
+                          </div>
+                        </div>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary1 py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <div>
-              <h2 class="text-white">Techverse</h2>
+                        <div class="mb-4">
+                          <label class="form-label">Subject</label>
+                          <input type="text" name="subject" class="form-control" placeholder="">
+
+                        </div>
+                        <div class="mb-4">
+                          <label class="form-label">Message</label>
+                          <textarea class="form-control" name="message" rows="4"
+                            placeholder="Start typing here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn neon-button text-white px-4">Send</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="text-white mt-3" style="max-width: 300px; line-height: 30px;">TechVerse is a top IT consulting company that provides custom, smart, and innovative solutions to help businesses grow through technology, strategy, and modern tools.</p>
-            <div class="d-flex justify-content-start gap-2 social-icons">
-              <a href="https://www.facebook.com/techverse.solutionss/" class="text-white"><i
-                  class="fab fa-facebook-f icon-bg d-flex justify-content-center align-items-center"></i></a>
-              <a href="https://x.com/Tech_Verse_" class="text-white"><i
-              class="fa-brands fa-x-twitter icon-bg d-flex justify-content-center align-items-center"
-            ></i
-          ></a>
-              <a href="https://www.linkedin.com/company/tech-verse-solutions/" class="text-white"><i
-                  class="fab fa-linkedin-in icon-bg d-flex justify-content-center align-items-center"></i></a>
-              <a href="https://www.pinterest.com/techversesolutions/" class="text-white"><i
-                  class="fab fa-pinterest icon-bg d-flex justify-content-center align-items-center"></i></a>
-              <a href="https://www.instagram.com/techverse.solutions/" class="text-white"><i
-                  class="fab fa-instagram icon-bg d-flex justify-content-center align-items-center"></i></a>
-            </div>
-          </div>
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <h4 class="text-white">Useful Links</h4>
-            <ul class="list-unstyled mt-4">
-              <li><a href="{% url 'userapp:useraboutus' %}" class="text-white">About Us</a></li>
-              <li><a href="{% url 'userapp:contact' %}" class="text-white">Contact Us</a></li>
-              <li><a href="{% url 'userapp:career' %}" class="text-white">Career</a></li>
-              <li><a href="{% url 'userapp:privacy_policy' %}" class="text-white">Privacy Policy</a></li>
-              <li><a href="{% url 'userapp:terms_condition' %}" class="text-white">Terms and Condition</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <h4 class="text-white">Contact Information</h4>
-            <ul class="list-unstyled mt-4">
-              <li class="mb-2"><a href="#" class="text-white"><i class="fa-solid fa-phone-volume me-2 text-white"></i>+91
-                  9081431434</a></li>
-              <li class="mb-2"><a href="#" class="text-white"><i
-                    class="fa-regular fa-envelope me-2 text-white"></i>info@techversesolutions.com</a>
-              <li>
-              <li class="mb-2"><a href="#" class="text-white"><i
-                    class="fa-solid fa-location-dot me-2 text-white"></i>S. Hill Street Suite 1313 Los Angeles,CA 90013 United States
-CA 90013 United States.</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 col-12 mb-3 mb-md-0">
-            <h4 class="text-white">Locations</h4>
-            <ul class="list-unstyled mt-4 text-white">
-              <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white"><li class="mb-2"><i class="fa-solid fa-city me-2 text-white"></i>United States</li></a>
-              <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white"><li class="mb-2"><i class="fa-solid fa-tree-city me-2 text-white"></i>India</li></a>
-            </ul>
+
+            <!-- UL Chane -->
+
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+  </nav>
+  <!-- Navbar End -->
 
-    <!-- Scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+  {% block content %}
+  {% endblock %}
 
-    <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      AOS.init(); // Initialize AOS
-    </script>
-    <script src="{% static 'userapp/home.js' %}"></script>
+  <!-- Footer Start -->
+  <div class="container-fluid bg-primary1 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-12 mb-3 mb-md-0">
+          <div>
+            <h2 class="text-white">Techverse</h2>
+          </div>
+          <p class="text-white mt-3" style="max-width: 300px; line-height: 30px;">TechVerse is a top IT consulting
+            company that provides custom, smart, and innovative solutions to help businesses grow through technology,
+            strategy, and modern tools.</p>
+          <div class="d-flex justify-content-start gap-2 social-icons">
+            <a href="https://www.facebook.com/techverse.solutionss/" class="text-white"><i
+                class="fab fa-facebook-f icon-bg d-flex justify-content-center align-items-center"></i></a>
+            <a href="https://x.com/Tech_Verse_" class="text-white"><i
+                class="fa-brands fa-x-twitter icon-bg d-flex justify-content-center align-items-center"></i></a>
+            <a href="https://www.linkedin.com/company/tech-verse-solutions/" class="text-white"><i
+                class="fab fa-linkedin-in icon-bg d-flex justify-content-center align-items-center"></i></a>
+            <a href="https://www.pinterest.com/techversesolutions/" class="text-white"><i
+                class="fab fa-pinterest icon-bg d-flex justify-content-center align-items-center"></i></a>
+            <a href="https://www.instagram.com/techverse.solutions/" class="text-white"><i
+                class="fab fa-instagram icon-bg d-flex justify-content-center align-items-center"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3 col-12 mb-3 mb-md-0">
+          <h4 class="text-white">Useful Links</h4>
+          <ul class="list-unstyled mt-4">
+            <li><a href="{% url 'userapp:useraboutus' %}" class="text-white">About Us</a></li>
+            <li><a href="{% url 'userapp:contact' %}" class="text-white">Contact Us</a></li>
+            <li><a href="{% url 'userapp:career' %}" class="text-white">Career</a></li>
+            <li><a href="{% url 'userapp:privacy_policy' %}" class="text-white">Privacy Policy</a></li>
+            <li><a href="{% url 'userapp:terms_condition' %}" class="text-white">Terms and Condition</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-12 mb-3 mb-md-0">
+          <h4 class="text-white">Contact Information</h4>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><a href="#" class="text-white"><i class="fa-solid fa-phone-volume me-2 text-white"></i>+91
+                9081431434</a></li>
+            <li class="mb-2"><a href="#" class="text-white"><i
+                  class="fa-regular fa-envelope me-2 text-white"></i>info@techversesolutions.com</a>
+            <li>
+            <li class="mb-2"><a href="#" class="text-white"><i class="fa-solid fa-location-dot me-2 text-white"></i>S.
+                Hill Street Suite 1313 Los Angeles,CA 90013 United States
+                CA 90013 United States.</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-12 mb-3 mb-md-0">
+          <h4 class="text-white">Locations</h4>
+          <ul class="list-unstyled mt-4 text-white">
+            <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white">
+              <li class="mb-2"><i class="fa-solid fa-city me-2 text-white"></i>United States</li>
+            </a>
+            <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white">
+              <li class="mb-2"><i class="fa-solid fa-tree-city me-2 text-white"></i>India</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
 
-    <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init(); // Initialize AOS
+  </script>
+  <script src="{% static 'userapp/home.js' %}"></script>
 
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-          loop: true,
-          margin: 20,
-          nav: false,
-          autoplay: true,
-          dots: false,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            768: {
-              items: 2,
-            },
+  <!-- JQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        autoplay: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1,
           },
-        });
+          768: {
+            items: 2,
+          },
+        },
       });
-    </script>
+    });
+  </script>
 
-    <script>
-      // selecting required element
-      const element = document.querySelector(".pagination ul");
-      let totalPages = 20;
-      let page = 10;
-      //calling function with passing parameters and adding inside element which is ul tag
-      element.innerHTML = createPagination(totalPages, page);
-      function createPagination(totalPages, page) {
-        let liTag = "";
-        let active;
-        let beforePage = page - 1;
-        let afterPage = page + 1;
-        if (page > 1) {
-          //show the next button if the page value is greater than 1
-          liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${
-            page - 1
+  <script>
+    // selecting required element
+    const element = document.querySelector(".pagination ul");
+    let totalPages = 20;
+    let page = 10;
+    //calling function with passing parameters and adding inside element which is ul tag
+    element.innerHTML = createPagination(totalPages, page);
+    function createPagination(totalPages, page) {
+      let liTag = "";
+      let active;
+      let beforePage = page - 1;
+      let afterPage = page + 1;
+      if (page > 1) {
+        //show the next button if the page value is greater than 1
+        liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1
           })"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
-        }
-        if (page > 2) {
-          //if page value is less than 2 then add 1 after the previous button
-          liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
-          if (page > 3) {
-            //if page value is greater than 3 then add this (...) after the first li or page
-            liTag += `<li class="dots"><span>...</span></li>`;
-          }
-        }
-        // how many pages or li show before the current li
-        if (page == totalPages) {
-          beforePage = beforePage - 2;
-        } else if (page == totalPages - 1) {
-          beforePage = beforePage - 1;
-        }
-        // how many pages or li show after the current li
-        if (page == 1) {
-          afterPage = afterPage + 2;
-        } else if (page == 2) {
-          afterPage = afterPage + 1;
-        }
-        for (var plength = beforePage; plength <= afterPage; plength++) {
-          if (plength > totalPages) {
-            //if plength is greater than totalPage length then continue
-            continue;
-          }
-          if (plength == 0) {
-            //if plength is 0 than add +1 in plength value
-            plength = plength + 1;
-          }
-          if (page == plength) {
-            //if page is equal to plength than assign active string in the active variable
-            active = "active";
-          } else {
-            //else leave empty to the active variable
-            active = "";
-          }
-          liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
-        }
-        if (page < totalPages - 1) {
-          //if page value is less than totalPage value by -1 then show the last li or page
-          if (page < totalPages - 2) {
-            //if page value is less than totalPage value by -2 then add this (...) before the last li or page
-            liTag += `<li class="dots"><span>...</span></li>`;
-          }
-          liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
-        }
-        if (page < totalPages) {
-          //show the next button if the page value is less than totalPage(20)
-          liTag += `<li class="btn next" onclick="createPagination(totalPages, ${
-            page + 1
-          })"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
-        }
-        element.innerHTML = liTag; //add li tag inside ul tag
-        return liTag; //reurn the li tag
       }
-    </script>
-  </body>
+      if (page > 2) {
+        //if page value is less than 2 then add 1 after the previous button
+        liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
+        if (page > 3) {
+          //if page value is greater than 3 then add this (...) after the first li or page
+          liTag += `<li class="dots"><span>...</span></li>`;
+        }
+      }
+      // how many pages or li show before the current li
+      if (page == totalPages) {
+        beforePage = beforePage - 2;
+      } else if (page == totalPages - 1) {
+        beforePage = beforePage - 1;
+      }
+      // how many pages or li show after the current li
+      if (page == 1) {
+        afterPage = afterPage + 2;
+      } else if (page == 2) {
+        afterPage = afterPage + 1;
+      }
+      for (var plength = beforePage; plength <= afterPage; plength++) {
+        if (plength > totalPages) {
+          //if plength is greater than totalPage length then continue
+          continue;
+        }
+        if (plength == 0) {
+          //if plength is 0 than add +1 in plength value
+          plength = plength + 1;
+        }
+        if (page == plength) {
+          //if page is equal to plength than assign active string in the active variable
+          active = "active";
+        } else {
+          //else leave empty to the active variable
+          active = "";
+        }
+        liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+      }
+      if (page < totalPages - 1) {
+        //if page value is less than totalPage value by -1 then show the last li or page
+        if (page < totalPages - 2) {
+          //if page value is less than totalPage value by -2 then add this (...) before the last li or page
+          liTag += `<li class="dots"><span>...</span></li>`;
+        }
+        liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+      }
+      if (page < totalPages) {
+        //show the next button if the page value is less than totalPage(20)
+        liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1
+          })"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+      }
+      element.innerHTML = liTag; //add li tag inside ul tag
+      return liTag; //reurn the li tag
+    }
+  </script>
+</body>
+
 </html>
