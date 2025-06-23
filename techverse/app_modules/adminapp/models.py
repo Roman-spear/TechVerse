@@ -227,3 +227,16 @@ class ServiceTechnology(BaseModel):
     def get_delete_url(self):
         return reverse("adminapp:servicedetail_delete",kwargs={'pk':self.pk})
     
+class MetaName(BaseModel):
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = SummernoteTextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.name
+    
+class MetaProperty(BaseModel):
+    name = models.CharField(max_length=255,null=True,blank=True)
+    description = SummernoteTextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.name

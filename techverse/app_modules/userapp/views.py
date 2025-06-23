@@ -17,6 +17,7 @@ class UserIndexView(TemplateView):
         context["service_category"] = models.ServiceCategory.objects.all()[:5]
         context["ai_category"] = models.AICategory.objects.all()
         context["industry_category"] = models.IndustryCategory.objects.all()
+        context["blogs"] = models.Blog.objects.all()[:3]
         return context
     
     
@@ -111,6 +112,15 @@ class UserBlogDetailView(DetailView):
     slug_field = "slug"
     slug_url_kwarg = "slug"
     context_object_name="data"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data = self.get_object()
+        print(f' ==> [Line 118]: \033[38;2;153;115;129m[data]\033[0m({type(data).__name__}) = \033[38;2;209;137;2m{data}\033[0m')
+        context["related_blog"] = models.Blog.objects.exclude(id=data.id).filter(category=data.category)
+        print(f' ==> [Line 119]: \033[38;2;87;50;97m[context]\033[0m({type(context).__name__}) = \033[38;2;230;139;51m{context}\033[0m')
+        return context
+    
     
 class UserContactView(TemplateView):
     template_name = "userapp/contact.html"
