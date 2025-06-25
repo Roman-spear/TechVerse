@@ -26,13 +26,8 @@
         <h1 class="fw-bold mb-5 text-blue text-center">Technology Solutions for Every Industry</h1>
         <div class="row">
             {% for ab in industry_category %}
-            <style>
-                .service-card-{{forloop.counter}} {
-                    background: url({% if ab.image %} {{ab.image.url}} {% endif %});
-                }
-            </style>
             <div class="col-md-3 col-sm-6 p-2">
-                <div class="service-card service-card-{{forloop.couter}}" style="height: 300px;">
+                <div class="service-card service-card-{{forloop.couter}}" style="height: 300px; background:url('{% if ab.image %} {{ab.image.url}} {% endif %}') no-repeat center center; background-size: cover;">
                     <div class="service-card-info w-75">
                         <h1>{{ab.name}}</h1>
                         <a href="{% url 'userapp:industry_detail' ab.slug %}" class="btn fs-5 mt-5 border border-white rounded-pill">Learn More <i class="fa fa-arrow-right ps-2"></i></a>

@@ -74,7 +74,7 @@
         </a>
       </div>
 
-      <div class="col-2 col-lg-9">
+      <div class="col-2 col-lg-9 ">
         <div class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
           aria-controls="offcanvasMenu">
           <div class="toggler-icon">
@@ -87,126 +87,133 @@
           <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body d-flex justify-content-start justify-content-lg-end">
+          <div class="offcanvas-body">
             <!-- UL Chane -->
-            <ul class="navbar-nav mb-3 mb-lg-0 w-100" id="navbar-main">
-              <li class="nav-item">
-                <a class="nav-link text-blue" href="{% url 'userapp:userindex' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-blue" href="{% url 'userapp:useraboutus' %}">About Us</a>
-              </li>
-              <!-- Service -->
-              <li class="nav-item dropdown position-static">
-                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:services' %}"
-                  role="button">Service
-                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
-                <div class="service-drop-div dropdown-menu">
-                  <div class="container">
-                    <div class="row gy-4">
-                      <!-- Data Engineering -->
-                      {% for ab in servicecategory %}
-                      <div class="col-lg-3 col-md-6 col-sm-12">
-                        <a href="{% url 'userapp:services_detail' ab.slug %}" class="nav-link">
-                          <h5 class="category-title text-blue fw-bold">
-                            {{ab.header_name}}
-                          </h5>
-                        </a>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- AI -->
-              <li class="nav-item dropdown position-static">
-                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:ai' %}"
-                  role="button"> AI
-                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
-                <div class="service-drop-div">
-                  <div class="container">
-                    <div class="row gy-4">
-                      <!-- Data Engineering -->
-                      {% for ab in aicategory %}
-                      <div class="col-lg-3 col-md-6 col-sm-12">
-                        <a href="{% url 'userapp:ai_detail' ab.slug %}" class="nav-link">
-                          <h5 class="category-title text-blue fw-bold">
-                            {{ab.name}}
-                          </h5>
-                        </a>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- Industries -->
-              <li class="nav-item dropdown position-static">
-                <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:industries' %}"
-                  role="button">Industries
-                  <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
-                <div class="service-drop-div">
-                  <div class="container">
-                    <div class="row align-items-center">
-                       <!-- Right Banner -->
-                      <div class="col-lg-3 mb-3 mb-md-0">
-                        <img src="{% static 'userapp/images/industry-AI.jpg' %}" alt="Industries" class="w-100" style="min-height: 200px;" />
-                      </div>
-                      <!-- Left Content -->
-                      <div class="col-lg-9">
-                        <h2 class="fw-bold">
-                          Top IT Company Rendering Industry Specific Solutions
-                        </h2>
-                        <p class="mb-5">
-                          We cater to every booming industry and offer the
-                          best-in-class technology for all.
-                        </p>
-                        <div class="p-3" style="max-height: 300px; overflow-y: auto;">
-                          <div class="row g-4">
-                            <!-- Each industry card -->
-                            {% for ab in industrycategory %}
-                            <div class="col-md-6 col-xl-4 industry-card">
-                              <a href="{% url 'userapp:industry_detail' ab.slug %}" class="nav-link">
-                                <h4>{{ab.name}}</h4>
-                                <p>
-                                  {{ab.description|safe}}
-                                </p>
-                              </a>
-                            </div>
-                            {% endfor %}
+             <div class = "row w-100">
+              <div class = "col-12 col-lg-9">
+                <ul class="navbar-nav mb-3 mb-lg-0 w-100" id="navbar-main">
+                  <li class="nav-item">
+                    <a class="nav-link text-blue" href="{% url 'userapp:userindex' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-blue" href="{% url 'userapp:useraboutus' %}">About Us</a>
+                  </li>
+                  <!-- Service -->
+                  <li class="nav-item dropdown position-static">
+                    <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:services' %}"
+                      role="button">Service
+                      <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                    <div class="service-drop-div dropdown-menu">
+                      <div class="container">
+                        <div class="row gy-4">
+                          <!-- Data Engineering -->
+                          {% for ab in servicecategory %}
+                          <div class="col-lg-3 col-md-6 col-sm-12">
+                            <a href="{% url 'userapp:services_detail' ab.slug %}" class="nav-link">
+                              <h5 class="category-title text-blue fw-bold">
+                                {{ab.header_name}}
+                              </h5>
+                            </a>
                           </div>
+                          {% endfor %}
                         </div>
                       </div>
-
-                     
                     </div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-blue" href="{% url 'userapp:career' %}">Careers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-blue" href="{% url 'userapp:blog' %}">Insights</a>
-              </li>
-              <!-- <li class="nav-item">
-                  <a class="nav-link text-blue" href="{% url 'userapp:portfolio' %}"
-                    >Portfolio</a
-                  >
-                </li> -->
-              <li class="nav-item">
-                <a class="nav-link text-blue" href="{% url 'userapp:contact' %}">Contact Us</a>
-              </li>
-              <button type="button" class="px-2 py-2 px-xl-3 py-xl-2 text-dark btn text-white text-wrap neon-button"
-                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-backdrop="false">
-                Let's Talk
-              </button>
-              <button onclick="startVoiceRecognition()"
-                class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative ms-2 mt-2 mt-xl-0"
-                style="height: 40px; width: 40px">
-                <i class="fa-solid fa-headphones"></i>
-              </button>
-            </ul>
+                  </li>
+                  <!-- AI -->
+                  <li class="nav-item dropdown position-static">
+                    <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:ai' %}"
+                      role="button"> AI
+                      <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                    <div class="service-drop-div">
+                      <div class="container">
+                        <div class="row gy-4">
+                          <!-- Data Engineering -->
+                          {% for ab in aicategory %}
+                          <div class="col-lg-3 col-md-6 col-sm-12">
+                            <a href="{% url 'userapp:ai_detail' ab.slug %}" class="nav-link">
+                              <h5 class="category-title text-blue fw-bold">
+                                {{ab.name}}
+                              </h5>
+                            </a>
+                          </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Industries -->
+                  <li class="nav-item dropdown position-static">
+                    <a class="nav-link text-blue service-page-link toggle-dropdown w-100" href="{% url 'userapp:industries' %}"
+                      role="button">Industries
+                      <span class="mobile-toggle-icon d-lg-none ms-2 position-absolute end-0">+</span></a>
+                    <div class="service-drop-div">
+                      <div class="container">
+                        <div class="row align-items-center">
+                          <!-- Right Banner -->
+                          <div class="col-lg-3 mb-3 mb-md-0">
+                            <img src="{% static 'userapp/images/industry-AI.jpg' %}" alt="Industries" class="w-100" style="min-height: 200px;" />
+                          </div>
+                          <!-- Left Content -->
+                          <div class="col-lg-9">
+                            <h2 class="fw-bold">
+                              Top IT Company Rendering Industry Specific Solutions
+                            </h2>
+                            <p class="mb-5">
+                              We cater to every booming industry and offer the
+                              best-in-class technology for all.
+                            </p>
+                            <div class="p-3" style="max-height: 300px; overflow-y: auto;">
+                              <div class="row g-4">
+                                <!-- Each industry card -->
+                                {% for ab in industrycategory %}
+                                <div class="col-md-6 col-xl-4 industry-card">
+                                  <a href="{% url 'userapp:industry_detail' ab.slug %}" class="nav-link">
+                                    <h4>{{ab.name}}</h4>
+                                    <p>
+                                      {{ab.description|safe}}
+                                    </p>
+                                  </a>
+                                </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  {% comment %} <li class="nav-item">
+                    <a class="nav-link text-blue" href="{% url 'userapp:career' %}">Careers</a>
+                  </li> {% endcomment %}
+                  <li class="nav-item">
+                    <a class="nav-link text-blue" href="{% url 'userapp:blog' %}">Insights</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                      <a class="nav-link text-blue" href="{% url 'userapp:portfolio' %}"
+                        >Portfolio</a
+                      >
+                    </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link text-blue" href="{% url 'userapp:contact' %}">Contact Us</a>
+                  </li>
+                  
+                </ul>
+              </div>
+              <div class = "col-12 col-lg-3 d-flex justify-content-start justify-content-lg-end  align-items-center">
+                <button type="button" class="px-2 py-2 px-xl-3 py-xl-2 text-dark btn text-white text-wrap neon-button"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-backdrop="false">
+                    Let's Talk
+                  </button>
+                  <button onclick="startVoiceRecognition()"
+                    class="btn-whats pulse rounded-circle bg-primary1 text-white border-0 rounded-circle text-center d-block position-relative ms-2 mt-0 mt-xl-0"
+                    style="height: 40px; width: 40px">
+                    <i class="fa-solid fa-headphones"></i>
+                  </button>
+              </div>
+            </div>
 
             <!-- Contact us modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -313,16 +320,14 @@
             <li class="mb-2"><a href="#" class="text-white"><i
                   class="fa-regular fa-envelope me-2 text-white"></i>info@techversesolutions.com</a>
             <li>
-            <li class="mb-2"><a href="#" class="text-white"><i class="fa-solid fa-location-dot me-2 text-white"></i>S.
-                Hill Street Suite 1313 Los Angeles,CA 90013 United States
-                CA 90013 United States.</a></li>
+            <li class="mb-2"><a href="#" class="text-white"><i class="fa-solid fa-location-dot me-2 text-white"></i>Los Angeles, USA</a></li>
           </ul>
         </div>
         <div class="col-md-3 col-12 mb-3 mb-md-0">
           <h4 class="text-white">Locations</h4>
           <ul class="list-unstyled mt-4 text-white">
             <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white">
-              <li class="mb-2"><i class="fa-solid fa-city me-2 text-white"></i>United States</li>
+              <li class="mb-2"><i class="fa-solid fa-city me-2 text-white"></i>USA</li>
             </a>
             <a href="{% url 'userapp:useraboutus' %}#location-section" class="text-white">
               <li class="mb-2"><i class="fa-solid fa-tree-city me-2 text-white"></i>India</li>

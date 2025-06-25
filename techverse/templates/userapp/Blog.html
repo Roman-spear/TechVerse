@@ -24,7 +24,7 @@
     <p class="text-center">A clear spot for you to explore tech ideas on special subjects.</p>
     <!-- Filter -->
     <div class="filter py-4">
-      <div class="filter-options d-flex flex-wrap gap-3 p-3 justify-content-center">
+      <div class="filter-options d-flex flex-wrap gap-3 justify-content-center">
         <div class="d-flex align-items-center">
           <a href="{% url 'userapp:blog' %}" {% if request.GET.view_name == "blog" %} class="active" {% endif %}><label for="bubble">All</label></a>
         </div>

@@ -153,7 +153,7 @@
             {% for ab in ai_category %}
             <div class="col-6 d-flex align-items-center justify-content-center border p-3">
               <div>
-                <a href="{% url 'userapp:ai_detail' ab.slug %}" style="color:white;">
+                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color:white;">
                   <h4 class="fw-bold">{{ab.name}}</h4>
                   <p class="mb-0">{{ab.description|safe}}</p>
                 </a>
@@ -289,11 +289,7 @@
           </div>
         </div>
         <div class="col-md-4  d-flex align-items-center justify-content-center" >
-<<<<<<< Updated upstream
-          <img src="{% static 'userapp/images/tv.svg' %}" alt="" class="img-fluid" style="height: 450px;">
-=======
           <img src="{% static 'userapp/images/new-ai-services.png' %}" alt="" class="img-fluid" style="height: 450px;">
->>>>>>> Stashed changes
         </div>
         <div class="col-md-4 p-3 d-flex align-items-center justify-content-center">
           <div class="row h-100 w-100">
@@ -311,7 +307,7 @@
         </div>
       </div>
   </div>
-  
+
 
   <!-- Section tech start -->
   <section class=" text-center py-5">
@@ -400,53 +396,33 @@
   <!-- Section 7 End -->
 
   <!-- Section 9 Start -->
-  <section class="py-5 mt-5">
-    <div class="container">
-      <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
-      <div class="row g-4">
+<section class="py-5 mt-5">
+  <div class="container">
+    <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
+    <div class="row g-4">
 
-        <!-- Blog Card 1 -->
-        {% for ab in blogs %}
-        <div class="col-md-6 col-lg-4">
-          <a href="{% url 'userapp:blog_detail' ab.slug %}">
-            <div class="card shadow-sm h-100 rounded-0">
-              {% if ab.image %}
-              <img src="{{ab.image.url}}" class="card-img-top rounded-0" alt="Blog Image">
-              {% else %}
-              <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-              {% endif %}
-              <div class="card-body">
-                <h5 class="card-title fw-semibold">{{ab.title}}</h5>
-                <p class="card-text text-muted small">
-                  {{ab.description|safe|slice:':200'}}....
-                </p>
-              </div>
-              <div class="card-footer bg-white border-0 pt-0">
-                <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                  <li class="list-inline-item">
-                    <i class="far fa-calendar-alt me-1"></i> {{ab.date|date:'d M, Y'}}
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="far fa-user me-1"></i> {{ab.author}}
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="far fa-comments me-1"></i> 38
-                  </li>
-                </ul>
-              </div>
+      {% for ab in blogs %}
+      <div class="col-md-6 col-lg-4">
+        <a href="{% url 'userapp:blog_detail' ab.slug  %}" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100 rounded-0">
+            {% if ab.image %}
+              <img src="{{ ab.image.url }}" class="card-img-top rounded-0" alt="Blog Image">
+            {% else %}
+              <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Default Blog Image">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">{{ ab.title }}</h5>
+              <p class="card-text text-muted small">
+                {{ ab.description|safe|truncatechars:200 }}... <span class="text-primary">Read More</span>
+              </p>
             </div>
-<<<<<<< Updated upstream
-          </a>
-        </div>
-        {% endfor %}
-=======
             <div class="card-footer bg-white border-0 pt-0">
               <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
                 <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 10 Jul, 2025
+                  <i class="far fa-calendar-alt me-1"></i> {{ ab.date|date:'d M, Y' }}
                 </li>
                 <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
+                  <i class="far fa-user me-1"></i> {{ ab.author }}
                 </li>
                 <li class="list-inline-item">
                   <i class="far fa-comments me-1"></i> 38
@@ -454,14 +430,14 @@
               </ul>
             </div>
           </div>
-        </div>
-
->>>>>>> Stashed changes
-        
-
+        </a>
       </div>
+      {% endfor %}
+
     </div>
-  </section>
+  </div>
+</section>
+
   <!-- Section 9 End -->
 
   <!-- Section testimonial Start -->
