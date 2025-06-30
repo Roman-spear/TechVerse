@@ -204,11 +204,11 @@ form .form-select:focus {
   transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 .transition-top {
-  transition: top 0.3s ease;
+  transition: top 0.2s ease;
 }
 .navbar-hidden {
   top: 0 !important;
-  transition: top 2s ease;
+  transition: top 0.2s ease;
 }
 @media (max-width: 996px) {
   #glass-navbar {
