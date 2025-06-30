@@ -2,6 +2,10 @@
 {% load static %} 
 {% block content %}
 
+{% block meta %}
+<meta name="title" content="End-to-End Software Development Services | Web, Mobile, Cloud & AI">
+<meta name="description" content="Techverse Solutions offers end-to-end software development services, including web, mobile, cloud, and AI solutions to help your business grow and succeed.">
+{% endblock %}
 
     <!-- Section 1 Hero Section Start -->
     <div class="container-fluid position-relative p-0">
@@ -33,7 +37,7 @@
                     background-size: cover;
                 }
             </style>
-            <div class="col-md-4 col-sm-6 p-0">
+            <div class="col-xl-4 col-lg-6 col-sm-6 col-12 p-0">
                 <div class="service-card service-card-{{forloop.counter}}">
                     <div class="service-card-info w-75">
                         <h1>{{ab.header_name}}</h1>

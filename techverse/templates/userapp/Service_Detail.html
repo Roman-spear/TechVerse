@@ -33,7 +33,7 @@
         <div class="col-md-5 mb-4 mb-md-0">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
             {% for ab in service_option %}
-            <button class="my-1 w-100 p-3 rounded nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="pill" data-bs-target="#service{{ab.id}}">{{forloop.counter}} {{ab.name}}</button>
+            <button class="my-1 w-100 p-3 rounded nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="pill" data-bs-target="#service{{ab.id}}">{{forloop.counter}}. {{ab.name}}</button>
             {% endfor %}
           </div>
         </div>

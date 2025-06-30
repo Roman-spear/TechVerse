@@ -60,5 +60,7 @@ urlpatterns = [
     path('industrydetail_list/', views.IndustryDetailListView.as_view(), name="industrydetail_list"),
     path('industrydetail_update/<int:pk>/', views.IndustryDetailUpdateView.as_view(), name="industrydetail_update"),
     path('industrydetail_delete/<int:pk>/', views.IndustryDetailDeleteView.as_view(), name="industrydetail_delete"),
+    
+    path('industry/<slug:slug>/', views.IndustryDetailView.as_view(), name="industry_detail"),
 
 ]

@@ -215,7 +215,42 @@ class IndustryCategoryCreateView(CreateView):
         print(form.errors)
         messages.error(self.request, 'Error, Please try again')
         return super().form_invalid(form)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        industry = self.get_object()
+        
+        # Pass related dynamic detail
+        context["industry_detail"] = models.IndustryDetail.objects.filter(industry_category=industry)
+        context["industry_process"] = models.IndustryProcess.objects.filter(industry_category=industry)
 
+        # Title/Meta tags
+        context["meta_title"] = f"{industry.name} | Mara Jode"
+        context["meta_description"] = industry.description
+        context["meta_keywords"] = f"{industry.name.lower()}, {industry.slug}, services, industry"
+
+        return context
+    
+class IndustryDetailView(DetailView):
+    model = models.IndustryCategory
+    template_name = "userapp/industry_detail.html"
+    context_object_name = "industry_data"
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs) 
+        industry = self.get_object()
+        print("data1") 
+        context["industry_detail"] = models.IndustryDetail.objects.filter(industry_category=industry) 
+        context["industry_process"] = models.IndustryProcess.objects.filter(industry_category=industry) 
+
+        # Meta Data 
+        context["meta_title"] = industry.meta_title or industry.name
+        context["meta_description"] = industry.meta_description or industry.description[:160]
+        context["meta_keywords"] = f"{industry.name.lower()}, {industry.slug}, industry, services"
+
+        return context
 
 class IndustryCategoryListView(ListView):
     model = models.IndustryCategory

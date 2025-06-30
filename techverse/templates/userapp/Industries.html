@@ -2,6 +2,11 @@
 {% load static %} 
 {% block content %}
 
+{% block meta %}
+<meta name="title" content="Industry Software Solutions | Custom Development Services">
+<meta name="description" content="Techverse Solutions offers industry-specific software solutions and custom development services to help businesses grow with smart and scalable technology.">
+{% endblock %}
+
     <!-- Section 1 Hero Section Start -->
     <div class="container-fluid position-relative p-0">
         <div class="header-section">
@@ -26,7 +31,7 @@
         <h1 class="fw-bold mb-5 text-blue text-center">Technology Solutions for Every Industry</h1>
         <div class="row">
             {% for ab in industry_category %}
-            <div class="col-md-3 col-sm-6 p-2">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-2">
                 <div class="service-card service-card-{{forloop.couter}}" style="height: 300px; background:url('{% if ab.image %} {{ab.image.url}} {% endif %}') no-repeat center center; background-size: cover;">
                     <div class="service-card-info w-75">
                         <h1>{{ab.name}}</h1>

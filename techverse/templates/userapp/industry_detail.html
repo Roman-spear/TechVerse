@@ -1,6 +1,15 @@
 {% extends 'userapp/master.html' %}
 {% load static %} 
+
+{% block meta_title %}{{ industry_data.meta_title }}{% endblock %}
+{% block meta_description %}{{ industry_data.meta_description|striptags|truncatewords:25 }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
+
 {% block content %}
+    <!-- Use industry_data, industry_detail, and industry_process here -->
+    
+    <!-- etc... -->
+
 
     <!-- Section 1 Hero Section Start -->
      <div class="container-fluid position-relative p-0">
@@ -15,10 +24,10 @@
 
     <!-- Section 2 Start -->
      <!-- Section 1 Industry We Serve Title -->
-    <div class="container py-5 d-flex flex-column align-items-center ">
+    <div class="container pt-5 d-flex flex-column align-items-center">
         <h1 class="fw-bold mb-3 text-blue text-center mx-5">{{industry_data.title}}
         </h1> 
-        <p class="mb-3 text-center" style="line-height: 30px;">{{industry_data.title_description|safe}}</p>
+        <p class="mb-0 text-center" style="line-height: 30px;">{{industry_data.title_description|safe}}</p>
     </div>
     <!-- Section 1 Industry We Serve Title -->
     <!-- Section 2 Industry we Serve -->
@@ -58,6 +67,9 @@
         {% endfor %}
     </div>
     <!-- Section 2 End -->
+
+    <h1>{{ industry_data.meta_title }}</h1>
+    <p>{{ industry_data.meta_description|safe }}</p>
 
     <!-- process start  -->
     <section class="process-section text-center">

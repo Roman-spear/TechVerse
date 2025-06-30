@@ -46,9 +46,14 @@ class IndustryCategory(BaseModel):
     title = models.CharField(max_length=255,null=True,blank=True)
     title_description = SummernoteTextField(null=True,blank=True)
     image = models.FileField(upload_to='industry_category_image',null=True,blank=True)
+    meta_title = models.CharField(max_length=255, blank=True, null=True)
+    meta_description = models.CharField(max_length=255, blank=True, null=True)
     
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("userapp:industry_detail", kwargs={'slug': self.slug})
     
     def get_update_url(self):
         return reverse("adminapp:industrycategory_update",kwargs={'pk':self.pk})
@@ -64,11 +69,11 @@ class IndustryDetail(BaseModel):
     header_image = models.FileField(upload_to='industrytitle_image',null=True,blank=True)
     alt = models.CharField(max_length=255,null=True,blank=True)
     header_alt = models.CharField(max_length=255,null=True,blank=True)
-    
+
     
     def __str__(self):
         return f"{self.industry_category.name} - {self.name}"
-    
+
     def get_update_url(self):
         return reverse("adminapp:industrydetail_update",kwargs={'pk':self.pk})
     
@@ -181,6 +186,7 @@ class ServiceDetail(BaseModel):
     description = SummernoteTextField(null=True,blank=True)
     header_image = models.FileField(upload_to='industrydetail_image',null=True,blank=True)
     alt = models.CharField(max_length=255,null=True,blank=True)
+
     
     def __str__(self): 
         return self.header_name

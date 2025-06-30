@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', function () {
     const navbar = document.getElementById('glass-navbar');
     if (window.scrollY > 20) {
@@ -7,12 +8,19 @@ window.addEventListener('scroll', function () {
     }
   });
 
+  // const tezjsIcon = document.getElementById("static-assets").dataset.tezjsIcon;
+  // const AngularJSIcon = document.getElementById("static-assets").dataset.AngularJSIcon;
+
+
 // Remove Dropdown JS
 
   function showTab(tabName, el = null) {
     const technologies = {
       frontend: [
-        { name: "TezJS", img: "https://img.icons8.com/ios/50/000000/source-code.png" },
+        // { name: "TezJS", img: tezjsIcon },
+        // { name: "TezJS", img: AngularJSIcon },
+        // { name: "TezJS", img: "https://img.icons8.com/color/48/tezjs.png" },
+        { name: "TezJS", img: "https://user-images.githubusercontent.com/20392302/166857418-b5f88b27-bc0a-4afa-bda1-4f4006b000e4.png" },
         { name: "AngularJS", img: "https://img.icons8.com/color/48/angularjs.png" },
         { name: "ReactJS", img: "https://img.icons8.com/color/48/react-native.png" },
         { name: "Vue.js", img: "https://img.icons8.com/color/48/vue-js.png" },
@@ -45,7 +53,8 @@ window.addEventListener('scroll', function () {
       ],
       cloud: [
         { name: "AWS", img: "https://img.icons8.com/color/48/amazon-web-services.png" },
-        { name: "Azure", img: "https://img.icons8.com/color/48/microsoft-azure.png" },
+        // { name: "Azure", img: "https://img.icons8.com/color/48/microsoft-azure.png" },
+        { name: "Azure", img: "https://hoopoeinfoedge.com/wp-content/uploads/2025/04/AzureXIgf9Zbm1744201964.png" },
         { name: "Google Cloud", img: "https://img.icons8.com/color/48/google-cloud.png" }
       ],
       devops: [

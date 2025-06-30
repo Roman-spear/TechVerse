@@ -3,6 +3,11 @@
 {% block content %}
 {% load custom_filters %}
 
+{% block meta %}
+<meta name="title" content="Top Software Development Company | Techverse Solutions">
+<meta name="description" content="Techverse Solutions is a top software development company offering web, mobile app, AI/ML, and custom software solutions to help businesses grow faster.">
+{% endblock %}
+
   <!-- Section 1 Hero Section Start -->
   <img src="{% static 'userapp/images/herobg.png' %}" alt="" class="herobg img-fluid">
   <div class="container position-relative mt-5">
@@ -39,7 +44,7 @@
             services include mobile app development, web development, website design, software development, digital
             marketing, AI/ML, and full-stack development. Whether you’re starting fresh or improving an existing system,
             we use the right tools to fit your needs.</p>
-          <p class="mb-3">We work with all types of clients—startups, small businesses, large companies, and
+          <p class="mb-3">We work with all types of clients startups, small businesses, large companies, and
             digital agencies. We listen to your goals, create a clear plan, and deliver quality results. Every project
             is focused on your success and business growth.</p>
           <div><a href="{% url 'userapp:useraboutus' %}" class="btn neon-button text-white px-3 py-2">About Us</a></div>
@@ -62,9 +67,9 @@
         <!-- CTA Section -->
         <div class="cta-box mt-4 text-center text-lg-start mh-100">
           <h4 class="fw-bold">Who We Are?</h4>
-          <p class="mb-2">TechVerse is an ISO-certified software development company delivering top-notch IT solutions to clients around the globe. From web and mobile app development to AI/ML and full-scale software services — we do it all.</p>
-          <p class="mb-2">Our team is a tight-knit group of problem-solvers, dedicated to building smart, scalable, and efficient solutions that actually move the needle. Quality isn’t just a checkbox for us — it’s at the core of everything we deliver.</p>
-          <p class="mb-2">We proudly serve industries like business, finance, healthcare, hospitality, education, travel, and automotive — helping brands grow, adapt, and lead in the digital age. </p>
+          <p class="mb-2">TechVerse is an ISO-certified software development company delivering top-notch IT solutions to clients around the globe. From web and mobile app development to AI/ML and full-scale software services we do it all.</p>
+          <p class="mb-2">Our team is a tight-knit group of problem-solvers, dedicated to building smart, scalable, and efficient solutions that actually move the needle. Quality isn’t just a checkbox for us it’s at the core of everything we deliver.</p>
+          <p class="mb-2">We proudly serve industries like business, finance, healthcare, hospitality, education, travel, and automotive helping brands grow, adapt, and lead in the digital age. </p>
           <!-- <p class="mb-2">At TechVerse, quality is our top priority. We provide innovative IT solutions for industries like business, finance, healthcare, hospitality, education, travel, and automotive, helping businesses grow and succeed.</p> -->
           <a href="{% url 'userapp:contact' %}">➜ Hire Developers</a>
         </div>
@@ -153,7 +158,7 @@
             {% for ab in ai_category %}
             <div class="col-6 d-flex align-items-center justify-content-center border p-3">
               <div>
-                <a href="{% url 'userapp:ai_detail' ab.id %}" style="color:white;">
+                <a href="{% url 'userapp:ai_detail' ab.slug %}" style="color:white;">
                   <h4 class="fw-bold">{{ab.name}}</h4>
                   <p class="mb-0">{{ab.description|safe}}</p>
                 </a>
@@ -279,7 +284,7 @@
             {% for ab in industry_category|split_half:"first" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
-                <a href="{% url 'userapp:industry_detail' ab.id %}">
+                <a href="{% url 'userapp:industry_detail' ab.slug %}">
                   <i class="{{ab.icon}}"></i>
                   <p class="industry-title">{{ab.name}}</p>
                 </a>
@@ -296,7 +301,7 @@
             {% for ab in industry_category|split_half:"second" %}
             <div class="col-md-6 d-flex justify-content-center flex-column align-items-center p-0">
               <div class="industry-box">
-                <a href="{% url 'userapp:industry_detail' ab.id %}">
+                <a href="{% url 'userapp:industry_detail' ab.slug %}">
                   <i class="{{ab.icon}}"></i>
                   <p class="industry-title">{{ab.name}}</p>
                 </a>
@@ -308,7 +313,10 @@
       </div>
   </div>
 
-
+{% comment %} <div id="static-assets"
+     data-tezjs-icon="{% static 'userapp/images/1.png' %}">
+     data-tezjs-icon="{% static 'userapp/images/1.png' %}">
+</div> {% endcomment %}
   <!-- Section tech start -->
   <section class=" text-center py-5">
     <h1 class="fw-bold mb-3 text-blue">Technologies and Platforms We Use</h1>
@@ -461,8 +469,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Emily Carter</span>
-              <span style="font-size: 12px;">CEO</span>
+              <span class="mb-0 fw-bold">Sahil Kanjariya</span>
+              <span style="font-size: 12px;">Backend Developer</span>
             </div>
           </div>
         </div>
@@ -483,8 +491,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Lucas M.</span>
-              <span style="font-size: 12px;">Co-Founder</span>
+              <span class="mb-0 fw-bold">Akshar Patel</span>
+              <span style="font-size: 12px;">Frontend Developer</span>
             </div>
           </div>
         </div>
@@ -506,8 +514,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">James T.</span>
-              <span style="font-size: 12px;">CEO</span>
+              <span class="mb-0 fw-bold">Hiten Joshi</span>
+              <span style="font-size: 12px;">Frontend Developer</span>
             </div>
           </div>
         </div>
@@ -528,8 +536,8 @@
           <div class="d-flex align-items-center gap-3">
             <img src="{% static 'userapp/images/user-1.jpg' %}" alt="User 1" class="rounded-circle" style="width: 40px; height: 40px;">
             <div class="d-flex flex-column text">
-              <span class="mb-0 fw-bold">Sarah M.</span>
-              <span style="font-size: 12px;">IT Director</span>
+              <span class="mb-0 fw-bold">Divyaraj Patel</span>
+              <span style="font-size: 12px;">SEO Developer</span>
             </div>
           </div>
         </div>
@@ -555,14 +563,14 @@
             <i class="fa fa-location-dot text-blue"></i>
             <div>
               <span class="fw-bold">Location:</span><br>
-              <span>S. Hill Street Suite 1313 Los Angeles,<br>CA 90013 United States CA 90013 United States.</span>
+              <span>Los Angeles, USA</span>
             </div>
           </div>
           <div class="mb-3 border-left border-4 ps-3 py-3 d-flex justify-content-start align-items-center gap-3">
             <i class="fa fa-phone text-blue"></i>
             <div>
               <span class="fw-bold"> Call Us:</span>
-              <span>+91 9081431434</span>
+              <span>+1 (714) 900-9397</span>
             </div>
           </div>
         </div>

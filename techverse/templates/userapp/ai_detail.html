@@ -158,12 +158,12 @@
         }
 
         .stack-label-left {
-            left: -300px;
+            left: -250px;
             text-align: right;
         }
 
         .stack-label-right {
-            right: -280px;
+            right: -240px;
             text-align: left;
         }
 
@@ -308,7 +308,7 @@
 <div class="container-fluid py-5 text-center">
     <h1 class="fw-bold mb-3 text-center text-blue">Key Benefits</h1>
         <ul class="process">
-            {% for ab in ai_benefit %}
+            {% for ab in ai_benefit %}  
             <li class="process__item text-center text-lg-start">
                 <span class="process__number">{{forloop.counter}}</span>
                 <span class="process__title">{{ab.name}}</span>

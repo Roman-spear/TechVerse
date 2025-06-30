@@ -470,7 +470,7 @@ form .form-select:focus {
   transform: translateY(40px);
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 992px) {
   .timeline {
     /* flex-direction: column; */
     align-items: center;
@@ -540,12 +540,12 @@ form .form-select:focus {
   margin-top: 10px;
   /* line-height: 1; */
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .process {
     display: inline-block;
   }
   .process__item {
-    width: 49%;
+    max-width: 49%;
     display: inline-block;
   }
 }
@@ -571,7 +571,7 @@ form .form-select:focus {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 992px) {
   .process-box {
     display: flex;
     flex-direction: row !important;
