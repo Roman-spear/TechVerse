@@ -92,129 +92,255 @@ form .form-select:focus {
   .header-section .header-content {
     margin: 0 5vw;
   }
+#glass-navbar {
+  top: 0px;
+  position: fixed;
+}
 }
 
-/* Navbar */
+/* Default navbar: relative (scrolls naturally with page) */
+#glass-navbar {
+  width: 100%;
+  position: relative;
+  /* top: auto; */
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+/* When scrolled: becomes fixed 
+#glass-navbar.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+*/
+
+/*==============================
+=         NAVBAR STYLES       =
+==============================*/
+
+/* General Styling */
+.navbar {
+  padding: 0 !important;
+  background-color: #fff;
+  z-index: 999;
+}
+
+/* Nav links */
+#navbar-main .nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark, #000);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover color and underline animation (Desktop Only) */
+@media (min-width: 992px) {
+  #navbar-main .nav-link:hover {
+    color: #113f7f;
+  }
+
+  #navbar-main .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--primary, #003378);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  #navbar-main .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+
+}
+
+/* Hide underline animation on mobile */
+@media (max-width: 991.98px) {
+  #navbar-main .nav-link::before {
+    display: none;
+  }
+    #glass-navbar {
+  top: 0px;
+}
+}
+
+/*==============================
+=      DROPDOWN MENUS         =
+==============================*/
+
+/* Desktop Dropdown */
+@media (min-width: 992px) {
+  .service-drop-div {
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: #fff;
+    border-bottom: 5px solid #003378;
+    box-shadow: 0 0 5px rgba(15, 27, 43, 0.2);
+    border-radius: 5px;
+    padding: 40px 15px;
+    z-index: 100;
+    display: none;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .nav-item:hover .service-drop-div {
+    display: block;
+  }
+}
+
+/* Mobile/Tablet Dropdown */
+@media (max-width: 991.98px) {
+  .nav-item.dropdown {
+    position: relative;
+  }
+
+  .nav-item.dropdown .service-drop-div {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: none;
+    padding: 15px 10px;
+    border: none;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .nav-item.dropdown.open .service-drop-div {
+    display: block !important;
+  }
+
+  /* Disable desktop hover behavior */
+  .nav-item:hover .service-drop-div {
+    display: none !important;
+  }
+
+  .mobile-toggle-icon {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+/*==============================
+=       FONT SIZE ADJUST      =
+==============================*/
+
+.service-drop-div h5,
+.service-drop-div h4 {
+  font-size: 1rem;
+}
+
+.service-drop-div p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 991.98px) {
+  .service-drop-div h5,
+  .service-drop-div h4 {
+    font-size: 0.95rem;
+  }
+
+  .service-drop-div p {
+    font-size: 0.85rem;
+  }
+
+  #navbar-main .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #navbar-main .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .service-drop-div h5,
+  .service-drop-div h4 {
+    font-size: 0.9rem;
+  }
+
+  .service-drop-div p {
+    font-size: 0.8rem;
+  }
+}
+
+/*==============================
+=         UTILITY STYLES      =
+==============================*/
 
 .neon-button {
-  background-color: var(--primary);
+  background-color: var(--primary, #003378);
   border-radius: 30px;
   transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .neon-button:hover {
   border-radius: 5px;
-  background-color: var(--primary);
-  box-shadow: 0 0 25px #0032783e;
-}
-.navbar {
-  padding: 0% !important;
-}
-#navbar-main .nav-link {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-}
-
-#navbar-main .nav-link:hover {
-  color: #113f7f;
-}
-
-#navbar-main .nav-link::before {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  background-color: var(--primary);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-#navbar-main .nav-link:hover::before {
-  transform: scaleX(1);
-}
-/* Default hidden */
-
-/* New Dropdown CSS */
-#navbar-main .service-drop-div {
-  position: absolute;
-  /* top: 80% !important; */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  z-index: 100;
-  max-height: 500px;
-  overflow-y: auto;
-  background-color: var(--white);
-  box-shadow: 0 0 5px #0f1b2b34;
-  border-radius: 5px;
-  padding: 40px 15px;
-  display: none;
-  border-bottom: 5px solid #003378;
-  transition: all 0.2s ease-in-out;
-}
-
-/* Show dropdown on hover (desktop only) */
-#navbar-main .nav-item:hover .service-drop-div {
-  display: block;
-}
-
-/* New Dropdown CSS */
-
-.industry-card {
-  margin: 0 !important;
-  padding: 0 !important;
+  background-color: var(--primary, #003378);
+  box-shadow: 0 0 25px rgba(0, 51, 120, 0.24);
 }
 
 .toggler-icon {
   width: 25px;
-  cursor: pointer;
   margin-left: 15px;
+  cursor: pointer;
   display: block;
   z-index: 99;
 }
 
 .toggler-icon span {
   display: block;
-  width: 100%;
   height: 3px;
+  width: 100%;
+  margin-bottom: 5px;
   border-radius: 50px;
   background-color: var(--primary);
-  margin-bottom: 5px;
   transition: 0.3s ease-in-out;
 }
 
-.toggler-icon .hb-1 {
-  width: 10px;
-}
-.toggler-icon .hb-3 {
-  width: 18px;
-}
+.toggler-icon .hb-1 { width: 10px; }
+.toggler-icon .hb-3 { width: 18px; }
 
 .toggler-icon:hover .hb-1,
 .toggler-icon:hover .hb-3 {
   width: 25px;
 }
 
-.nav-container {
-  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+/* Base state (navbar is in normal flow) */
+#glass-navbar {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  /* top: auto; */
+  z-index: 100;
 }
-.transition-top {
-  transition: top 0.2s ease;
+
+/* Fixed navbar (appears on scroll) */
+#glass-navbar.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.navbar-hidden {
-  top: 0 !important;
-  transition: top 0.2s ease;
-}
-@media (max-width: 996px) {
-  #glass-navbar {
-    top: 0;
-  }
-}
+
+
 /* ====Hero section======= */
 .herobg {
   position: absolute;
