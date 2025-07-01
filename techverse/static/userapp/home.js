@@ -8,75 +8,67 @@ window.addEventListener('scroll', function () {
     }
   });
 
-  // const tezjsIcon = document.getElementById("static-assets").dataset.tezjsIcon;
-  // const AngularJSIcon = document.getElementById("static-assets").dataset.AngularJSIcon;
-
 
 // Remove Dropdown JS
 
   function showTab(tabName, el = null) {
     const technologies = {
       frontend: [
-        // { name: "TezJS", img: tezjsIcon },
-        // { name: "TezJS", img: AngularJSIcon },
-        // { name: "TezJS", img: "https://img.icons8.com/color/48/tezjs.png" },
-        { name: "TezJS", img: "https://user-images.githubusercontent.com/20392302/166857418-b5f88b27-bc0a-4afa-bda1-4f4006b000e4.png" },
-        { name: "AngularJS", img: "https://img.icons8.com/color/48/angularjs.png" },
-        // { name: "AngularJS", img: "{% static 'userapp/images/1.png' %}" },
-        { name: "Vue.js", img: "https://img.icons8.com/color/48/vue-js.png" },
-        { name: "JavaScript", img: "https://img.icons8.com/color/48/javascript.png" },
-        { name: "CSS3", img: "https://img.icons8.com/color/48/css3.png" },
-        { name: "HTML5", img: "https://img.icons8.com/color/48/html-5.png" }
+        { name: "TezJS", img: "/static/userapp/images/1.svg" },
+        { name: "AngularJS", img: "/static/userapp/images/2.svg" },
+        { name: "Vue.js", img: "/static/userapp/images/3.svg" },
+        { name: "JavaScript", img: "/static/userapp/images/5.svg" },
+        { name: "CSS3", img: "/static/userapp/images/6.svg" },
+        { name: "HTML5", img: "/static/userapp/images/7.svg" }
       ],
       backend: [
-        { name: "Node.js", img: "https://img.icons8.com/color/48/nodejs.png" },
-        { name: "Express.js", img: "https://img.icons8.com/ios/48/express-js.png" },
-        { name: "PHP", img: "https://img.icons8.com/officel/48/php-logo.png" },
-        { name: "Python", img: "https://img.icons8.com/color/48/python.png" }
+        { name: "Node.js", img: "/static/userapp/images/8.svg" },
+        { name: "Express.js", img: "/static/userapp/images/9.svg" },
+        { name: "PHP", img: "/static/userapp/images/10.svg" },
+        { name: "Python", img: "/static/userapp/images/11.svg" }
       ],
       mobile: [
-        { name: "Flutter", img: "https://img.icons8.com/color/48/flutter.png" },
-        { name: "React Native", img: "https://img.icons8.com/color/48/react-native.png" },
-        { name: "Kotlin", img: "https://img.icons8.com/color/48/kotlin.png" },
-        { name: "Swift", img: "https://img.icons8.com/color/48/swift.png" }
+        { name: "Flutter", img: "/static/userapp/images/12.svg" },
+        { name: "React Native", img: "/static/userapp/images/13.svg" },
+        { name: "Kotlin", img: "/static/userapp/images/14.svg" },
+        { name: "Swift", img: "/static/userapp/images/15.svg" }
       ],
       database: [
-        { name: "MySQL", img: "https://img.icons8.com/ios-filled/50/mysql-logo.png" },
-        { name: "MongoDB", img: "https://img.icons8.com/color/48/mongodb.png" },
-        { name: "PostgreSQL", img: "https://img.icons8.com/color/48/postgreesql.png" },
-        { name: "Firebase", img: "https://img.icons8.com/color/48/firebase.png" }
+        { name: "MySQL", img: "/static/userapp/images/16.svg" },
+        { name: "MongoDB", img: "/static/userapp/images/17.svg" },
+        { name: "PostgreSQL", img: "/static/userapp/images/18.svg" },
+        { name: "Firebase", img: "/static/userapp/images/19.svg" }
       ],
       frameworks: [
-        { name: "Laravel", img: "https://img.icons8.com/ios-filled/50/laravel.png" },
-        { name: "Spring", img: "https://img.icons8.com/color/48/spring-logo.png" },
-        { name: "Django", img: "https://img.icons8.com/material-sharp/48/000000/django.png" }
+        { name: "Laravel", img: "/static/userapp/images/20.svg" },
+        { name: "Spring", img: "/static/userapp/images/21.svg" },
+        { name: "Django", img: "/static/userapp/images/22.svg" }
       ],
       cloud: [
-        { name: "AWS", img: "https://img.icons8.com/color/48/amazon-web-services.png" },
-        // { name: "Azure", img: "https://img.icons8.com/color/48/microsoft-azure.png" },
-        { name: "Azure", img: "https://hoopoeinfoedge.com/wp-content/uploads/2025/04/AzureXIgf9Zbm1744201964.png" },
-        { name: "Google Cloud", img: "https://img.icons8.com/color/48/google-cloud.png" }
+        { name: "AWS", img: "/static/userapp/images/23.svg" },
+        { name: "Azure", img: "/static/userapp/images/24.svg" },
+        { name: "Google Cloud", img: "/static/userapp/images/25.svg" }
       ],
       devops: [
-        { name: "Docker", img: "https://img.icons8.com/color/48/docker.png" },
-        { name: "Kubernetes", img: "https://img.icons8.com/color/48/kubernetes.png" },
-        { name: "Jenkins", img: "https://img.icons8.com/color/48/jenkins.png" },
-        { name: "GitHub Actions", img: "https://img.icons8.com/glyph-neue/48/github.png" }
+        { name: "Docker", img: "/static/userapp/images/26.svg" },
+        { name: "Kubernetes", img: "/static/userapp/images/27.svg" },
+        { name: "Jenkins", img: "/static/userapp/images/28.svg" },
+        { name: "GitHub Actions", img: "/static/userapp/images/29.svg" }
       ],
       ecommerce: [
-        { name: "Magento", img: "https://img.icons8.com/color/48/magento.png" },
-        { name: "Shopify", img: "https://img.icons8.com/color/48/shopify.png" },
-        { name: "WooCommerce", img: "https://img.icons8.com/color/48/woocommerce.png" }
+        { name: "Magento", img: "/static/userapp/images/30.svg" },
+        { name: "Shopify", img: "/static/userapp/images/31.svg" },
+        { name: "WooCommerce", img: "/static/userapp/images/32.svg" }
       ],
       cms: [
-        { name: "WordPress", img: "https://img.icons8.com/color/48/wordpress.png" },
-        { name: "Drupal", img: "https://img.icons8.com/color/48/drupal.png" },
-        { name: "Joomla", img: "https://img.icons8.com/color/48/joomla.png" }
+        { name: "WordPress", img: "/static/userapp/images/33.svg" },
+        { name: "Drupal", img: "/static/userapp/images/34.svg" },
+        { name: "Joomla", img: "/static/userapp/images/35.svg" }
       ],
       platforms: [
-        { name: "Windows", img: "https://img.icons8.com/color/48/windows-10.png" },
-        { name: "Linux", img: "https://img.icons8.com/color/48/linux.png" },
-        { name: "macOS", img: "https://img.icons8.com/ios/48/mac-os.png" }
+        { name: "Windows", img: "/static/userapp/images/36.svg" },
+        { name: "Linux", img: "/static/userapp/images/37.svg" },
+        { name: "macOS", img: "/static/userapp/images/38.svg" }
       ]
     };
     document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));

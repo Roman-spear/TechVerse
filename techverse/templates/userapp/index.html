@@ -400,47 +400,47 @@
   <!-- Section 7 End -->
 
   <!-- Section 9 Start -->
-<section class="py-5 mt-5">
-  <div class="container">
-    <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
-    <div class="row g-4">
+  <section class="py-5 mt-5">
+    <div class="container">
+      <h1 class="text-center text-blue fw-bold mb-5">Latest Blogs</h1>
+      <div class="row g-4">
 
-      {% for ab in blogs %}
-      <div class="col-md-6 col-lg-4">
-        <a href="{% url 'userapp:blog_detail' ab.slug  %}" class="text-decoration-none text-dark">
-          <div class="card shadow-sm h-100 rounded-0">
-            {% if ab.image %}
-              <img src="{{ ab.image.url }}" class="card-img-top rounded-0" alt="Blog Image">
-            {% else %}
-              <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Default Blog Image">
-            {% endif %}
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">{{ ab.title }}</h5>
-              <p class="card-text text-muted small">
-                {{ ab.description|safe|truncatechars:200 }}... <span class="text-primary">Read More</span>
-              </p>
+        {% for ab in blogs %}
+        <div class="col-md-6 col-lg-4">
+          <a href="{% url 'userapp:blog_detail' ab.slug  %}" class="text-decoration-none text-dark">
+            <div class="card shadow-sm h-100 rounded-0">
+              {% if ab.image %}
+                <img src="{{ ab.image.url }}" class="card-img-top rounded-0" alt="Blog Image">
+              {% else %}
+                <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Default Blog Image">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">{{ ab.title }}</h5>
+                <p class="card-text text-muted small">
+                  {{ ab.description|safe|truncatechars:200 }}... <span class="text-primary">Read More</span>
+                </p>
+              </div>
+              <div class="card-footer bg-white border-0 pt-0">
+                <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
+                  <li class="list-inline-item">
+                    <i class="far fa-calendar-alt me-1"></i> {{ ab.date|date:'d M, Y' }}
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="far fa-user me-1"></i> {{ ab.author }}
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="far fa-comments me-1"></i> 38
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> {{ ab.date|date:'d M, Y' }}
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> {{ ab.author }}
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 38
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        {% endfor %}
+
       </div>
-      {% endfor %}
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Section 9 End -->
 
