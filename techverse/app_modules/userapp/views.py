@@ -96,7 +96,7 @@ class UserBlogView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category_id = self.request.GET.get('category')
-        blogs = models.Blog.objects.all() 
+        blogs = models.Blog.objects.all().order_by('-id')
         if category_id:
             category_data = models.BlogCategory.objects.get(id=category_id)
             blogs = blogs.filter(category=category_data)
