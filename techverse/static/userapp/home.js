@@ -22,7 +22,7 @@ window.addEventListener('scroll', function () {
         // { name: "TezJS", img: "https://img.icons8.com/color/48/tezjs.png" },
         { name: "TezJS", img: "https://user-images.githubusercontent.com/20392302/166857418-b5f88b27-bc0a-4afa-bda1-4f4006b000e4.png" },
         { name: "AngularJS", img: "https://img.icons8.com/color/48/angularjs.png" },
-        { name: "ReactJS", img: "https://img.icons8.com/color/48/react-native.png" },
+        // { name: "AngularJS", img: "{% static 'userapp/images/1.png' %}" },
         { name: "Vue.js", img: "https://img.icons8.com/color/48/vue-js.png" },
         { name: "JavaScript", img: "https://img.icons8.com/color/48/javascript.png" },
         { name: "CSS3", img: "https://img.icons8.com/color/48/css3.png" },
