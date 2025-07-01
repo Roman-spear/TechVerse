@@ -4,14 +4,17 @@
 
 <head>
   {% for ab in meta_name %}
-  <meta name="{{ab.name}}" content="{{ab.description|safe}}">
-  <title>{{ab.description|safe}}</title> 
+  <meta name="{{ab.name}}" content="{{ab.description|striptags}}">
+  <title>{{ab.description|striptags}}</title> 
   {% endfor %}
 
   {% for ab in meta_property %}
   <meta property="{{ab.name}}" content="{{ab.description|safe}}">
   {% endfor %}
-
+  
+  {% for ab in canonical %}
+  <link href="{{ab.name}}" rel="canonical">
+  {% endfor %}
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

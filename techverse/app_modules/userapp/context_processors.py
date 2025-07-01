@@ -8,11 +8,13 @@ def global_data(request):
     canonical = request.build_absolute_uri()
     metaname = models.MetaName.objects.filter(view_name=meta_name_view)
     metaproperty = models.MetaProperty.objects.filter(view_name=meta_name_view)
-    if any(x in meta_name_view for x in ["blog_detail", "service_detail", "industry_detail", "ai_detail"]):
+    if any(x in meta_name_view for x in ["blog_detail", "services_detail", "industry_detail", "ai_detail"]):
         detail_identifier = request.resolver_match.kwargs.get('slug')
+        print(f' ==> [Line 12]: \033[38;2;174;114;204m[detail_identifier]\033[0m({type(detail_identifier).__name__}) = \033[38;2;226;99;206m{detail_identifier}\033[0m')
         if detail_identifier:
             metaname = metaname.filter(detail_name=detail_identifier)
             metaproperty = metaproperty.filter(detail_name=detail_identifier) 
+            
     print(f' ==> [Line 18]: \033[38;2;32;184;172m[metaname]\033[0m({type(metaname).__name__}) = \033[38;2;78;26;41m{metaname}\033[0m')
     print(f' ==> [Line 19]: \033[38;2;156;72;38m[metaproperty]\033[0m({type(metaproperty).__name__}) = \033[38;2;142;222;40m{metaproperty}\033[0m')
     print(f' ==> [Line 9]: \033[38;2;189;154;221m[canonical]\033[0m({type(canonical).__name__}) = \033[38;2;160;8;231m{canonical}\033[0m')
