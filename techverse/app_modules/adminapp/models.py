@@ -234,15 +234,28 @@ class ServiceTechnology(BaseModel):
         return reverse("adminapp:servicedetail_delete",kwargs={'pk':self.pk})
     
 class MetaName(BaseModel):
+    view_name = models.CharField(max_length=255)
+    detail_name = models.CharField(max_length=255,null=True,blank=True)
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return f"{self.view_name} - {self.name}"
     
 class MetaProperty(BaseModel):
+    view_name = models.CharField(max_length=255)
+    detail_name = models.CharField(max_length=255,null=True,blank=True)
     name = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return f"{self.view_name} - {self.name}"
+    
+class Canonical(BaseModel):
+    view_name = models.CharField(max_length=255)
+    detail_name = models.CharField(max_length=255,null=True,blank=True)
+    name = models.CharField(max_length=255) 
+    
+    def __str__(self):
+        return f"{self.view_name} - {self.name}"
+    

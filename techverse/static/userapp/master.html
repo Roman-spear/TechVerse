@@ -5,14 +5,14 @@
 <head>
   {% for ab in meta_name %}
   <meta name="{{ab.name}}" content="{{ab.description|safe}}">
-  <title>{{ab.description|safe}}</title> 
+  <title>{{ab.description|safe}}</title>
   {% endfor %}
 
   {% for ab in meta_property %}
   <meta property="{{ab.name}}" content="{{ab.description|safe}}">
   {% endfor %}
 
-
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="{% static 'userapp/images/Techverse-F.png' %}" type="image/x-png" />
@@ -111,7 +111,7 @@
                     <a class="nav-link text-blue" href="{% url 'userapp:useraboutus' %}">About Us</a>
                   </li>
                   <!-- Service -->
-<li class="nav-item dropdown position-static">
+<li class="nav-item  dropdown position-static">
   <div class="d-flex justify-content-between align-items-center w-100">
     <a href="{% url 'userapp:services' %}" class="nav-link text-blue w-100">Service</a>
     <button class="mobile-toggle-icon d-lg-none ms-2 toggle-dropdown btn btn-sm bg-blue border-0">
@@ -134,7 +134,7 @@
 </li>
 
 <!-- AI -->
-<li class="nav-item dropdown position-static">
+<li class="nav-item  dropdown position-static">
   <div class="d-flex justify-content-between align-items-center w-100">
     <a href="{% url 'userapp:ai' %}" class="nav-link text-blue w-100">AI</a>
     <button class="mobile-toggle-icon d-lg-none ms-2 toggle-dropdown btn btn-sm bg-blue border-0">

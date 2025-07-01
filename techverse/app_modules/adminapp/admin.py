@@ -25,3 +25,7 @@ admin.site.register(models.AIServices)
 
 admin.site.register(models.Blog)
 admin.site.register(models.BlogCategory)
+
+admin.site.register(models.MetaName) 
+admin.site.register(models.MetaProperty) 
+admin.site.register(models.Canonical)
