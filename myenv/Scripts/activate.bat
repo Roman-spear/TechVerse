@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< Updated upstream
 set VIRTUAL_ENV=C:\Spectrics Solutions\New Git Projects\TechVerse\myenv
+=======
+set "VIRTUAL_ENV=E:\SPECTRICS SOLUTION\TV\Techverse\myenv"
+>>>>>>> Stashed changes
 
 if not defined PROMPT set PROMPT=$P$G
 
@@ -24,8 +28,13 @@ set PYTHONHOME=
 if defined _OLD_VIRTUAL_PATH set PATH=%_OLD_VIRTUAL_PATH%
 if not defined _OLD_VIRTUAL_PATH set _OLD_VIRTUAL_PATH=%PATH%
 
+<<<<<<< Updated upstream
 set PATH=%VIRTUAL_ENV%\Scripts;%PATH%
 set VIRTUAL_ENV_PROMPT=(myenv) 
+=======
+set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
+set "VIRTUAL_ENV_PROMPT=myenv"
+>>>>>>> Stashed changes
 
 :END
 if defined _OLD_CODEPAGE (

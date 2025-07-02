@@ -245,6 +245,7 @@ if (Test-Path -Path Env:PYTHONHOME) {
 # Add the venv to the PATH
 Copy-Item -Path Env:PATH -Destination Env:_OLD_VIRTUAL_PATH
 $Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"
+<<<<<<< Updated upstream
 
 # SIG # Begin signature block
 # MIIpigYJKoZIhvcNAQcCoIIpezCCKXcCAQExDzANBglghkgBZQMEAgEFADB5Bgor
@@ -470,3 +471,5 @@ $Env:PATH = "$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH"
 # kYgQnPXOTOux40RjWtnLt7QvNFmGPP5pCiBAadxy0gFN6a+Y6mgBh1gH9gT+q1qr
 # vDHmWJOpGRElkEUVb7fay9uSoD+brnbWWSviHK81
 # SIG # End signature block
+=======
+>>>>>>> Stashed changes

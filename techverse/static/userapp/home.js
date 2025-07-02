@@ -1,7 +1,7 @@
 
 window.addEventListener('scroll', function () {
     const navbar = document.getElementById('glass-navbar');
-    if (window.scrollY > 20) {
+    if (window.scrollY > 10) {
       navbar.classList.add('navbar-hidden');
     } else {
       navbar.classList.remove('navbar-hidden');
@@ -46,8 +46,8 @@ window.addEventListener('scroll', function () {
       ],
       cloud: [
         { name: "AWS", img: "/static/userapp/images/23.svg" },
-        { name: "Azure", img: "/static/userapp/images/24.svg" },
-        { name: "Google Cloud", img: "/static/userapp/images/25.svg" }
+        { name: "Azure", img: "/static/userapp/images/25.svg" },
+        { name: "Google Cloud", img: "/static/userapp/images/24.svg" }
       ],
       devops: [
         { name: "Docker", img: "/static/userapp/images/26.svg" },
