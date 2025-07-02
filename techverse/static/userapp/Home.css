@@ -82,7 +82,7 @@ form .form-select:focus {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .header-section {
     align-items: center;
     text-align: center;
@@ -711,7 +711,7 @@ form .form-select:focus {
   .top-step,
   .bottom-step {
     transform: none !important;
-    margin: 20px 0;
+    margin: 20px 180px;
   }
 
   .timeline::before {
@@ -913,17 +913,18 @@ form .form-select:focus {
 }
 
 .aboutcontainer {
-  background-image: url("./images/bg.svg");
+  background-image: url("./images/bg2.svg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 3rem 1rem;
   text-align: center;
 }
+
 
 .aboutcontainer::before {
   position: absolute;

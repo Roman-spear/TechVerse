@@ -17,7 +17,7 @@ class UserIndexView(TemplateView):
         context["service_category"] = models.ServiceCategory.objects.all()[:5]
         context["ai_category"] = models.AICategory.objects.all()
         context["industry_category"] = models.IndustryCategory.objects.all()
-        context["blogs"] = models.Blog.objects.all()[:3]
+        context["blogs"] = models.Blog.objects.all().order_by('-id')[:3]
         return context
     
     
