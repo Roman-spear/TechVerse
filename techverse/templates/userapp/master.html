@@ -3,6 +3,23 @@
 {% load static %}
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-53SK9SHX');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBTDM6LLRC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-JBTDM6LLRC');
+  </script>
+
   {% for ab in meta_name %}
   <meta name="{{ab.name}}" content="{{ab.description|striptags}}">
   <title>{{ab.description|striptags}}</title> 
@@ -16,6 +33,8 @@
   <link href="{{ab.name}}" rel="canonical">
   {% endfor %}
 
+  <meta name="google-site-verification" content="qNdkEPNU_Vf0lubKOPM2lqDZDP9zdvQpLSOgBsP-QtQ" />
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="{% static 'userapp/images/Techverse-F.png' %}" type="image/x-png" />
@@ -51,6 +70,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53SK9SHX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Header Start -->
   <div class="container-fluid contact-bar bg-primary1 py-2 d-none d-lg-block">
     <div class="container-xl d-flex justify-content-between align-items-center">
