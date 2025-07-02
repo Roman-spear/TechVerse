@@ -1,10 +1,6 @@
 {% extends 'userapp/master.html' %}
 {% load static %} 
 
-{% block meta_title %}{{ industry_data.meta_title }}{% endblock %}
-{% block meta_description %}{{ industry_data.meta_description|striptags|truncatewords:25 }}{% endblock %}
-{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
-
 {% block content %}
     <!-- Use industry_data, industry_detail, and industry_process here -->
     
