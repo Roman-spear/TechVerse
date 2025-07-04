@@ -24,7 +24,7 @@
     <!-- Section 2 Start -->
     <div class="container py-5">
         <h1 class="fw-bold mb-5 text-blue text-center">Our Services</h1>
-        <div class="row">
+        <div class="row g-2 g-lg-0">
             {% for ab in services %}
             <style>
                 .service-card-{{forloop.counter}} {
@@ -32,7 +32,7 @@
                     background-size: cover;
                 }
             </style>
-            <div class="col-xl-4 col-lg-6 col-sm-6 col-12 p-0">
+            <div class="col-xl-4 col-lg-6 col-sm-6 col-12 p-2 p-lg-0">
                 <div class="service-card service-card-{{forloop.counter}}">
                     <div class="service-card-info w-75">
                         <h1>{{ab.header_name}}</h1>
@@ -46,7 +46,7 @@
 
     <!-- Section 2 End -->
     <!-- Section tech start -->
-    <section class="container text-center py-5">
+    <section class="text-center py-5">
         <h1 class="fw-bold mb-3 text-blue">Technologies and Platforms We Use</h1>
         <div class="tabs">
         <div class="tab" onclick="showTab('frontend', this)">Frontend</div>

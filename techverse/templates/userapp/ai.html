@@ -117,7 +117,7 @@
         <h1 class="fw-bold mb-3 text-blue">AI Use Cases</h1>
         <p>Making Life Easier With Smart And Simple AI</p>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-8">
             <div class="circle-container">
               <div class="center-ai">
                 <img src="{% static 'userapp/images/AI-for.svg' %}" alt="AI Core" />
@@ -128,13 +128,13 @@
             </div>
           </div>
           <!-- Right Description Boxes -->
-          <div class="col-lg-6 bg-primary1 text-white p-0">
+          <div class="col-lg-4 bg-white text-white p-3">
             <div class="row h-100 g-0">
               {% for ab in ai_category %}
-              <div class="col-6 d-flex align-items-center justify-content-center border p-3">
+              <div class="col-12 d-flex align-items-center justify-content-center border p-0 h-auto rounded-4 bg-primary1 mb-2">
                 <a href="{% url 'userapp:ai_detail' ab.slug %}" style="color: whitesmoke;"><div>
                   <h4 class="fw-bold">{{ab.name}}</h4>
-                  <p class="mb-0">{{ab.description|safe}}</p>
+                  {% comment %} <p class="mb-0">{{ab.description|safe}}</p> {% endcomment %}
                 </div></a>
               </div>
               {% endfor %}

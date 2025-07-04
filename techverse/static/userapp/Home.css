@@ -1311,6 +1311,28 @@ input[type="range"]::-moz-range-thumb {
   display: block;
 }
 
+
+/* Default desktop styles already set in your code */
+
+/* Tablet view (768px to 1024px) */
+@media (max-width: 1024px) {
+  .service-card {
+    background-size: contain;
+    background-position: center;
+    height: 40vh;
+  }
+}
+
+/* Mobile view (below 768px) */
+@media (max-width: 767px) {
+  .service-card {
+    background-size: cover;
+    background-position: top center;
+    height: 50vh;
+    background-image: url("https://cdn.pixabay.com/photo/2024/10/30/17/14/ai-generated-9162204_640.jpg"); /* Optional: Use a smaller/mobile-optimized image */
+  }
+}
+
 /* /////=== */
 /* servicedetail  */
 

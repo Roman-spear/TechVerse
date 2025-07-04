@@ -124,6 +124,7 @@ class AIDetail(BaseModel):
     title = models.CharField(max_length=255,null=True,blank=True)
     description = SummernoteTextField(null=True,blank=True)
     contact_text = models.TextField(null=True,blank=True)
+    service_title = models.CharField(max_length=255,null=True,blank=True)
     about_name = models.CharField(max_length=255,null=True,blank=True)
     about_description = SummernoteTextField()
     about_image = models.FileField(upload_to='ai_aboutimage',null=True,blank=True)
