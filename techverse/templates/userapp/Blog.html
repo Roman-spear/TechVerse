@@ -71,68 +71,110 @@
         </a>
       </div>
       {% endfor %}
-      {% comment %} <!-- Blog Card 2 -->
-      <div class="col-md-6 col-lg-4">
-        <a href="Blog_Detail.html">
-          <div class="card shadow-sm h-100 rounded-0">
-            <img src="{% static 'userapp/images/blog2.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Website Development</h5>
-              <p class="card-text text-muted small">
-                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-              </p>
-            </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 25 Jun, 2025
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 68
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Blog Card 3 -->
-      <div class="col-md-6 col-lg-4">
-        <a href="Blog_Detail.html">
-          <div class="card shadow-sm h-100 rounded-0">
-            <img src="{% static 'userapp/images/blog1.jpg' %}" class="card-img-top rounded-0" alt="Blog Image">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Software Development</h5>
-              <p class="card-text text-muted small">
-                Exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-              </p>
-            </div>
-            <div class="card-footer bg-white border-0 pt-0">
-              <ul class="list-inline small text-muted d-flex justify-content-between mb-0">
-                <li class="list-inline-item">
-                  <i class="far fa-calendar-alt me-1"></i> 16 May, 2025
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-user me-1"></i> User
-                </li>
-                <li class="list-inline-item">
-                  <i class="far fa-comments me-1"></i> 58
-                </li>
-              </ul>
-            </div>
-          </div>
-        </a>
-      </div> {% endcomment %}
     </div>
     <!-- Pagination -->
     <div class="pagination d-flex justify-content-center mt-4">
-      <ul class="d-flex align-items-center rounded-pill"> <!--pages or li are comes from javascript --> </ul>
-      
+      <ul class="d-flex align-items-center rounded-pill"></ul>
     </div>
   </section>
   <!-- Section 2 End -->
 
 
+  <script>
+    // Get pagination data from Django
+    const totalPages = {{ paginator.num_pages }};
+    let currentPage = {{ page_obj.number }};
+    const categoryId = "{{ category_id|default:'' }}";
+    
+    // Initialize pagination
+    const element = document.querySelector(".pagination ul");
+    element.innerHTML = createPagination(totalPages, currentPage);
+    
+    function createPagination(totalPages, page) {
+        let liTag = "";
+        let active;
+        let beforePage = page - 1;
+        let afterPage = page + 1;
+        
+        // Previous button
+        if (page > 1) {
+            liTag += `<li class="btn prev" onclick="navigateToPage(${page - 1})">
+                        <span><i class="fas fa-angle-left"></i> Prev</span>
+                     </li>`;
+        }
+        
+        // First page
+        if (page > 2) {
+            liTag += `<li class="first numb" onclick="navigateToPage(1)">
+                        <span>1</span>
+                      </li>`;
+            if (page > 3) {
+                liTag += `<li class="dots"><span>...</span></li>`;
+            }
+        }
+        
+        // Always show 3 pages in the middle when possible
+        if (page === 1) {
+            // On first page, show 1, 2, 3
+            beforePage = 1;
+            afterPage = Math.min(3, totalPages);
+        } else if (page === totalPages) {
+            // On last page, show n-2, n-1, n
+            beforePage = Math.max(totalPages - 2, 1);
+            afterPage = totalPages;
+        } else {
+            // In middle, show current-1, current, current+1
+            beforePage = page - 1;
+            afterPage = page + 1;
+        }
+        
+        // Page numbers (middle range)
+        for (let plength = beforePage; plength <= afterPage; plength++) {
+            if (plength > totalPages || plength < 1) continue;
+            
+            // Skip if this is page 1 and we already added it as "first numb"
+            if (plength === 1 && page > 2) continue;
+            // Skip if this is the last page and we'll add it as "last numb"
+            if (plength === totalPages && page < totalPages - 1) continue;
+            
+            active = page === plength ? "active" : "";
+            liTag += `<li class="numb ${active}" onclick="navigateToPage(${plength})">
+                          <span>${plength}</span>
+                       </li>`;
+        }
+        
+        // Last page
+        if (page < totalPages - 1) {
+            if (page < totalPages - 2) {
+                liTag += `<li class="dots"><span>...</span></li>`;
+            }
+            // Only add last page if it's not already in the middle range
+            if (afterPage < totalPages) {
+                liTag += `<li class="last numb" onclick="navigateToPage(${totalPages})">
+                            <span>${totalPages}</span>
+                          </li>`;
+            }
+        }
+        
+        // Next button
+        if (page < totalPages) {
+            liTag += `<li class="btn next" onclick="navigateToPage(${page + 1})">
+                        <span>Next <i class="fas fa-angle-right"></i></span>
+                      </li>`;
+        }
+        
+        element.innerHTML = liTag;
+        return liTag;
+    }
+    
+    // Function to handle page navigation
+    function navigateToPage(page) {
+        let url = `?page=${page}`;
+        if (categoryId) {
+            url += `&category=${categoryId}`;
+        }
+        window.location.href = url;
+    }
+  </script>
+  
 {% endblock %}
